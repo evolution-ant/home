@@ -6,7 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "encore/laravel-admin": "v2.0.0-beta5",
+        "dianwoung/large-file-upload": "^0.0.3",
+        "encore/laravel-admin": "v1.8.17",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "jxlwqq/data-table": "^1.0",

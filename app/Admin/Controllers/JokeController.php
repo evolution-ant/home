@@ -45,7 +45,7 @@ class JokeController extends Controller
         return $content->title('详情')
             ->description('简介')
             ->view('product.show', array(
-                'content'=>'content'
+                'content' => 'content'
             ));
     }
 
@@ -85,6 +85,10 @@ class JokeController extends Controller
     protected function grid()
     {
         $grid = new Grid(new Joke);
+        $grid->quickSearch('content', 'remark');
+        $grid->selector(function (Grid\Tools\Selector $selector) {
+            $selector->select('type_id', 'Type', Type::where('group', Joke::NAME)->pluck('name', 'id'));
+        });
         // $grid->header(function ($query) {
         // $jokes = $query->select(DB::raw('count(jokes) as count, jokes'))
         //     ->groupBy('jokes')->get()->pluck('count', 'jokes')->toArray();
@@ -117,21 +121,27 @@ class JokeController extends Controller
         });
 
         $grid->quickCreate(function (Grid\Tools\QuickCreate $create) {
-            $create->text('content', 'content');
+            $create->text('content', 'Content');
             $types = Type::all()->pluck('name', 'id');
-            $create->select('type_id', "type")->options($types);
+            $create->select('type_id', "Type")->options($types);
             $tags = Tag::where('group', Joke::NAME)->pluck('name', 'id');
-            $create->multipleSelect('tags', 'tags')->options($tags);
-            $create->text('remark', 'remark');
-            $create->text('importance', 'importance');
+            $create->multipleSelect('tags', 'Tags')->options($tags);
+            $create->select('importance', 'Importance')->options([
+                1 => '⭐️ ',
+                2 => '⭐️ ⭐️',
+                3 => '⭐️ ⭐️ ⭐️',
+                4 => '⭐️ ⭐️ ⭐️ ⭐️',
+                5 => '⭐️ ⭐️ ⭐️ ⭐️ ⭐️'
+            ])->default(1);
+            $create->text('remark', 'Remark');
         });
-        // $grid->updated_at(trans('admin.updated_at'));
-        $grid->column('type_id', 'type')->display(function ($type_id) {
-            $name = Type::find($type_id)->name;
+
+        $grid->column('type_id', 'Type')->display(function ($type_id) {
             $style = 'default';
             if ($type_id == 0) {
-                return "<span class='label label-{$style}'>$name</span>";
+                return "";
             }
+            $name = Type::find($type_id)->name;
             switch ($type_id % 5) {
                 case 0:
                     $style = 'primary';
@@ -152,10 +162,41 @@ class JokeController extends Controller
                     $style = 'default';
                     break;
             }
-            return "<span class='label label-{$style}'>$name</span>";
+            \Log::info($type_id);
+            return "<span class='label label-$style'>$name</span> ";
         });
-        $grid->content('content');
-        $grid->tags()->pluck('name')->badge('yellow');
+        $grid->content('Content')->width(600);
+        $grid->tags()->pluck('name', 'id')->display(function ($tags) {
+            $value = '';
+            foreach ($tags as $id => $name) {
+                $style = '';
+                switch ($id % 5) {
+                    case 0:
+                        $style = 'default';
+                        break;
+                    case 1:
+                        $style = 'primary';
+                        break;
+                    case 2:
+                        $style = 'success';
+                        break;
+                    case 3:
+                        $style = 'danger';
+                        break;
+                    case 4:
+                        $style = 'warning';
+                        break;
+                    case 5:
+                        $style = 'info';
+                        break;
+                    default:
+                        $style = 'default';
+                        break;
+                }
+                $value = $value . "<span class='label label-$style'>$name</span> ";
+            }
+            return $value;
+        });
         // $grid->column('reading_times')->display(function ($reading_times) {
         //     return "<span class='label label-default'>$reading_times</span>";
         // })->sortable();
@@ -167,7 +208,7 @@ class JokeController extends Controller
             }
             return join('&nbsp;', array_fill(0, min(5, $importance), $html));
         })->sortable();
-        $grid->remark('remark');
+        $grid->remark('Remark')->width(300)->color('red');
 
         return $grid;
     }

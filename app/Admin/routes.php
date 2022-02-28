@@ -14,6 +14,7 @@ Route::group([
         'joke' => JokeController::class,
         'type' => TypeController::class,
         'tag' => TagController::class,
+        'test' => TestController::class,
     ]);
     $router->get('/', 'HomeController@index')->name('home');
     $router->get('/chartjs', 'ChartjsController@index')->name('chartjs');

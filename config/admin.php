@@ -366,7 +366,7 @@ return [
     | Alert message that will displayed on top of the page.
     |--------------------------------------------------------------------------
     */
-    'top_alert' => '',
+    'top_alert' => 'warning',
 
     /*
     |--------------------------------------------------------------------------
@@ -384,6 +384,8 @@ return [
     | the extension files will be generated in this directory.
     */
     'extension_dir' => app_path('Admin/Extensions'),
+
+    'grid_action_class' => \Encore\Admin\Grid\Displayers\ContextMenuActions::class,
 
     /*
     |--------------------------------------------------------------------------

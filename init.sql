@@ -1,10 +1,11 @@
 DROP TABLE IF EXISTS `jokes`;
 CREATE TABLE `jokes` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `type_id` int(11) DEFAULT NULL,
-    `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-    `remark` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+    `type_id` int(11) DEFAULT 0,
+    `content` text(255) COLLATE utf8_unicode_ci NOT NULL,
+    `remark` text(255) COLLATE utf8_unicode_ci DEFAULT NULL,
     `reading_times` tinyint(1) DEFAULT 0,
+    `like` tinyint(1) DEFAULT 0,
     `importance` int(11) DEFAULT 0,
     `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,

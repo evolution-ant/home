@@ -22,6 +22,9 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 
 Encore\Admin\Form::forget(['map', 'editor']);
+Encore\Admin\Form::extend('largefile', \Encore\LargeFileUpload\LargeFileField::class);
+Encore\Admin\Admin::css('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+
 Form::init(function (Form $form) {
 
     $form->tools(function (Form\Tools $tools) {
@@ -49,6 +52,4 @@ Grid::init(function (Grid $grid) {
         $tools->append('<a class="btn btn-sm btn-default" onClick="javascript :history.back(-1);"><i class="glyphicon glyphicon-arrow-left"></i> Previous</a>');
     });
     $grid->disableRowSelector();
-
 });
-
