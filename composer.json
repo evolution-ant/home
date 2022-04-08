@@ -20,12 +20,14 @@
         "laravel-admin-ext/helpers": "2.*",
         "laravel-admin-ext/log-viewer": "^1.0",
         "laravel-admin-ext/media-manager": "2.x",
+        "laravel-admin-ext/python-editor": "^1.0",
         "laravel-admin-ext/redis-manager": "^1.3",
         "laravel-admin-ext/scheduling": "^1.2",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "stil/gd-text": "^1.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

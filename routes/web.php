@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('app', function () {
     return view('layouts/app');
 });
+
+Route::get('/api/demo', [App\Http\Controllers\ApiJokeController::class, 'type']);

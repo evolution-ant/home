@@ -25,6 +25,8 @@ Encore\Admin\Form::forget(['map', 'editor']);
 Encore\Admin\Form::extend('largefile', \Encore\LargeFileUpload\LargeFileField::class);
 Encore\Admin\Admin::css('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 
+app('view')->prependNamespace('admin',resource_path('views/admin'));
+
 Form::init(function (Form $form) {
 
     $form->tools(function (Form\Tools $tools) {

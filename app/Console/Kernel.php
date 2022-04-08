@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Models\Joke;
 
 class Kernel extends ConsoleKernel
 {
@@ -17,7 +18,12 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('inspire')->everyTenMinutes();
-
+        $schedule->call(function () {
+            \Log::info(__METHOD__, ['old_str count:']);
+            \DB::table('jokes')->insert([
+                ['content' => 'taylor@example.com'],
+            ]);
+        })->everyMinute();
         $schedule->command('route:list')->dailyAt('02:00');
     }
 
@@ -28,7 +34,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }

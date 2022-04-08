@@ -11,10 +11,15 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Illuminate\Support\Facades\DB;
+use App\Admin\Actions\Joke\Restore;
+use Encore\Admin\Widgets\Box;
+use Encore\Admin\Admin;
 
 class JokeController extends Controller
 {
     use HasResourceActions;
+
     /**
      * Index interface.
      *
@@ -84,23 +89,45 @@ class JokeController extends Controller
      */
     protected function grid()
     {
+
         $grid = new Grid(new Joke);
+
+        $grid->actions(function ($actions) {
+            if (\request('_scope_') == 'trashed') {
+                $actions->add(new Restore());
+            }
+        });
+
+        $grid->enableHotKeys();
         $grid->quickSearch('content', 'remark');
         $grid->selector(function (Grid\Tools\Selector $selector) {
-            $selector->select('type_id', 'Type', Type::where('group', Joke::NAME)->pluck('name', 'id'));
+            $selector->selectOne('type_id', 'Type', Type::where('group', Joke::NAME)->pluck('name', 'id'));
+            $selector->select('tags', 'Tags',  Tag::where('group', Joke::NAME)->pluck('name', 'id'), function ($query, $value) {
+                $joke_ids = [];
+                foreach ($value as $id) {
+                    $tmp_jokes = DB::table("joke_tag")->where('tag_id', $id)->get();
+                    foreach ($tmp_jokes as $tmp_joke) {
+                        array_push($joke_ids, $tmp_joke->joke_id);
+                    }
+                }
+                \Log::info($joke_ids);
+                $query->whereIn('id', $joke_ids);
+            });
         });
+
         // $grid->header(function ($query) {
-        // $jokes = $query->select(DB::raw('count(jokes) as count, jokes'))
+        // $jokes = $query->select(DB::raw('count(remark) as count, jokes'))
         //     ->groupBy('jokes')->get()->pluck('count', 'jokes')->toArray();
         // $doughnut = view('admin.chart.jokes', compact('jokes'));
         //     return new Box('性别比例');
         // });
-        // $grid->footer(function ($query) {
-        //     $data = $query->where('importance', 0)->sum('importance');
-        //     return "<div style='padding: 10px;'>总收入 ： $data</div>";
-        // });
+        $grid->footer(function ($query) {
+            $data = $query->where('importance', 0)->sum('importance');
+            return "<div style='padding: 10px;'>总收入 ： $data</div>";
+        });
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
+            $filter->scope('trashed', '回收站')->onlyTrashed();
             $filter->column(1 / 3, function ($filter) {
                 $filter->equal('type', 'Type')->select(function () {
                     $query = Type::where('group', Joke::NAME)->pluck('name', 'id');
@@ -127,7 +154,7 @@ class JokeController extends Controller
             $tags = Tag::where('group', Joke::NAME)->pluck('name', 'id');
             $create->multipleSelect('tags', 'Tags')->options($tags);
             $create->select('importance', 'Importance')->options([
-                1 => '⭐️ ',
+                1 => '⭐️',
                 2 => '⭐️ ⭐️',
                 3 => '⭐️ ⭐️ ⭐️',
                 4 => '⭐️ ⭐️ ⭐️ ⭐️',
@@ -135,6 +162,8 @@ class JokeController extends Controller
             ])->default(1);
             $create->text('remark', 'Remark');
         });
+
+        $grid->column('content')->copyable();
 
         $grid->column('type_id', 'Type')->display(function ($type_id) {
             $style = 'default';
@@ -165,7 +194,7 @@ class JokeController extends Controller
             \Log::info($type_id);
             return "<span class='label label-$style'>$name</span> ";
         });
-        $grid->content('Content')->width(600);
+        // $grid->content('Content')->width(800)->copyable();
         $grid->tags()->pluck('name', 'id')->display(function ($tags) {
             $value = '';
             foreach ($tags as $id => $name) {
@@ -197,11 +226,8 @@ class JokeController extends Controller
             }
             return $value;
         });
-        // $grid->column('reading_times')->display(function ($reading_times) {
-        //     return "<span class='label label-default'>$reading_times</span>";
-        // })->sortable();
 
-        $grid->importance()->display(function ($importance) {
+        $grid->importance('Imp')->display(function ($importance) {
             $html = "<i class='fa fa-star' style='color:#ff8913'></i>";
             if ($importance < 1) {
                 return '';
@@ -209,7 +235,9 @@ class JokeController extends Controller
             return join('&nbsp;', array_fill(0, min(5, $importance), $html));
         })->sortable();
         $grid->remark('Remark')->width(300)->color('red');
-
+        $grid->column('created_at')->hide();
+        $grid->column('updated_at')->hide();
+        $grid->column('id')->hide();
         return $grid;
     }
 
@@ -246,17 +274,20 @@ class JokeController extends Controller
     protected function form()
     {
         $form = new Form(new Joke);
-        // $form->row(function ($row) {
-        //     $types = Type::where('group', Joke::NAME)->pluck('name', 'id');
-        //     $row->radio('type_id', "type")->options($types);
-        // });
         $types = Type::where('group', Joke::NAME)->pluck('name', 'id');
-        $form->radio('type_id', "type")->options($types);
+        $form->radioCard('type_id', "type")->options($types);
+        $form->python('code')->height(500);
+
         $form->textarea('content', 'content')->required();
         $tags = Tag::where('group', Joke::NAME)->pluck('name', 'id');
         $form->listbox('tags', 'choose tags')->options($tags);
         $form->starRating('importance');
         $form->text('remark', 'remark');
+        $form->row(function ($row) {
+            $row->width(4)->text('email');
+            $row->width(4)->text('password');
+            $row->width(4)->text('password_confirmation');
+        });
         return $form;
     }
 }
