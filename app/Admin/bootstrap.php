@@ -50,8 +50,8 @@ Grid::init(function (Grid $grid) {
         $filter->disableIdFilter();
     });
 
-    $grid->tools(function (Grid\Tools $tools) {
-        $tools->append('<a class="btn btn-sm btn-default" onClick="javascript :history.back(-1);"><i class="glyphicon glyphicon-arrow-left"></i> Previous</a>');
-    });
+    // $grid->tools(function (Grid\Tools $tools) {
+        // $tools->append('<a class="btn btn-sm btn-default" onClick="javascript :history.back(-1);"><i class="glyphicon glyphicon-arrow-left"></i> Previous</a>');
+    // });
     $grid->disableRowSelector();
 });

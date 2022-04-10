@@ -128,8 +128,8 @@ class MenuController extends Controller
 
         $form->select('parent_id', trans('admin.parent_id'))->options($menuModel::selectOptions());
         $form->text('title', trans('admin.title'))->rules('required');
-        // $form->icon('icon', trans('admin.icon'))->default('fa-bars')->rules('required')->help($this->iconHelp());
-        $form->html(view('admin.form.aliIcon', ['icons' => $this->icons()]), 'IconFont')->required();
+        $form->icon('icon', trans('admin.icon'))->default('fa-bars')->rules('required')->help($this->iconHelp());
+        $form->html(view('admin.form.aliIcon', ['icons' => $this->icons()]), 'IconFont');
 
         $form->text('uri', trans('admin.uri'));
         $form->multipleSelect('roles', trans('admin.roles'))->options($roleModel::all()->pluck('name', 'id'));
@@ -155,13 +155,13 @@ class MenuController extends Controller
 
     private function icons()
     {
-        $css = file_get_contents('http://at.alicdn.com/t/font_3311150_f6syz1fhm2e.css');
-        preg_match_all('/icon.+:/', $css, $matches);// eg: 73 => "icon-car:"
+        $css = file_get_contents('http://at.alicdn.com/t/font_3311150_gbiviklnygw.css');
+        preg_match_all('/icon.+:/', $css, $matches); // eg: 73 => "icon-car:"
 
         $icons = [];
         $matches = $matches[0];
 
-        foreach ($matches as $match){
+        foreach ($matches as $match) {
             $icon = substr($match, 0, strlen($match) - 1);
             $icons[] = [
                 'id' => $icon,

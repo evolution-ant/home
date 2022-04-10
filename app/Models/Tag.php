@@ -15,4 +15,12 @@ class Tag extends Model
     {
         return $this->belongsToMany(Joke::class);
     }
+    public function code()
+    {
+        return $this->belongsToMany(Code::class);
+    }
+    public function todo()
+    {
+        return $this->belongsToMany(Todo::class);
+    }
 }

@@ -14,4 +14,12 @@ class Type extends Model
     {
         return $this->hasMany(Joke::class);
     }
+    public function codes()
+    {
+        return $this->hasMany(Code::class);
+    }
+    public function todo()
+    {
+        return $this->belongsToMany(Todo::class);
+    }
 }

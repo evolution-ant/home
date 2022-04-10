@@ -91,6 +91,10 @@ class TagController extends Controller
         $grid->created_at(trans('admin.created_at'));
         $grid->updated_at(trans('admin.updated_at'));
 
+        $grid->selector(function (Grid\Tools\Selector $selector) {
+            $selector->selectOne('group', 'Group', TypeController::GROUP_OPTIONS);
+        });
+
         return $grid;
     }
 

@@ -11,7 +11,9 @@ Route::group([
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
     $router->resources([
+        'todo' => TodoController::class,
         'joke' => JokeController::class,
+        'code' => CodeController::class,
         'type' => TypeController::class,
         'tag' => TagController::class,
         'test' => TestController::class,

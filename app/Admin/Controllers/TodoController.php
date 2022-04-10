@@ -2,8 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Actions\Joke\LikeJoke;
-use App\Models\Joke;
+use App\Models\Todo;
 use App\Models\Type;
 use App\Models\Tag;
 use App\Http\Controllers\Controller;
@@ -13,11 +12,10 @@ use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\DB;
-use App\Admin\Actions\Joke\Restore;
-use Encore\Admin\Widgets\Box;
-use Encore\Admin\Admin;
+use App\Admin\Actions\Todo\Restore;
 
-class JokeController extends Controller
+
+class TodoController extends Controller
 {
     use HasResourceActions;
 
@@ -30,7 +28,7 @@ class JokeController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('Joke')
+            ->header('Todo')
             ->description(' ')
             ->body($this->grid());
     }
@@ -91,7 +89,7 @@ class JokeController extends Controller
     protected function grid()
     {
 
-        $grid = new Grid(new Joke);
+        $grid = new Grid(new Todo);
 
         $grid->actions(function ($actions) {
             if (\request('_scope_') == 'trashed') {
@@ -108,25 +106,19 @@ class JokeController extends Controller
         $grid->enableHotKeys();
         $grid->quickSearch('content', 'remark');
         $grid->selector(function (Grid\Tools\Selector $selector) {
-            $selector->selectOne('type_id', 'Type', Type::where('group', Joke::NAME)->pluck('name', 'id'));
-            $selector->select('tags', 'Tags',  Tag::where('group', Joke::NAME)->pluck('name', 'id'), function ($query, $value) {
-                $joke_ids = [];
+            $selector->selectOne('type_id', 'Type', Type::where('group', Todo::NAME)->pluck('name', 'id'));
+            $selector->select('tags', 'Tags',  Tag::where('group', Todo::NAME)->pluck('name', 'id'), function ($query, $value) {
+                $todo_ids = [];
                 foreach ($value as $id) {
-                    $tmp_jokes = DB::table("joke_tag")->where('tag_id', $id)->get();
-                    foreach ($tmp_jokes as $tmp_joke) {
-                        array_push($joke_ids, $tmp_joke->joke_id);
+                    $tmp_todos = DB::table("todo_tag")->where('tag_id', $id)->get();
+                    foreach ($tmp_todos as $tmp_todo) {
+                        array_push($todo_ids, $tmp_todo->todo_id);
                     }
                 }
-                $query->whereIn('id', $joke_ids);
+                $query->whereIn('id', $todo_ids);
             });
         });
 
-        // $grid->header(function ($query) {
-        // $jokes = $query->select(DB::raw('count(remark) as count, jokes'))
-        //     ->groupBy('jokes')->get()->pluck('count', 'jokes')->toArray();
-        // $doughnut = view('admin.chart.jokes', compact('jokes'));
-        //     return new Box('性别比例');
-        // });
         $grid->footer(function ($query) {
             $data = $query->where('importance', 0)->sum('importance');
             return "<div style='padding: 10px;'>总收入 ： $data</div>";
@@ -136,7 +128,7 @@ class JokeController extends Controller
             $filter->scope('trashed', '回收站')->onlyTrashed();
             $filter->column(1 / 3, function ($filter) {
                 $filter->equal('type', 'Type')->select(function () {
-                    $query = Type::where('group', Joke::NAME)->pluck('name', 'id');
+                    $query = Type::where('group', Todo::NAME)->pluck('name', 'id');
                     return $query;
                 });
             });
@@ -157,7 +149,7 @@ class JokeController extends Controller
             $create->text('content', 'Content');
             $types = Type::all()->pluck('name', 'id');
             $create->select('type_id', "Type")->options($types);
-            $tags = Tag::where('group', Joke::NAME)->pluck('name', 'id');
+            $tags = Tag::where('group', Todo::NAME)->pluck('name', 'id');
             $create->multipleSelect('tags', 'Tags')->options($tags);
             $create->select('importance', 'Importance')->options([
                 1 => '⭐️',
@@ -168,6 +160,7 @@ class JokeController extends Controller
             ])->default(1);
             $create->text('remark', 'Remark');
         });
+
         $grid->column('content')->display(function () {
             $content = $this->content;
             $content = str_replace('<', '&lt;', $content);
@@ -232,11 +225,13 @@ class JokeController extends Controller
                 $tags = $tags . "<span class='badge label-$tag_style'>$tag->name</span>";
             }
 
+            $titleHtml = sprintf("<h3>%s</h3>", $this->title);
             $remarkHtml = sprintf("<h4 class='text-danger'>🧾%s</h4>", $this->remark);
             if (!$this->remark) {
                 $remarkHtml = '';
             }
             \Log::info(__METHOD__, ['type_style:', $type_style]);
+            \Log::info(__METHOD__, ['type_name:', $type_name]);
             $headHtml = sprintf('<div class="panel panel-%s"><div class="panel-heading">%s</div><div class="panel-footer">', $type_style, $type_name);
             $typeHtml = sprintf("<p><span class='label label-%s'>%s</span></p>", $type_style, $type_name);
             $tagsHtml = sprintf("<p>%s</p>", $tags);
@@ -244,18 +239,18 @@ class JokeController extends Controller
             $contentHtml = sprintf("<pre><code>%s</code></pre>", $content);
             return sprintf('
                 %s
+                %s
                 <p></p>
                 %s
                 %s
                 %s
                 </div>
-                ', $headHtml, $remarkHtml, $tagsHtml, $contentHtml);
+                ', $headHtml, $titleHtml, $remarkHtml, $tagsHtml, $contentHtml);
         });
 
         // $grid->column('back')->modal(function ($model) {
         //     return "dsafsdfads";
         // });
-        $grid->column('like')->action(LikeJoke::class);
         // $grid->importance('Imp')->display(function ($importance) {
         //     $html = "<i class='fa fa-star' style='color:#ff8913'></i>";
         //     if ($importance < 1) {
@@ -278,7 +273,7 @@ class JokeController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(Joke::findOrFail($id));
+        $show = new Show(Todo::findOrFail($id));
 
         $show->id('ID');
         $show->content('content');
@@ -302,12 +297,13 @@ class JokeController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Joke);
-        $types = Type::where('group', Joke::NAME)->pluck('name', 'id');
+        $form = new Form(new Todo);
+        $types = Type::where('group', Todo::NAME)->pluck('name', 'id');
         $form->radioCard('type_id', "type")->options($types);
+        $form->text('title', 'title');
         $form->textarea('content')->required();
 
-        $tags = Tag::where('group', Joke::NAME)->pluck('name', 'id');
+        $tags = Tag::where('group', Todo::NAME)->pluck('name', 'id');
         $form->listbox('tags', 'choose tags')->options($tags);
         $form->starRating('importance');
         $form->text('remark', 'remark');

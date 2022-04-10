@@ -4,6 +4,8 @@ namespace App\Admin\Controllers;
 
 use App\Models\Type;
 use App\Models\Joke;
+use App\Models\Code;
+use App\Models\Todo;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
@@ -17,7 +19,8 @@ class TypeController extends Controller
 
     const GROUP_OPTIONS = [
         Joke::NAME => Joke::NAME,
-        'book' => 'book',
+        Code::NAME => Code::NAME,
+        Todo::NAME => Todo::NAME,
     ];
     /**
      * Index interface.
