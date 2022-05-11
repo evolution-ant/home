@@ -13,7 +13,7 @@ use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\DB;
 use App\Admin\Actions\Todo\Restore;
-
+use App\Admin\Actions\Todo\IsDone;
 
 class TodoController extends Controller
 {
@@ -95,16 +95,14 @@ class TodoController extends Controller
             if (\request('_scope_') == 'trashed') {
                 $actions->add(new Restore());
             }
-               // append一个操作
-            $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
-
-            // prepend一个操作
-            $actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
-            // $actions->append(new CheckButton($actions->getKey()));
         });
 
         $grid->enableHotKeys();
         $grid->quickSearch('content', 'remark');
+        $grid->tools(function (Grid\Tools $tools) {
+            $tools->append('<a href="/admin/type?&_selector%5Bgroup%5D=todos" class="btn btn-success btn-sm" role="button">Type</a>');
+            $tools->append('<a href="/admin/tag?&_selector%5Bgroup%5D=todos" class="btn btn-danger btn-sm" role="button">Tag</a>');
+        });
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('type_id', 'Type', Type::where('group', Todo::NAME)->pluck('name', 'id'));
             $selector->select('tags', 'Tags',  Tag::where('group', Todo::NAME)->pluck('name', 'id'), function ($query, $value) {
@@ -117,6 +115,32 @@ class TodoController extends Controller
                 }
                 $query->whereIn('id', $todo_ids);
             });
+            $selector->selectOne('importance', 'Imp', [
+                3 => '⭐️⭐️⭐️ 高',
+                2 => '⭐️⭐️ 中',
+                1 => '⭐️ 低',
+            ]);
+            $selector->selectOne('is_done', 'IsDone', [
+                0 => '⭕️ 未完成',
+                1 => '✅ 已完成',
+            ]);
+            $selector->select('deadline_at', 'deadline_at',  ['today' => 'today', 'week' => 'week', 'month' => 'month'], function ($query, $value) {
+                \Log::info(__METHOD__, ['date:', date("Y-m")]);
+                switch ($value) {
+                    case 'today':
+                        $query->where('deadline_at', date("Y-m-d"));
+                        break;
+                        // case 'week':
+                        //     $query->where('deadline_at', date("Y-m-d"));
+                        //     break;
+                    case 'month':
+                        $query->like('deadline_at', date("Y-m"));
+                        break;
+                    default:
+                        $query->where('deadline_at', date("Y-m-d"));
+                        break;
+                }
+            });
         });
 
         $grid->footer(function ($query) {
@@ -126,16 +150,17 @@ class TodoController extends Controller
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
             $filter->scope('trashed', '回收站')->onlyTrashed();
-            $filter->column(1 / 3, function ($filter) {
+            $filter->column(1 / 2, function ($filter) {
                 $filter->equal('type', 'Type')->select(function () {
                     $query = Type::where('group', Todo::NAME)->pluck('name', 'id');
                     return $query;
                 });
             });
-            $filter->column(1 / 3, function ($filter) {
+            $filter->column(1 / 2, function ($filter) {
                 $filter->like('content');
             });
-            $filter->column(1 / 3, function ($filter) {
+
+            $filter->column(1 / 2, function ($filter) {
                 $filter->where(function ($query) {
                     $input = $this->input;
                     $query->whereHas('tags', function ($query) use ($input) {
@@ -146,8 +171,9 @@ class TodoController extends Controller
         });
 
         $grid->quickCreate(function (Grid\Tools\QuickCreate $create) {
+            $create->text('title', 'Title');
             $create->text('content', 'Content');
-            $types = Type::all()->pluck('name', 'id');
+            $types = Type::where('group', Todo::NAME)->pluck('name', 'id');
             $create->select('type_id', "Type")->options($types);
             $tags = Tag::where('group', Todo::NAME)->pluck('name', 'id');
             $create->multipleSelect('tags', 'Tags')->options($tags);
@@ -155,47 +181,13 @@ class TodoController extends Controller
                 1 => '⭐️',
                 2 => '⭐️ ⭐️',
                 3 => '⭐️ ⭐️ ⭐️',
-                4 => '⭐️ ⭐️ ⭐️ ⭐️',
-                5 => '⭐️ ⭐️ ⭐️ ⭐️ ⭐️'
             ])->default(1);
-            $create->text('remark', 'Remark');
+            // $create->text('remark', 'Remark');
         });
 
-        $grid->column('content')->display(function () {
-            $content = $this->content;
-            $content = str_replace('<', '&lt;', $content);
-            $content = str_replace('>', '&gt;', $content);
-            $content = str_replace('"', "'", $content);
-
-            $type_style = 'default';
-            $type = Type::find($this->type_id);
-            $type_name = '';
-            if ($type != null) {
-                \Log::info(__METHOD__, ['type_id:', $this->type_id]);
-                \Log::info(__METHOD__, ['name:', $type->name]);
-                $type_name = $type->name;
-            }
-            switch ($this->type_id % 5) {
-                case 0:
-                    $type_style = 'primary';
-                    break;
-                case 1:
-                    $type_style = 'success';
-                    break;
-                case 2:
-                    $type_style = 'info';
-                    break;
-                case 3:
-                    $type_style = 'warning';
-                    break;
-                case 4:
-                    $type_style = 'danger';
-                    break;
-                default:
-                    $type_style = 'default';
-                    break;
-            }
-
+        $grid->column('id');
+        $grid->column('is_done')->action(IsDone::class);
+        $grid->column('title')->display(function ($title) {
             $tags = '';
             foreach ($this->tags as $tag) {
                 $tag_style = '';
@@ -224,44 +216,49 @@ class TodoController extends Controller
                 }
                 $tags = $tags . "<span class='badge label-$tag_style'>$tag->name</span>";
             }
-
-            $titleHtml = sprintf("<h3>%s</h3>", $this->title);
-            $remarkHtml = sprintf("<h4 class='text-danger'>🧾%s</h4>", $this->remark);
-            if (!$this->remark) {
-                $remarkHtml = '';
+            switch ($this->importance) {
+                case 1:
+                    $title_style = 'success';
+                    break;
+                case 2:
+                    $title_style = 'warning';
+                    break;
+                case 3:
+                    $title_style = 'danger';
+                    break;
+                default:
+                    $title_style = 'danger';
+                    break;
             }
-            \Log::info(__METHOD__, ['type_style:', $type_style]);
-            \Log::info(__METHOD__, ['type_name:', $type_name]);
-            $headHtml = sprintf('<div class="panel panel-%s"><div class="panel-heading">%s</div><div class="panel-footer">', $type_style, $type_name);
-            $typeHtml = sprintf("<p><span class='label label-%s'>%s</span></p>", $type_style, $type_name);
-            $tagsHtml = sprintf("<p>%s</p>", $tags);
-            \Log::info(__METHOD__, ['tagsHtml:', $tagsHtml]);
-            $contentHtml = sprintf("<pre><code>%s</code></pre>", $content);
-            return sprintf('
-                %s
-                %s
-                <p></p>
-                %s
-                %s
-                %s
-                </div>
-                ', $headHtml, $titleHtml, $remarkHtml, $tagsHtml, $contentHtml);
+            if ($this->is_done == 0) {
+                return sprintf('<p class="text-%s">%s %s</p>', $title_style,$tags, $title);
+            } else {
+                return sprintf('<p class="text-%s"><del>%s %s</del></p>',$title_style,$tags, $title);
+            }
         });
-
-        // $grid->column('back')->modal(function ($model) {
-        //     return "dsafsdfads";
-        // });
-        // $grid->importance('Imp')->display(function ($importance) {
-        //     $html = "<i class='fa fa-star' style='color:#ff8913'></i>";
-        //     if ($importance < 1) {
-        //         return '';
-        //     }
-        //     return join('&nbsp;', array_fill(0, min(5, $importance), $html));
-        // })->sortable();
-        // $grid->remark('Remark')->width(300)->color('red');
+        $grid->column('importance')->display(function ($importance) {
+            switch ($importance) {
+                case 1:
+                    $star_str = '⭐️';
+                    break;
+                case 2:
+                    $star_str = '⭐️⭐️';
+                    break;
+                case 3:
+                    $star_str = '⭐️⭐️⭐️';
+                    break;
+                default:
+                    $star_str = '⭐️⭐️⭐️';
+                    break;
+            }
+            return $star_str;
+        })->sortable();
+        $grid->column('deadline_at')->display(function ($deadline_at) {
+            return str_replace(' 00:00:00', '', $deadline_at);
+        })->sortable();
+        $grid->column('content')->width(200);
         $grid->column('created_at')->hide();
         $grid->column('updated_at')->hide();
-        $grid->column('id')->hide();
         return $grid;
     }
 
@@ -300,12 +297,12 @@ class TodoController extends Controller
         $form = new Form(new Todo);
         $types = Type::where('group', Todo::NAME)->pluck('name', 'id');
         $form->radioCard('type_id', "type")->options($types);
-        $form->text('title', 'title');
-        $form->textarea('content')->required();
-
+        $form->text('title', 'title')->required();
+        $form->date('deadline_at', 'deadline_at')->format('YYYY-MM-DD');
         $tags = Tag::where('group', Todo::NAME)->pluck('name', 'id');
         $form->listbox('tags', 'choose tags')->options($tags);
         $form->starRating('importance');
+        $form->textarea('content');
         $form->text('remark', 'remark');
 
         return $form;

@@ -127,7 +127,6 @@ class TagController extends Controller
         $form = new Form(new Tag);
         $form->radio('group', "group")->options(TypeController::GROUP_OPTIONS);
         $form->text('name', 'name');
-
         return $form;
     }
 }

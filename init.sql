@@ -34,18 +34,20 @@ DROP TABLE IF EXISTS `todos`;
 CREATE TABLE `todos` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `type_id` int(11) DEFAULT 0,
-    `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `remark` text(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `reading_times` tinyint(1) DEFAULT 0,
-    `like` tinyint(1) DEFAULT 0,
     `importance` int(11) DEFAULT 0,
+    `is_done` tinyint(1) DEFAULT 0,
+    `deadline_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `deleted_at` timestamp NULL DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-ALTER TABLE codes add title varchar(255) COLLATE utf8mb4_unicode_ci default NULL;
+ALTER TABLE todos add title varchar(255) COLLATE utf8mb4_unicode_ci default NULL;
+ALTER TABLE todos add is_done tinyint(1) COLLATE utf8mb4_unicode_ci default 0;
+
 
 
 DROP TABLE IF EXISTS `types`;

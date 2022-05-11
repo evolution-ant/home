@@ -106,7 +106,12 @@ class JokeController extends Controller
         });
 
         $grid->enableHotKeys();
+        $grid->tools(function (Grid\Tools $tools) {
+            $tools->append('<a href="/admin/type?&_selector%5Bgroup%5D=jokes" class="btn btn-success btn-sm" role="button">Type</a>');
+            $tools->append('<a href="/admin/tag?&_selector%5Bgroup%5D=jokes" class="btn btn-danger btn-sm" role="button">Tag</a>');
+        });
         $grid->quickSearch('content', 'remark');
+
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('type_id', 'Type', Type::where('group', Joke::NAME)->pluck('name', 'id'));
             $selector->select('tags', 'Tags',  Tag::where('group', Joke::NAME)->pluck('name', 'id'), function ($query, $value) {

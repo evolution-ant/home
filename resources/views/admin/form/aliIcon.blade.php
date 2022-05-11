@@ -11,7 +11,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_3311150_gbiviklnygw.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_3311150_8yuhxsa0jva.css">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
         @endforeach
         </select>--}}
     </div>
-    <script src="http://at.alicdn.com/t/font_3311150_gbiviklnygw.js"></script>
+    <script src="http://at.alicdn.com/t/font_3311150_8yuhxsa0jva.js"></script>
     <script>
         $('.icon_li').click(function() {
             $('#icon').val($(this).attr('value'))

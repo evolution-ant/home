@@ -103,7 +103,10 @@ class CodeController extends Controller
             $actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
             // $actions->append(new CheckButton($actions->getKey()));
         });
-
+        $grid->tools(function (Grid\Tools $tools) {
+            $tools->append('<a href="/admin/type?&_selector%5Bgroup%5D=codes" class="btn btn-success btn-sm" role="button">Type</a>');
+            $tools->append('<a href="/admin/tag?&_selector%5Bgroup%5D=codes" class="btn btn-danger btn-sm" role="button">Tag</a>');
+        });
         $grid->enableHotKeys();
         $grid->quickSearch('content', 'remark');
         $grid->selector(function (Grid\Tools\Selector $selector) {

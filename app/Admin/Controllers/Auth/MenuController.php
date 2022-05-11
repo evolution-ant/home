@@ -155,7 +155,7 @@ class MenuController extends Controller
 
     private function icons()
     {
-        $css = file_get_contents('http://at.alicdn.com/t/font_3311150_gbiviklnygw.css');
+        $css = file_get_contents('http://at.alicdn.com/t/font_3311150_8yuhxsa0jva.css');
         preg_match_all('/icon.+:/', $css, $matches); // eg: 73 => "icon-car:"
 
         $icons = [];

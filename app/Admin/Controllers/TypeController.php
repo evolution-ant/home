@@ -95,7 +95,12 @@ class TypeController extends Controller
      */
     protected function grid()
     {
+
         $grid = new Grid(new Type);
+        $grid->selector(function (Grid\Tools\Selector $selector) {
+            $selector->selectOne('group', 'Group', TypeController::GROUP_OPTIONS);
+        });
+        
         $grid->quickCreate(function (Grid\Tools\QuickCreate $create) {
             $create->text('name', 'name');
             $create->select('group', "group")->options($this::GROUP_OPTIONS);

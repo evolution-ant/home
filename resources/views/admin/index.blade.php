@@ -15,7 +15,7 @@
     @endif
 
     {!! Admin::css() !!}
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_3311150_gbiviklnygw.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_3311150_8yuhxsa0jva.css">
 
     <style type="text/css">
         .al-icon {
@@ -72,15 +72,15 @@
         LA.user = @json($_user_);
 
         //菜单栏高亮
-        $(function(){
-            $('.sidebar-menu li:not(.treeview) > a').on('click', function(){
+        $(function() {
+            $('.sidebar-menu li:not(.treeview) > a').on('click', function() {
                 var $parent = $(this).parent().addClass('active');
                 $parent.siblings('.treeview.active').find('> a').trigger('click');
                 $parent.siblings().removeClass('active').find('li').removeClass('active');
             });
-            $(window).on('load', function(){
-                $('.sidebar-menu a').each(function(){
-                    if(this.href === window.location.href){
+            $(window).on('load', function() {
+                $('.sidebar-menu a').each(function() {
+                    if (this.href === window.location.href) {
                         $(this).parent().addClass('active')
                             .closest('.treeview-menu').addClass('.menu-open')
                             .closest('.treeview').addClass('active');
@@ -93,7 +93,7 @@
 
     <!-- REQUIRED JS SCRIPTS -->
     {!! Admin::js() !!}
-    <script src="//at.alicdn.com/t/font_3311150_gbiviklnygw.js"></script>
+    <script src="//at.alicdn.com/t/font_3311150_8yuhxsa0jva.js"></script>
 
 </body>
 

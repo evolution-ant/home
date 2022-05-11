@@ -13,7 +13,7 @@ class LikeJoke extends RowAction
         $Joke->like = (int) !$Joke->like;
         $Joke->save();
         // 保存之后返回新的html到前端显示
-        $html = $Joke->like ? '<button type="button" class="btn btn-default">🌝</button>' : '<button type="button" class="btn btn-default">🌚</button>';
+        $html = $Joke->like == 1 ? '<button type="button" class="btn btn-default">🌝</button>' : '<button type="button" class="btn btn-default">🌚</button>';
         return $this->response()->html($html);
     }
 
@@ -21,6 +21,6 @@ class LikeJoke extends RowAction
     public function display($like)
     {
         \Log::info(__METHOD__, ['like:', $like]);
-        return $like==1 ? '<button type="button" class="btn btn-default">🌝</button>' : '<button type="button" class="btn btn-default">🌚</button>';
+        return $like == 1 ? '<button type="button" class="btn btn-default">🌝</button>' : '<button type="button" class="btn btn-default">🌚</button>';
     }
 }
