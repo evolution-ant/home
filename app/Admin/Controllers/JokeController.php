@@ -92,23 +92,20 @@ class JokeController extends Controller
     {
 
         $grid = new Grid(new Joke);
+        $grid->model()->orderBy('updated_at', 'desc');
 
         $grid->actions(function ($actions) {
             if (\request('_scope_') == 'trashed') {
                 $actions->add(new Restore());
             }
-               // append一个操作
             $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
-
-            // prepend一个操作
             $actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
-            // $actions->append(new CheckButton($actions->getKey()));
         });
 
         $grid->enableHotKeys();
         $grid->tools(function (Grid\Tools $tools) {
-            $tools->append('<a href="/admin/type?&_selector%5Bgroup%5D=jokes" class="btn btn-success btn-sm" role="button">Type</a>');
-            $tools->append('<a href="/admin/tag?&_selector%5Bgroup%5D=jokes" class="btn btn-danger btn-sm" role="button">Tag</a>');
+            $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=jokes" class="btn btn-success btn-sm" role="button">Type</a>');
+            $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=jokes" class="btn btn-danger btn-sm" role="button">Tag</a>');
         });
         $grid->quickSearch('content', 'remark');
 
@@ -126,16 +123,6 @@ class JokeController extends Controller
             });
         });
 
-        // $grid->header(function ($query) {
-        // $jokes = $query->select(DB::raw('count(remark) as count, jokes'))
-        //     ->groupBy('jokes')->get()->pluck('count', 'jokes')->toArray();
-        // $doughnut = view('admin.chart.jokes', compact('jokes'));
-        //     return new Box('性别比例');
-        // });
-        $grid->footer(function ($query) {
-            $data = $query->where('importance', 0)->sum('importance');
-            return "<div style='padding: 10px;'>总收入 ： $data</div>";
-        });
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
             $filter->scope('trashed', '回收站')->onlyTrashed();
@@ -173,102 +160,8 @@ class JokeController extends Controller
             ])->default(1);
             $create->text('remark', 'Remark');
         });
-        $grid->column('content')->display(function () {
-            $content = $this->content;
-            $content = str_replace('<', '&lt;', $content);
-            $content = str_replace('>', '&gt;', $content);
-            $content = str_replace('"', "'", $content);
-
-            $type_style = 'default';
-            $type = Type::find($this->type_id);
-            $type_name = '';
-            if ($type != null) {
-                \Log::info(__METHOD__, ['type_id:', $this->type_id]);
-                \Log::info(__METHOD__, ['name:', $type->name]);
-                $type_name = $type->name;
-            }
-            switch ($this->type_id % 5) {
-                case 0:
-                    $type_style = 'primary';
-                    break;
-                case 1:
-                    $type_style = 'success';
-                    break;
-                case 2:
-                    $type_style = 'info';
-                    break;
-                case 3:
-                    $type_style = 'warning';
-                    break;
-                case 4:
-                    $type_style = 'danger';
-                    break;
-                default:
-                    $type_style = 'default';
-                    break;
-            }
-
-            $tags = '';
-            foreach ($this->tags as $tag) {
-                $tag_style = '';
-                switch ($tag->id % 5) {
-                    case 0:
-                        $tag_style = 'default';
-                        break;
-                    case 1:
-                        $tag_style = 'primary';
-                        break;
-                    case 2:
-                        $tag_style = 'success';
-                        break;
-                    case 3:
-                        $tag_style = 'danger';
-                        break;
-                    case 4:
-                        $tag_style = 'warning';
-                        break;
-                    case 5:
-                        $tag_style = 'info';
-                        break;
-                    default:
-                        $tag_style = 'default';
-                        break;
-                }
-                $tags = $tags . "<span class='badge label-$tag_style'>$tag->name</span>";
-            }
-
-            $remarkHtml = sprintf("<h4 class='text-danger'>🧾%s</h4>", $this->remark);
-            if (!$this->remark) {
-                $remarkHtml = '';
-            }
-            \Log::info(__METHOD__, ['type_style:', $type_style]);
-            $headHtml = sprintf('<div class="panel panel-%s"><div class="panel-heading">%s</div><div class="panel-footer">', $type_style, $type_name);
-            $typeHtml = sprintf("<p><span class='label label-%s'>%s</span></p>", $type_style, $type_name);
-            $tagsHtml = sprintf("<p>%s</p>", $tags);
-            \Log::info(__METHOD__, ['tagsHtml:', $tagsHtml]);
-            $contentHtml = sprintf("<pre><code>%s</code></pre>", $content);
-            return sprintf('
-                %s
-                <p></p>
-                %s
-                %s
-                %s
-                </div>
-                ', $headHtml, $remarkHtml, $tagsHtml, $contentHtml);
-        });
-
-        // $grid->column('back')->modal(function ($model) {
-        //     return "dsafsdfads";
-        // });
+        $grid->content()->codeWrapper('go');
         $grid->column('like')->action(LikeJoke::class);
-        // $grid->importance('Imp')->display(function ($importance) {
-        //     $html = "<i class='fa fa-star' style='color:#ff8913'></i>";
-        //     if ($importance < 1) {
-        //         return '';
-        //     }
-        //     return join('&nbsp;', array_fill(0, min(5, $importance), $html));
-        // })->sortable();
-        // $grid->remark('Remark')->width(300)->color('red');
         $grid->column('created_at')->hide();
         $grid->column('updated_at')->hide();
         $grid->column('id')->hide();
@@ -314,7 +207,6 @@ class JokeController extends Controller
 
         $tags = Tag::where('group', Joke::NAME)->pluck('name', 'id');
         $form->listbox('tags', 'choose tags')->options($tags);
-        $form->starRating('importance');
         $form->text('remark', 'remark');
 
         return $form;

@@ -23,4 +23,16 @@ class Tag extends Model
     {
         return $this->belongsToMany(Todo::class);
     }
+    public function book()
+    {
+        return $this->belongsToMany(Book::class);
+    }
+    public function collection()
+    {
+        return $this->belongsToMany(Collection::class);
+    }
+    public function word()
+    {
+        return $this->belongsToMany(Word::class);
+    }
 }

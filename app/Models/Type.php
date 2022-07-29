@@ -18,8 +18,20 @@ class Type extends Model
     {
         return $this->hasMany(Code::class);
     }
-    public function todo()
+    public function todos()
     {
-        return $this->belongsToMany(Todo::class);
+        return $this->hasMany(Todo::class);
+    }
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+    public function collections()
+    {
+        return $this->hasMany(Collection::class);
+    }
+    public function words()
+    {
+        return $this->hasMany(Word::class);
     }
 }

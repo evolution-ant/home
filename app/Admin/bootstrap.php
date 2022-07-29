@@ -20,19 +20,41 @@
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
+use Encore\Admin\Admin;
+use Encore\Admin\Grid\Column;
+use App\Admin\Extensions\Column\CodeWrapper;
+use App\Admin\Extensions\Column\LabelWrapper;
+use App\Admin\Extensions\Column\BadgeWrapper;
+use App\Admin\Extensions\Column\LanguageWrapper;
+use App\Admin\Extensions\Column\GradeWrapper;
 
-Encore\Admin\Form::forget(['map', 'editor']);
-Encore\Admin\Form::extend('largefile', \Encore\LargeFileUpload\LargeFileField::class);
-Encore\Admin\Admin::css('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+app('view')->prependNamespace('admin', resource_path('views/admin'));
 
-app('view')->prependNamespace('admin',resource_path('views/admin'));
+Form::forget(['map', 'editor']);
+Form::extend('largefile', \Encore\LargeFileUpload\LargeFileField::class);
+Admin::css('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+Admin::css('/vendor/prism/prism.css');
+Admin::js('/vendor/prism/prism.js');
+Admin::script('Prism.highlightAll();');
+
+Admin::favicon('https://i.ibb.co/60rG9Xs/cms-logo.png');
+
+
+Column::extend('color', function ($value, $color) {
+    return "<span style='color: $color'>$value</span>";
+});
+
+Column::extend('codeWrapper', CodeWrapper::class);
+Column::extend('labelWrapper', LabelWrapper::class);
+Column::extend('badgeWrapper', BadgeWrapper::class);
+Column::extend('languageWrapper', LanguageWrapper::class);
+Column::extend('gradeWrapper', GradeWrapper::class);
 
 Form::init(function (Form $form) {
 
     $form->tools(function (Form\Tools $tools) {
         $tools->append('<a class="btn btn-sm btn-default" onClick="javascript :history.back(-1);"><i class="glyphicon glyphicon-arrow-left"></i> Previous</a>');
     });
-
 
     $form->footer(function ($footer) {
         // 去掉`查看`checkbox
@@ -51,7 +73,7 @@ Grid::init(function (Grid $grid) {
     });
 
     // $grid->tools(function (Grid\Tools $tools) {
-        // $tools->append('<a class="btn btn-sm btn-default" onClick="javascript :history.back(-1);"><i class="glyphicon glyphicon-arrow-left"></i> Previous</a>');
+    // $tools->append('<a class="btn btn-sm btn-default" onClick="javascript :history.back(-1);"><i class="glyphicon glyphicon-arrow-left"></i> Previous</a>');
     // });
     $grid->disableRowSelector();
 });

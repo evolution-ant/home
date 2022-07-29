@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\DB;
 use App\Admin\Actions\Code\Restore;
 use App\Admin\Actions\Code\LikeCode;
 
-
 class CodeController extends Controller
 {
     use HasResourceActions;
@@ -43,10 +42,6 @@ class CodeController extends Controller
      */
     public function show($id, Content $content)
     {
-        // return $content
-        //     ->header(trans('admin.detail'))
-        //     ->description(trans('admin.description'))
-        //     ->body($this->detail($id));
         return $content->title('详情')
             ->description('简介')
             ->view('product.show', array(
@@ -91,24 +86,24 @@ class CodeController extends Controller
     {
 
         $grid = new Grid(new Code);
+        $grid->model()->orderBy('updated_at', 'desc');
 
         $grid->actions(function ($actions) {
             if (\request('_scope_') == 'trashed') {
                 $actions->add(new Restore());
             }
-               // append一个操作
             $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
-
-            // prepend一个操作
             $actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
-            // $actions->append(new CheckButton($actions->getKey()));
         });
         $grid->tools(function (Grid\Tools $tools) {
-            $tools->append('<a href="/admin/type?&_selector%5Bgroup%5D=codes" class="btn btn-success btn-sm" role="button">Type</a>');
-            $tools->append('<a href="/admin/tag?&_selector%5Bgroup%5D=codes" class="btn btn-danger btn-sm" role="button">Tag</a>');
+            $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=codes" class="btn btn-success btn-sm" role="button">Type</a>');
+            $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=codes" class="btn btn-danger btn-sm" role="button">Tag</a>');
+            $tools->append('<a href="/admin/code" class="btn btn-warning btn-sm" role="button">Clear</a>');
         });
         $grid->enableHotKeys();
-        $grid->quickSearch('content', 'remark');
+        $grid->quickSearch(function ($model, $query) {
+            $model->where('title', 'like', "%{$query}%")->orWhere('content', 'like', "%{$query}%")->orWhere('remark', 'like', "%{$query}%");
+        });
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('type_id', 'Type', Type::where('group', Code::NAME)->pluck('name', 'id'));
             $selector->select('tags', 'Tags',  Tag::where('group', Code::NAME)->pluck('name', 'id'), function ($query, $value) {
@@ -123,10 +118,6 @@ class CodeController extends Controller
             });
         });
 
-        $grid->footer(function ($query) {
-            $data = $query->where('importance', 0)->sum('importance');
-            return "<div style='padding: 10px;'>总收入 ： $data</div>";
-        });
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
             $filter->scope('trashed', '回收站')->onlyTrashed();
@@ -155,116 +146,45 @@ class CodeController extends Controller
             $create->select('type_id', "Type")->options($types);
             $tags = Tag::where('group', Code::NAME)->pluck('name', 'id');
             $create->multipleSelect('tags', 'Tags')->options($tags);
-            $create->select('importance', 'Importance')->options([
-                1 => '⭐️',
-                2 => '⭐️ ⭐️',
-                3 => '⭐️ ⭐️ ⭐️',
-                4 => '⭐️ ⭐️ ⭐️ ⭐️',
-                5 => '⭐️ ⭐️ ⭐️ ⭐️ ⭐️'
-            ])->default(1);
             $create->text('remark', 'Remark');
         });
-
-        $grid->column('content')->display(function () {
-            $content = $this->content;
-            $content = str_replace('<', '&lt;', $content);
-            $content = str_replace('>', '&gt;', $content);
-            $content = str_replace('"', "'", $content);
-
-            $type_style = 'default';
-            $type = Type::find($this->type_id);
-            $type_name = '';
-            if ($type != null) {
-                \Log::info(__METHOD__, ['type_id:', $this->type_id]);
-                \Log::info(__METHOD__, ['name:', $type->name]);
-                $type_name = $type->name;
-            }
-            switch ($this->type_id % 5) {
-                case 0:
-                    $type_style = 'primary';
-                    break;
-                case 1:
-                    $type_style = 'success';
-                    break;
-                case 2:
-                    $type_style = 'info';
-                    break;
-                case 3:
-                    $type_style = 'warning';
-                    break;
-                case 4:
-                    $type_style = 'danger';
-                    break;
-                default:
-                    $type_style = 'default';
-                    break;
-            }
-
-            $tags = '';
-            foreach ($this->tags as $tag) {
-                $tag_style = '';
-                switch ($tag->id % 5) {
-                    case 0:
-                        $tag_style = 'default';
-                        break;
-                    case 1:
-                        $tag_style = 'primary';
-                        break;
-                    case 2:
-                        $tag_style = 'success';
-                        break;
-                    case 3:
-                        $tag_style = 'danger';
-                        break;
-                    case 4:
-                        $tag_style = 'warning';
-                        break;
-                    case 5:
-                        $tag_style = 'info';
-                        break;
-                    default:
-                        $tag_style = 'default';
-                        break;
-                }
-                $tags = $tags . "<span class='badge label-$tag_style'>$tag->name</span>";
-            }
-
-            $titleHtml = sprintf("<h3>%s</h3>", $this->title);
-            $remarkHtml = sprintf("<h4 class='text-danger'>🧾%s</h4>", $this->remark);
-            if (!$this->remark) {
-                $remarkHtml = '';
-            }
-            \Log::info(__METHOD__, ['type_style:', $type_style]);
-            $headHtml = sprintf('<div class="panel panel-%s"><div class="panel-heading">%s</div><div class="panel-footer">', $type_style, $type_name);
-            $typeHtml = sprintf("<p><span class='label label-%s'>%s</span></p>", $type_style, $type_name);
-            $tagsHtml = sprintf("<p>%s</p>", $tags);
-            \Log::info(__METHOD__, ['tagsHtml:', $tagsHtml]);
-            $contentHtml = sprintf("<pre><code>%s</code></pre>", $content);
-            return sprintf('
-                %s
-                %s
-                <p></p>
-                %s
-                %s
-                %s
-                </div>
-                ', $headHtml, $titleHtml, $remarkHtml, $tagsHtml, $contentHtml);
-        });
         $grid->column('like')->action(LikeCode::class);
+        $grid->column('type.name', 'PL')->display(function ($name, $column) {
+            $name = '';
+            $id = 0;
+            if ($this->type != null) {
+                $name = $this->type->name;
+                $id = $this->type->id;
+            }
+            return $column->languageWrapper($name);
+        });
+        $grid->column('content')->display(function ($content, $column) {
+            $name = '';
+            if ($this->type != null) {
+                $name = $this->type->name;
+            }
+            return $column->codeWrapper($name, $this->title, $this->remark);
+        });
+        $grid->column('tags')->display(function ($tags, $column) {
+            $tag_names = [];
+            $tag_ids = [];
+            foreach ($tags as $tag) {
+                array_push($tag_names, $tag['name']);
+                array_push($tag_ids, $tag['id']);
+            }
+            if (count($tag_names) == 0) {
+                return '';
+            }
+            return $column->badgeWrapper($tag_names, $tag_ids);
+        });
 
-        // $grid->column('back')->modal(function ($model) {
-        //     return "dsafsdfads";
-        // });
-        // $grid->importance('Imp')->display(function ($importance) {
-        //     $html = "<i class='fa fa-star' style='color:#ff8913'></i>";
-        //     if ($importance < 1) {
-        //         return '';
-        //     }
-        //     return join('&nbsp;', array_fill(0, min(5, $importance), $html));
-        // })->sortable();
-        // $grid->remark('Remark')->width(300)->color('red');
-        $grid->column('created_at')->hide();
-        $grid->column('updated_at')->hide();
+        $grid->column('Edit')->display(function () {
+            return sprintf('<div class="list-group">
+            <a href="/admin/code/%s/edit" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+            </div>', $this->id);
+        });
+
+
         $grid->column('id')->hide();
         return $grid;
     }
@@ -287,7 +207,6 @@ class CodeController extends Controller
         })->badge();
         $show->remark('remark');
         $show->reading_times('reading_times');
-        $show->importance('importance');
         $show->created_at(trans('admin.created_at'));
         $show->updated_at(trans('admin.updated_at'));
 
@@ -309,9 +228,16 @@ class CodeController extends Controller
 
         $tags = Tag::where('group', Code::NAME)->pluck('name', 'id');
         $form->listbox('tags', 'choose tags')->options($tags);
-        $form->starRating('importance');
         $form->text('remark', 'remark');
+        $form->saving(function (Form $form) {
+            // dd($form);
+            \Log::info(__METHOD__, ['$text :', $form->text]);
+        });
+        // $form->confirm('确定更新吗？', 'edit');
 
+        // $form->confirm('确定创建吗？', 'create');
+
+        // $form->confirm('确定提交吗？');
         return $form;
     }
 }

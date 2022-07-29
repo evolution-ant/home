@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `jokes`;
 CREATE TABLE `jokes` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `type_id` int(11) DEFAULT 0,
@@ -13,7 +12,6 @@ CREATE TABLE `jokes` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-DROP TABLE IF EXISTS `codes`;
 CREATE TABLE `codes` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `type_id` int(11) DEFAULT 0,
@@ -28,9 +26,22 @@ CREATE TABLE `codes` (
     `deleted_at` timestamp NULL DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-ALTER TABLE codes add title varchar(255) COLLATE utf8mb4_unicode_ci default NULL;
 
-DROP TABLE IF EXISTS `todos`;
+CREATE TABLE `books` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `type_id` int(11) DEFAULT 0,
+    `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `remark` text(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `reading_times` tinyint(1) DEFAULT 0,
+    `like` tinyint(1) DEFAULT 0,
+    `importance` int(11) DEFAULT 0,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE `todos` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `type_id` int(11) DEFAULT 0,
@@ -45,12 +56,8 @@ CREATE TABLE `todos` (
     `deleted_at` timestamp NULL DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-ALTER TABLE todos add title varchar(255) COLLATE utf8mb4_unicode_ci default NULL;
-ALTER TABLE todos add is_done tinyint(1) COLLATE utf8mb4_unicode_ci default 0;
 
 
-
-DROP TABLE IF EXISTS `types`;
 CREATE TABLE `types` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -61,10 +68,6 @@ CREATE TABLE `types` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-ALTER TABLE types MODIFY name varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '类型';
-
-
-DROP TABLE IF EXISTS `tags`;
 CREATE TABLE `tags` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -75,10 +78,6 @@ CREATE TABLE `tags` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-ALTER TABLE tags MODIFY name varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '标签';
-
-
-DROP TABLE IF EXISTS `joke_tag`;
 CREATE TABLE `joke_tag` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `tag_id` int(11) DEFAULT 0,
@@ -89,7 +88,6 @@ CREATE TABLE `joke_tag` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-DROP TABLE IF EXISTS `code_tag`;
 CREATE TABLE `code_tag` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `tag_id` int(11) DEFAULT 0,
@@ -100,11 +98,73 @@ CREATE TABLE `code_tag` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-DROP TABLE IF EXISTS `tag_todo`;
 CREATE TABLE `tag_todo` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `tag_id` int(11) DEFAULT 0,
     `todo_id` int(11) DEFAULT 0,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `book_tag` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `tag_id` int(11) DEFAULT 0,
+    `book_id` int(11) DEFAULT 0,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `collections` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `type_id` int(11) DEFAULT 0,
+    `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `remark` text(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `reading_times` tinyint(1) DEFAULT 0,
+    `like` tinyint(1) DEFAULT 0,
+    `importance` int(11) DEFAULT 0,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `collection_tag` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `tag_id` int(11) DEFAULT 0,
+    `collection_id` int(11) DEFAULT 0,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `words` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `type_id` int(11) DEFAULT 0,
+    `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `language` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `translations` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `phonetic` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `explains` varchar(2550) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `remark` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `reading_times` tinyint(1) DEFAULT 0,
+    `like` tinyint(1) DEFAULT 0,
+    `importance` int(11) DEFAULT 0,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `tag_word` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `tag_id` int(11) DEFAULT 0,
+    `word_id` int(11) DEFAULT 0,
     `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `deleted_at` timestamp NULL DEFAULT NULL,

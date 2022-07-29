@@ -91,6 +91,21 @@ class TagController extends Controller
         $grid->created_at(trans('admin.created_at'));
         $grid->updated_at(trans('admin.updated_at'));
 
+        // 获取当前 url
+        $full_url = url()->full();
+        $group = '';
+        // 如果 url 中含有 group 参数，则设置 group 参数为当前 group 参数
+        if (strpos($full_url, 'group') !== false) {
+            // 获取 group 参数
+            $group = explode('?', $full_url)[1];
+            $group = explode('%5D=', $group)[1];
+        }
+
+        $grid->quickCreate(function (Grid\Tools\QuickCreate $create) use ($group) {
+            $create->text('name', 'name');
+            $create->select('group', "group")->options(TypeController::GROUP_OPTIONS)->default($group);
+        });
+
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('group', 'Group', TypeController::GROUP_OPTIONS);
         });

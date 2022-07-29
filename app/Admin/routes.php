@@ -11,12 +11,15 @@ Route::group([
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
     $router->resources([
-        'todo' => TodoController::class,
-        'joke' => JokeController::class,
-        'code' => CodeController::class,
-        'type' => TypeController::class,
-        'tag' => TagController::class,
-        'test' => TestController::class,
+        'books' => BookController::class,
+        'todos' => TodoController::class,
+        'jokes' => JokeController::class,
+        'codes' => CodeController::class,
+        'collections' => CollectionController::class,
+        'words' => WordController::class,
+        'types' => TypeController::class,
+        'tags' => TagController::class,
+        'tests' => TestController::class,
     ]);
     // 加入自己的管理路由
     $router->namespace('Auth')->group(function ($router) {

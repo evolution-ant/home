@@ -100,8 +100,8 @@ class TodoController extends Controller
         $grid->enableHotKeys();
         $grid->quickSearch('content', 'remark');
         $grid->tools(function (Grid\Tools $tools) {
-            $tools->append('<a href="/admin/type?&_selector%5Bgroup%5D=todos" class="btn btn-success btn-sm" role="button">Type</a>');
-            $tools->append('<a href="/admin/tag?&_selector%5Bgroup%5D=todos" class="btn btn-danger btn-sm" role="button">Tag</a>');
+            $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=todos" class="btn btn-success btn-sm" role="button">Type</a>');
+            $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=todos" class="btn btn-danger btn-sm" role="button">Tag</a>');
         });
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('type_id', 'Type', Type::where('group', Todo::NAME)->pluck('name', 'id'));
@@ -231,9 +231,9 @@ class TodoController extends Controller
                     break;
             }
             if ($this->is_done == 0) {
-                return sprintf('<p class="text-%s">%s %s</p>', $title_style,$tags, $title);
+                return sprintf('<p class="text-%s">%s %s</p>', $title_style, $tags, $title);
             } else {
-                return sprintf('<p class="text-%s"><del>%s %s</del></p>',$title_style,$tags, $title);
+                return sprintf('<p class="text-%s"><del>%s %s</del></p>', $title_style, $tags, $title);
             }
         });
         $grid->column('importance')->display(function ($importance) {
@@ -301,7 +301,7 @@ class TodoController extends Controller
         $form->date('deadline_at', 'deadline_at')->format('YYYY-MM-DD');
         $tags = Tag::where('group', Todo::NAME)->pluck('name', 'id');
         $form->listbox('tags', 'choose tags')->options($tags);
-        $form->starRating('importance');
+        // $form->starRating('importance');
         $form->textarea('content');
         $form->text('remark', 'remark');
 

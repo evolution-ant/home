@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>Laravel</b> admin',
+    'logo' => 'home',
 
     /*
     |--------------------------------------------------------------------------
@@ -132,11 +132,11 @@ return [
         'remember' => true,
 
         // Redirect to the specified URI when user is not authorized.
-        'redirect_to' => 'auth/login',
+        'redirect_to' => 'auto-login',
 
         // The URIs that should be excluded from authorization.
         'excepts' => [
-            'auth/login',
+            'auto-login',
             'auth/logout',
             '_handle_action_',
         ],

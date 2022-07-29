@@ -21,4 +21,8 @@ Route::get('app', function () {
     return view('layouts/app');
 });
 
-Route::get('/api/demo', [App\Http\Controllers\ApiJokeController::class, 'type']);
+Route::get('/api/menu_type', [App\Http\Controllers\AlfredController::class, 'type']);
+Route::post('/api/create', [App\Http\Controllers\AlfredController::class, 'create']);
+Route::get('/api/goto', [App\Http\Controllers\AlfredController::class, 'goto']);
+Route::get('/api/word/update', [App\Http\Controllers\ApiWordController::class, 'update']);
+Route::get('/admin/auto-login', [App\Http\Controllers\AutoLoginController::class, 'autoLogin']);

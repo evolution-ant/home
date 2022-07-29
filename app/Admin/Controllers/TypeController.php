@@ -4,9 +4,12 @@ namespace App\Admin\Controllers;
 
 use App\Models\Type;
 use App\Models\Joke;
+use App\Models\Collection;
+use App\Models\Book;
 use App\Models\Code;
 use App\Models\Todo;
 use App\Http\Controllers\Controller;
+use App\Models\Word;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -21,6 +24,9 @@ class TypeController extends Controller
         Joke::NAME => Joke::NAME,
         Code::NAME => Code::NAME,
         Todo::NAME => Todo::NAME,
+        Book::NAME => Book::NAME,
+        Collection::NAME => Collection::NAME,
+        Word::NAME => Word::NAME,
     ];
     /**
      * Index interface.
@@ -97,17 +103,27 @@ class TypeController extends Controller
     {
 
         $grid = new Grid(new Type);
+        $grid->model()->orderBy('group');
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('group', 'Group', TypeController::GROUP_OPTIONS);
         });
-        
-        $grid->quickCreate(function (Grid\Tools\QuickCreate $create) {
+        // 获取当前 url
+        $full_url = url()->full();
+        $group = '';
+        // 如果 url 中含有 group 参数，则设置 group 参数为当前 group 参数
+        if (strpos($full_url, 'group') !== false) {
+            // 获取 group 参数
+            $group = explode('?', $full_url)[1];
+            $group = explode('%5D=', $group)[1];
+        }
+
+        $grid->quickCreate(function (Grid\Tools\QuickCreate $create) use ($group) {
             $create->text('name', 'name');
-            $create->select('group', "group")->options($this::GROUP_OPTIONS);
+            $create->select('group', "group")->options($this::GROUP_OPTIONS)->default($group);
         });
         $grid->id('ID');
         $grid->name('name');
-        $grid->group('group');
+        $grid->column('group')->labelWrapper();
         $grid->created_at(trans('admin.created_at'));
         $grid->updated_at(trans('admin.updated_at'));
 
@@ -140,6 +156,7 @@ class TypeController extends Controller
      */
     protected function form()
     {
+
         $form = new Form(new Type);
         // $form->display('ID');
         $form->radio('group', "group")->required()->options($this::GROUP_OPTIONS);
