@@ -124,6 +124,7 @@ CREATE TABLE `collections` (
     `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
     `remark` text(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `favicon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `reading_times` tinyint(1) DEFAULT 0,
     `like` tinyint(1) DEFAULT 0,
     `importance` int(11) DEFAULT 0,
@@ -165,6 +166,32 @@ CREATE TABLE `tag_word` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `tag_id` int(11) DEFAULT 0,
     `word_id` int(11) DEFAULT 0,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `sentences` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `type_id` int(11) DEFAULT 0,
+    `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `translations` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `explains` varchar(2550) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `remark` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `reading_times` tinyint(1) DEFAULT 0,
+    `like` tinyint(1) DEFAULT 0,
+    `importance` int(11) DEFAULT 0,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `sentence_tag` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `tag_id` int(11) DEFAULT 0,
+    `sentence_id` int(11) DEFAULT 0,
     `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `deleted_at` timestamp NULL DEFAULT NULL,

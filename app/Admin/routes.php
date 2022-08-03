@@ -17,6 +17,7 @@ Route::group([
         'codes' => CodeController::class,
         'collections' => CollectionController::class,
         'words' => WordController::class,
+        'sentences' => SentenceController::class,
         'types' => TypeController::class,
         'tags' => TagController::class,
         'tests' => TestController::class,

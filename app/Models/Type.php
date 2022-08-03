@@ -34,4 +34,8 @@ class Type extends Model
     {
         return $this->hasMany(Word::class);
     }
+    public function sentences()
+    {
+        return $this->hasMany(Sentence::class);
+    }
 }

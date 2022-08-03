@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Collection;
+use App\Models\Sentence;
 use App\Models\Type;
 use App\Models\Tag;
 use App\Http\Controllers\Controller;
@@ -18,8 +18,9 @@ use Encore\Admin\Widgets\Collapse;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\DB;
 use App\Admin\Actions\Code\Restore;
+use App\Admin\Actions\Sentence\LikeSentence;
 
-class CollectionController extends Controller
+class SentenceController extends Controller
 {
     use HasResourceActions;
 
@@ -32,7 +33,7 @@ class CollectionController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('Collection')
+            ->header('Sentence')
             ->description(' ')
             ->body($this->grid());
     }
@@ -89,8 +90,8 @@ class CollectionController extends Controller
     protected function grid()
     {
 
-        $grid = new Grid(new Collection);
-        $grid->model()->orderBy('updated_at', 'desc');
+        $grid = new Grid(new Sentence);
+        $grid->model()->orderBy('importance', 'desc')->orderBy('updated_at', 'desc');
 
         $grid->actions(function ($actions) {
             if (\request('_scope_') == 'trashed') {
@@ -100,24 +101,24 @@ class CollectionController extends Controller
             $actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
         });
         $grid->tools(function (Grid\Tools $tools) {
-            $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=' . Collection::NAME . '" class="btn btn-success btn-sm" role="button">Type</a>');
-            $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=' . Collection::NAME . '" class="btn btn-danger btn-sm" role="button">Tag</a>');
+            $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=' . Sentence::NAME . '" class="btn btn-success btn-sm" role="button">Type</a>');
+            $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=' . Sentence::NAME . '" class="btn btn-danger btn-sm" role="button">Tag</a>');
         });
         $grid->enableHotKeys();
         $grid->quickSearch(function ($model, $query) {
-            $model->where('title', 'like', "%{$query}%")->orWhere('content', 'like', "%{$query}%")->orWhere('remark', 'like', "%{$query}%");
+            $model->orWhere('content', 'like', "%{$query}%");
         });
         $grid->selector(function (Grid\Tools\Selector $selector) {
-            $selector->selectOne('type_id', 'Type', Type::where('group', Collection::NAME)->pluck('name', 'id'));
-            $selector->select('tags', 'Tags',  Tag::where('group', Collection::NAME)->pluck('name', 'id'), function ($query, $value) {
-                $collection_ids = [];
+            $selector->selectOne('type_id', 'Type', Type::where('group', Sentence::NAME)->pluck('name', 'id'));
+            $selector->select('tags', 'Tags',  Tag::where('group', Sentence::NAME)->pluck('name', 'id'), function ($query, $value) {
+                $sentence_ids = [];
                 foreach ($value as $id) {
-                    $tmp_collections = DB::table("collection_tag")->where('tag_id', $id)->get();
-                    foreach ($tmp_collections as $tmp_collection) {
-                        array_push($collection_ids, $tmp_collection->collection_id);
+                    $tmp_sentences = DB::table("sentence_tag")->where('tag_id', $id)->get();
+                    foreach ($tmp_sentences as $tmp_sentence) {
+                        array_push($sentence_ids, $tmp_sentence->sentence_id);
                     }
                 }
-                $query->whereIn('id', $collection_ids);
+                $query->whereIn('id', $sentence_ids);
             });
         });
 
@@ -126,7 +127,7 @@ class CollectionController extends Controller
             $filter->scope('trashed', '回收站')->onlyTrashed();
             $filter->column(1 / 3, function ($filter) {
                 $filter->equal('type', 'Type')->select(function () {
-                    $query = Type::where('group', Collection::NAME)->pluck('name', 'id');
+                    $query = Type::where('group', Sentence::NAME)->pluck('name', 'id');
                     return $query;
                 });
             });
@@ -147,45 +148,46 @@ class CollectionController extends Controller
             $create->text('content', 'Content');
             $types = Type::all()->pluck('name', 'id');
             $create->select('type_id', "Type")->options($types);
-            $tags = Tag::where('group', Collection::NAME)->pluck('name', 'id');
+            $tags = Tag::where('group', Sentence::NAME)->pluck('name', 'id');
             $create->multipleSelect('tags', 'Tags')->options($tags);
             $create->text('remark', 'Remark');
         });
-        // $grid->column('like')->action(LikeCode::class);
-        $grid->column('type.name', 'Type')->display(function ($name, $column) {
-            if ($this->type == NUll) {
-                return '';
-            }
-            return $column->labelWrapper($this->type->name, $this->type->id);
-        });
-        // $grid->column('content')->link();
-        $grid->column('remark', 'remark');
-        // 显示标题
-        $grid->column('title', 'Title')->display(function ($title) {
-            // 在线 favicon
-            $favicon = '<img src="' . $this->favicon . '" width="16" height="16" />';
-            // 返回 a 标签,包含 title 和 link 和新窗口打开三个属性
-            return "<a href='{$this->content}' target='_blank'>{$favicon} {$this->title}</a>";
-        });
-        $grid->column('tags')->display(function ($tags, $column) {
-            $tag_names = [];
-            $tag_ids = [];
-            foreach ($tags as $tag) {
-                array_push($tag_names, $tag['name']);
-                array_push($tag_ids, $tag['id']);
-            }
-            if (count($tag_names) == 0) {
-                return '';
-            }
-            return $column->badgeWrapper($tag_names, $tag_ids);
-        });
 
-        // $grid->column('link')->display(function () {
-        //     return sprintf('<div class="list-group">
-        //     <a href="/admin/code/%s/edit" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
-        //     </div>', $this->id);
-        // });
-
+        // created_at 和 updated_at 列的显示格式
+        $grid->column('created_at')->display(function ($created_at) {
+            return date("Y-m-d", strtotime($created_at));
+        });
+        $grid->column('content')->expand(function ($model) {
+            $str = '';
+            $translations = $model->translations;
+            // phonetic,explains
+            $phonetic = $model->phonetic;
+            $explains = $model->explains;
+            $country = '';
+            //如果 language 里包含 'ZH' 或 'zh',则country为 🇨🇳 ，否则为 🇺🇸
+            if (strpos($model->language, 'ZH') !== false || strpos($model->language, 'zh') !== false) {
+                $country = '🇺🇸';
+            } else {
+                $country = '🇨🇳';
+            }
+            if ($translations) {
+                // $translations 放在 h3 里
+                $str .= sprintf('%s %s<br>', $country, $translations);
+            }
+            if ($phonetic) {
+                $str = $str . sprintf('%s %s<br>', '🎙', $phonetic);
+            }
+            if ($explains) {
+                $str = $str . sprintf('%s %s<br>', '📖', $explains);
+            }
+            // $str 左对齐居中显示
+            return '<div style="text-align:center;">' . $str . '</div>';
+        });
+        // 展示 grade 字段
+        $grid->column('importance')->display(function ($grade, $column) {
+            return $column->gradeWrapper($grade);
+        });
+        $grid->column('like')->action(LikeSentence::class);
         $grid->column('id')->hide();
         return $grid;
     }
@@ -198,11 +200,10 @@ class CollectionController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(Collection::findOrFail($id));
+        $show = new Show(Sentence::findOrFail($id));
 
         $show->id('ID');
         $show->content('content');
-        $show->type_id('type_id');
         $show->tags('标签')->as(function ($tags) {
             return $tags->pluck('name');
         })->badge();
@@ -221,14 +222,15 @@ class CollectionController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Collection);
-        $types = Type::where('group', Collection::NAME)->pluck('name', 'id');
+        $form = new Form(new Sentence);
+        $types = Type::where('group', Sentence::NAME)->pluck('name', 'id');
         $form->radioCard('type_id', "type")->options($types);
-        $form->text('title', 'title');
         $form->textarea('content')->required();
-        $form->text('remark', 'remark');
-        $tags = Tag::where('group', Collection::NAME)->pluck('name', 'id');
+        $form->textarea('translations')->required();
+
+        $tags = Tag::where('group', Sentence::NAME)->pluck('name', 'id');
         $form->listbox('tags', 'choose tags')->options($tags);
+        $form->text('remark', 'remark');
 
         return $form;
     }

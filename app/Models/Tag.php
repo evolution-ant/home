@@ -35,4 +35,8 @@ class Tag extends Model
     {
         return $this->belongsToMany(Word::class);
     }
+    public function sentence()
+    {
+        return $this->belongsToMany(Sentence::class);
+    }
 }

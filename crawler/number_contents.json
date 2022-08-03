@@ -1,0 +1,3797 @@
+[
+    {
+        "number": 1,
+        "zh_content": "这是什么？",
+        "en_content": " What’s this? "
+    },
+    {
+        "number": 2,
+        "zh_content": "那是一本书。",
+        "en_content": " That’s a book "
+    },
+    {
+        "number": 3,
+        "zh_content": "这是你的书吗？",
+        "en_content": " Is this your book? "
+    },
+    {
+        "number": 4,
+        "zh_content": "不，那不是我的书。",
+        "en_content": " No,that’s not my book "
+    },
+    {
+        "number": 5,
+        "zh_content": "这是谁的书？",
+        "en_content": " Whose book is this? "
+    },
+    {
+        "number": 6,
+        "zh_content": "那是你的书。",
+        "en_content": " That’s your book "
+    },
+    {
+        "number": 7,
+        "zh_content": "还有那是什么？",
+        "en_content": " And what’s that? "
+    },
+    {
+        "number": 8,
+        "zh_content": "那是一本书吗？",
+        "en_content": " Is that a book? "
+    },
+    {
+        "number": 9,
+        "zh_content": "不，不是。",
+        "en_content": " No,it isn’t "
+    },
+    {
+        "number": 10,
+        "zh_content": "那是一枝铅笔。",
+        "en_content": " It’s a pencil "
+    },
+    {
+        "number": 11,
+        "zh_content": "它是你的吗？",
+        "en_content": " Is it yours? "
+    },
+    {
+        "number": 12,
+        "zh_content": "是，是我的。",
+        "en_content": " Yes,it’s mine "
+    },
+    {
+        "number": 13,
+        "zh_content": "门在哪儿？",
+        "en_content": " Where’s the door?　"
+    },
+    {
+        "number": 14,
+        "zh_content": "门在那儿。",
+        "en_content": " There it is　"
+    },
+    {
+        "number": 15,
+        "zh_content": "这本书是他的吗？",
+        "en_content": " Is this book his?　"
+    },
+    {
+        "number": 16,
+        "zh_content": "这些是什么？",
+        "en_content": " What are these? "
+    },
+    {
+        "number": 17,
+        "zh_content": "那些是书。",
+        "en_content": " Those are books "
+    },
+    {
+        "number": 18,
+        "zh_content": "那些书在哪儿？",
+        "en_content": " Where are the books? "
+    },
+    {
+        "number": 19,
+        "zh_content": "在那儿。",
+        "en_content": " There they are "
+    },
+    {
+        "number": 20,
+        "zh_content": "这些是我的铅笔。",
+        "en_content": " These are my pencils "
+    },
+    {
+        "number": 21,
+        "zh_content": "你的那些钢笔在哪儿？",
+        "en_content": " Where are your pens? "
+    },
+    {
+        "number": 22,
+        "zh_content": "在那里。",
+        "en_content": " They’re over there "
+    },
+    {
+        "number": 23,
+        "zh_content": "这些是你的钢笔吗？",
+        "en_content": " Are these your pens? "
+    },
+    {
+        "number": 24,
+        "zh_content": "是我的。",
+        "en_content": " Yes,they are "
+    },
+    {
+        "number": 25,
+        "zh_content": "那些是我的。",
+        "en_content": " Those are mine "
+    },
+    {
+        "number": 26,
+        "zh_content": "这些书是你的，对不对？",
+        "en_content": " These are your books,aren’t they? "
+    },
+    {
+        "number": 27,
+        "zh_content": "不，不是。",
+        "en_content": " No,they aren’t "
+    },
+    {
+        "number": 28,
+        "zh_content": "不是我的。",
+        "en_content": " They’re not mine "
+    },
+    {
+        "number": 29,
+        "zh_content": "这些是我的，而那些是你的。",
+        "en_content": " These are mine,and those are yours "
+    },
+    {
+        "number": 30,
+        "zh_content": "那些钢笔不是你的，对吧？",
+        "en_content": " Those aren’t your pens,are they? "
+    },
+    {
+        "number": 31,
+        "zh_content": "你的书是什么颜色的？",
+        "en_content": " What color is your book? "
+    },
+    {
+        "number": 32,
+        "zh_content": "我的书是深蓝色封面。",
+        "en_content": " My book has a dark blue cover "
+    },
+    {
+        "number": 33,
+        "zh_content": "打字机重量多少？",
+        "en_content": " How much does that typewriter weigh? "
+    },
+    {
+        "number": 34,
+        "zh_content": "这个不重，但是我不知道具体重量。",
+        "en_content": " It's not too heavy,but I don't know the exact weight "
+    },
+    {
+        "number": 35,
+        "zh_content": "这个圆桌大概四十五磅。",
+        "en_content": " This round table weighs about forty-five pounds "
+    },
+    {
+        "number": 36,
+        "zh_content": "你手提箱多大尺寸？",
+        "en_content": " What size suitcase do you own? "
+    },
+    {
+        "number": 37,
+        "zh_content": "我的一个手提箱很小，另一个是中等大小。",
+        "en_content": " One of my suitcases is small,and the other one is medium size "
+    },
+    {
+        "number": 38,
+        "zh_content": "我喜欢那张桌子的形状。",
+        "en_content": " I like the shape of that table "
+    },
+    {
+        "number": 39,
+        "zh_content": "琼斯大道多长？",
+        "en_content": " How long is Jones Boulevard? "
+    },
+    {
+        "number": 40,
+        "zh_content": "那条街只有两英里长。",
+        "en_content": " That street is only two miles long "
+    },
+    {
+        "number": 41,
+        "zh_content": "请你测量一下这个窗口，看看它有多宽？",
+        "en_content": " Will you please measure this window to see how wide it is? "
+    },
+    {
+        "number": 42,
+        "zh_content": "这个窗和那个窗一样宽。",
+        "en_content": " This window is just as wide as that one "
+    },
+    {
+        "number": 43,
+        "zh_content": "墙壁三英寸厚。",
+        "en_content": " The walls are three inches thick "
+    },
+    {
+        "number": 44,
+        "zh_content": "这种材料感觉很柔软。",
+        "en_content": " This material feels soft "
+    },
+    {
+        "number": 45,
+        "zh_content": "这支铅笔长于那支铅笔。",
+        "en_content": " This pencil is longer than that one"
+    },
+    {
+        "number": 46,
+        "zh_content": "你能告诉库珀先生我在这吗？",
+        "en_content": " Would you please tell Mr Cooper that I'm here "
+    },
+    {
+        "number": 47,
+        "zh_content": "今天晚上把这些书放在家里。",
+        "en_content": " Take these books home with you tonight "
+    },
+    {
+        "number": 48,
+        "zh_content": "请帮我把那些杂志拿过来。",
+        "en_content": " Please bring me those magazines"
+    },
+    {
+        "number": 49,
+        "zh_content": "你能帮我拿起这个重盒子吗？",
+        "en_content": " Would you help me lift this heavy box? "
+    },
+    {
+        "number": 50,
+        "zh_content": "请让约翰打开灯。",
+        "en_content": " Please ask John to turn on the lights "
+    },
+    {
+        "number": 51,
+        "zh_content": "把你的书放在桌子上。",
+        "en_content": " Put your books down on the table"
+    },
+    {
+        "number": 52,
+        "zh_content": "给我从厨房一个锤子，好吗？",
+        "en_content": " Get me a hammer from the kitchen,will you? "
+    },
+    {
+        "number": 53,
+        "zh_content": "把衣服挂在衣柜里，可以吗？",
+        "en_content": " Hang up my coat in the closet ,will you please?"
+    },
+    {
+        "number": 54,
+        "zh_content": "请不要打扰我了，我很忙",
+        "en_content": " Please don't bother me nowI'm very busy"
+    },
+    {
+        "number": 55,
+        "zh_content": "你介意邮寄这封信给我吗？",
+        "en_content": " Would you mind mailing this letter for me?"
+    },
+    {
+        "number": 56,
+        "zh_content": "如果你有时间，明天你会打电话给我吗？",
+        "en_content": " If you have time,will you call me tomorrow?"
+    },
+    {
+        "number": 57,
+        "zh_content": "请拿起这些杯子和碟子。",
+        "en_content": " Please pick up those cups and saucers"
+    },
+    {
+        "number": 58,
+        "zh_content": "你能帮我个忙吗？",
+        "en_content": " Will you do me a favor? "
+    },
+    {
+        "number": 59,
+        "zh_content": "请数一下那个房间里的椅子。",
+        "en_content": " Please count the chairs in that room"
+    },
+    {
+        "number": 60,
+        "zh_content": "请把牛奶倒入玻璃杯里。",
+        "en_content": " Please pour this milk into that glass"
+    },
+    {
+        "number": 61,
+        "zh_content": "你有一本书吗？",
+        "en_content": " Do you have a book? "
+    },
+    {
+        "number": 62,
+        "zh_content": "是的，我有。",
+        "en_content": " Yes,I do "
+    },
+    {
+        "number": 63,
+        "zh_content": "你有一台收音机，对吗？",
+        "en_content": " You have a radio,don’t you? "
+    },
+    {
+        "number": 64,
+        "zh_content": "不，我没有。",
+        "en_content": " No,I don’t  "
+    },
+    {
+        "number": 65,
+        "zh_content": "我也没有留声机。",
+        "en_content": " I don’t have a phonograph,either "
+    },
+    {
+        "number": 66,
+        "zh_content": "这台收音机是你的吗？",
+        "en_content": " Dees this radio belong to you? "
+    },
+    {
+        "number": 67,
+        "zh_content": "是的，我认为它是我的。",
+        "en_content": " Yes,I think it does "
+    },
+    {
+        "number": 68,
+        "zh_content": "你有几个姊妹和兄弟？",
+        "en_content": " How many sisters and brothers do you have? "
+    },
+    {
+        "number": 69,
+        "zh_content": "你没拿我的帽子吧？",
+        "en_content": " Don’t you have my hat? "
+    },
+    {
+        "number": 70,
+        "zh_content": "不，你的帽子和大衣都在我这里。",
+        "en_content": " Yes,I have both your hat and your coat "
+    },
+    {
+        "number": 71,
+        "zh_content": "约翰有一支黄铅笔吗？",
+        "en_content": " Does John have a yellow pencil? "
+    },
+    {
+        "number": 72,
+        "zh_content": "是的，他有。",
+        "en_content": " Yes,he does "
+    },
+    {
+        "number": 73,
+        "zh_content": "他有一台收音机，对不对？",
+        "en_content": " He has a radio,doesn’t he? "
+    },
+    {
+        "number": 74,
+        "zh_content": "不，他没有。",
+        "en_content": " No,he doesn’t have one "
+    },
+    {
+        "number": 75,
+        "zh_content": "他已经有一架留声机，但是他还没有收音机。",
+        "en_content": " He already has a phonograph,but he doesn’t have a radio yet "
+    },
+    {
+        "number": 76,
+        "zh_content": "我想约个时间去看库柏先生。",
+        "en_content": " I'd like to make an appointment to see Mr Cooper"
+    },
+    {
+        "number": 77,
+        "zh_content": "你愿意安排一次个人面试吗?",
+        "en_content": " Would you like to arrange for a personal interview? "
+    },
+    {
+        "number": 78,
+        "zh_content": "你的约见时间是下星期四10点。",
+        "en_content": " Your appointment will be next Thursday at 10 o'clock "
+    },
+    {
+        "number": 79,
+        "zh_content": "除了星期四，我什么时候都能来。",
+        "en_content": " I can come any day except Thursday"
+    },
+    {
+        "number": 80,
+        "zh_content": "他想把他的约会从星期一改到星期三",
+        "en_content": " He wants to change his appointment from Monday to Wednesday"
+    },
+    {
+        "number": 81,
+        "zh_content": "她没有打电话给办公室取消她的约会。",
+        "en_content": " She failed to call the office to cancel her appointment "
+    },
+    {
+        "number": 82,
+        "zh_content": "我要打电话给职业介绍所找份工作。",
+        "en_content": " I'm going to call the employment agency for a job"
+    },
+    {
+        "number": 83,
+        "zh_content": "请填写这张申请表。",
+        "en_content": " Please fill in this application form"
+    },
+    {
+        "number": 84,
+        "zh_content": "你在找一个固定的职位吗?",
+        "en_content": " Are you looking for a permanent position?"
+    },
+    {
+        "number": 85,
+        "zh_content": "今天下午我要叫一个管道工来。",
+        "en_content": " I'm going to call a plumber to come this afternoon"
+    },
+    {
+        "number": 86,
+        "zh_content": "我不能赴约，因为我病了。",
+        "en_content": " I couldn't keep the appointment because I was sick"
+    },
+    {
+        "number": 87,
+        "zh_content": "我是新员工。我昨天才受雇的。",
+        "en_content": " I'm a new employeeI was hired yesterday "
+    },
+    {
+        "number": 88,
+        "zh_content": "你来之前请先打个电话，否则我们可能不在家。",
+        "en_content": " Please call before you come,otherwise we might not be home"
+    },
+    {
+        "number": 89,
+        "zh_content": "让我们约定下星期四去购物。",
+        "en_content": " Let's make a date to go shopping next Thursday"
+    },
+    {
+        "number": 90,
+        "zh_content": "你离开的时候，请把门锁上好吗?",
+        "en_content": " Will you please lock the door when you leave?"
+    },
+    {
+        "number": 91,
+        "zh_content": "明天早上你打算什么时候起床",
+        "en_content": " What time are you going to get up tomorrow morning? "
+    },
+    {
+        "number": 92,
+        "zh_content": "我可能醒得早，六点半起床。",
+        "en_content": " I'll probably wake up early and get up at 6:30"
+    },
+    {
+        "number": 93,
+        "zh_content": "那你会怎么做?",
+        "en_content": " What will you do then? "
+    },
+    {
+        "number": 94,
+        "zh_content": "穿好衣服后，我要吃早餐",
+        "en_content": " After I get dressed,I'll have breakfast"
+    },
+    {
+        "number": 95,
+        "zh_content": "明天早饭你吃什么?",
+        "en_content": " What will you have for breakfast tomorrow morning?"
+    },
+    {
+        "number": 96,
+        "zh_content": "我早餐可能吃鸡蛋和烤面包。",
+        "en_content": " I'll probably have eggs and toast for breakfast "
+    },
+    {
+        "number": 97,
+        "zh_content": "吃完早饭，我就准备好去上班了。",
+        "en_content": " After breakfast,I'll get ready ro go to work"
+    },
+    {
+        "number": 98,
+        "zh_content": "我8点离开家，8点30分到达办公室。",
+        "en_content": " I'll leave the house at 8:00 and get to the office at 8:30"
+    },
+    {
+        "number": 99,
+        "zh_content": "我大概在12:30左右出去吃午饭。",
+        "en_content": " I'll probably go out for lunch at about 12:30 "
+    },
+    {
+        "number": 100,
+        "zh_content": "我将在5点半结束工作，6点钟到家。",
+        "en_content": " I'll finish working at 5:30 and get home by 6 o'clock"
+    },
+    {
+        "number": 101,
+        "zh_content": "明天晚上你打算在家吃晚饭吗?",
+        "en_content": " Are you going to have dinner at home tomorrow night? "
+    },
+    {
+        "number": 102,
+        "zh_content": "你认为明天晚上你会去看电影吗",
+        "en_content": " Do you think you'll go to the movies tomorrow night? "
+    },
+    {
+        "number": 103,
+        "zh_content": "我可能会呆在家里看电视。",
+        "en_content": " I'll probably stay home and watch television"
+    },
+    {
+        "number": 104,
+        "zh_content": "当我困的时候，我可能已经准备好睡觉了。",
+        "en_content": " When I get sleepy,I'll probably get ready for bed"
+    },
+    {
+        "number": 105,
+        "zh_content": "你认为你马上就能睡着吗",
+        "en_content": " Do you think you'll be able to go to sleep right away?"
+    },
+    {
+        "number": 106,
+        "zh_content": "我寄给那家杂志的订阅费。它每周都被放出去。",
+        "en_content": " I sent in a subscription to that magazineIt's put out every week"
+    },
+    {
+        "number": 107,
+        "zh_content": "如果你订阅了报纸，它就会送到你的家门口。",
+        "en_content": " If you subscribe to the newspaper,it'll be delivered to your door "
+    },
+    {
+        "number": 108,
+        "zh_content": "我没有读整篇论文。我只是瞥了一眼标题",
+        "en_content": " I didn't read the whole paperI just glanced at the headlines"
+    },
+    {
+        "number": 109,
+        "zh_content": "故事的第一章是在杂志的这个问题上。",
+        "en_content": " The first chapter of the story is in this issue of the magazine "
+    },
+    {
+        "number": 110,
+        "zh_content": "我还没有看过最新一期的杂志。是出来了吗?",
+        "en_content": " I haven't seen the latest issue of the magazineIs it out yet? "
+    },
+    {
+        "number": 111,
+        "zh_content": "这份报纸的总发行量是多少呢？",
+        "en_content": " What's the total circulation of this newspaper? "
+    },
+    {
+        "number": 112,
+        "zh_content": "我在找分类的部分。你看到了吗?",
+        "en_content": " I'm looking for the classified sectionHave you seen it? "
+    },
+    {
+        "number": 113,
+        "zh_content": "我的姐夫是纽约时报的一名记者。",
+        "en_content": " My brother-in-law is a reporter on The New York Times staff "
+    },
+    {
+        "number": 114,
+        "zh_content": "今天的报纸上有一篇关于选举的文章。",
+        "en_content": " There was an article in today's paper about the election "
+    },
+    {
+        "number": 115,
+        "zh_content": "今天报纸上没有多少新闻。",
+        "en_content": " There wasn't much news in the paper today "
+    },
+    {
+        "number": 116,
+        "zh_content": "你看这本杂志多长时间了?",
+        "en_content": " How long have you been taking this magazine? "
+    },
+    {
+        "number": 117,
+        "zh_content": "你读过那篇关于营救两名渔夫的文章吗?",
+        "en_content": " Did you read the article about the rescue of the two fishermen? "
+    },
+    {
+        "number": 118,
+        "zh_content": "你为什么不在报上登个广告卖你的车呢?",
+        "en_content": " Why don't you put an advertisement in the paper to sell your car? "
+    },
+    {
+        "number": 119,
+        "zh_content": "我收到了四份关于自行车销售的广告。",
+        "en_content": " I got four replies to my ad about the bicycle for sale"
+    },
+    {
+        "number": 120,
+        "zh_content": "我儿子有一条新报路线。他递送晨报。",
+        "en_content": " My son has a newpaper routeHe delivers the morning paper"
+    },
+    {
+        "number": 121,
+        "zh_content": "你昨天下午在哪？",
+        "en_content": " Where were you yesterday afternoon?"
+    },
+    {
+        "number": 122,
+        "zh_content": "我下午一直在家。",
+        "en_content": " I was at home all afternoon"
+    },
+    {
+        "number": 123,
+        "zh_content": "我正在写信给我的朋友。",
+        "en_content": " I was writing some letters to friends of mine"
+    },
+    {
+        "number": 124,
+        "zh_content": "昨天下午4点左右你在做什么？",
+        "en_content": " What were you doing at about 4 o'clock yesterday afternoon?"
+    },
+    {
+        "number": 125,
+        "zh_content": "我正在听收音机。",
+        "en_content": " I was listening to the radio"
+    },
+    {
+        "number": 126,
+        "zh_content": "我打电话给你时，你在做什么？",
+        "en_content": " What were you doing when I called you on the telephone?"
+    },
+    {
+        "number": 127,
+        "zh_content": "当你打电话给我的时候，我正在吃晚餐。",
+        "en_content": " When you called me, I was eating dinner"
+    },
+    {
+        "number": 128,
+        "zh_content": "当我看到琼斯先生的时候，他正在和约翰·史密斯交谈。",
+        "en_content": " When I saw Mr Jones,he was talking with John Smith"
+    },
+    {
+        "number": 129,
+        "zh_content": "当你写信的时候，我正在读一本书。",
+        "en_content": " While you were writing letters,I was reading a book "
+    },
+    {
+        "number": 130,
+        "zh_content": "当我们吃早餐的时候，约翰在电话里说话。",
+        "en_content": " While we were having breakfast,John was talking on the telephone"
+    },
+    {
+        "number": 131,
+        "zh_content": "你能猜到我今天早上在做什么吗？",
+        "en_content": " Can you guess what I was doing this morning?"
+    },
+    {
+        "number": 132,
+        "zh_content": "我不记得约翰昨天下午做了什么。",
+        "en_content": " I can't remember what John was doing yesterday afternoon"
+    },
+    {
+        "number": 133,
+        "zh_content": "我忘记了他所说的地址是什么。",
+        "en_content": " I've forgotten what he said his address was"
+    },
+    {
+        "number": 134,
+        "zh_content": "我忘了他什么时候说吃晚饭了",
+        "en_content": " I've forgotten what time he said he had dinner last night"
+    },
+    {
+        "number": 135,
+        "zh_content": "他们打电话给我们的时候我们在吃饭。",
+        "en_content": " They called us just as we were having dinner"
+    },
+    {
+        "number": 136,
+        "zh_content": "我每天早上七点多起床。",
+        "en_content": " I get out of bed about 7 o'clock every morning"
+    },
+    {
+        "number": 137,
+        "zh_content": "起床后，我进了浴室洗澡。",
+        "en_content": " After getting up,I go into the bathroom and take a shower"
+    },
+    {
+        "number": 138,
+        "zh_content": "然后，刮胡子，刷牙，理头发。",
+        "en_content": " Then,I shave,brush my teeth and comb my hair"
+    },
+    {
+        "number": 139,
+        "zh_content": "刷牙后，我穿上衣服。",
+        "en_content": " After brushing my teeth,I put on my clothes"
+    },
+    {
+        "number": 140,
+        "zh_content": "之后，我下楼去厨房吃早餐。",
+        "en_content": " After that,I go downstairs to the kitchen to have breakfast"
+    },
+    {
+        "number": 141,
+        "zh_content": "吃完早饭后，我又回到了楼上。",
+        "en_content": " After eating breakfast,I go back upstairs again"
+    },
+    {
+        "number": 142,
+        "zh_content": "然后，通常是叫醒我弟弟。",
+        "en_content": " Then,it's usually time to wake up my little brother"
+    },
+    {
+        "number": 143,
+        "zh_content": "他不能自己穿衣，因为太小了。",
+        "en_content": " He can't dress himself yet because he's too young"
+    },
+    {
+        "number": 144,
+        "zh_content": "我帮他洗脸和手，然后给他穿衣服。",
+        "en_content": " I wash his face and hands,and then I dress him "
+    },
+    {
+        "number": 145,
+        "zh_content": "他试着自己按扣子，但他做不来。",
+        "en_content": " He tries to button his own shirt,but he can't do it"
+    },
+    {
+        "number": 146,
+        "zh_content": "我弟弟晚上睡觉前洗澡。",
+        "en_content": " My little brother takes a bath before he goes to bed at night "
+    },
+    {
+        "number": 147,
+        "zh_content": "他总是忘记把他耳朵后面洗洗。",
+        "en_content": " He always forgets to wash behind his ears"
+    },
+    {
+        "number": 148,
+        "zh_content": "下班回家，我总是很累。",
+        "en_content": " I'm always tired when I come home from work"
+    },
+    {
+        "number": 149,
+        "zh_content": "睡前，我脱下衣服穿上我的睡衣。",
+        "en_content": " At bedtime, I take off my clothes and put on my pajamas"
+    },
+    {
+        "number": 150,
+        "zh_content": "大约11点半，我上床准备睡觉。",
+        "en_content": " I get into bed at about 11:30 and go right off to sleep"
+    },
+    {
+        "number": 151,
+        "zh_content": "这是一个美丽的国家，有许多大湖。",
+        "en_content": " It's a beautiful country with many large lakes"
+    },
+    {
+        "number": 152,
+        "zh_content": "这个国家的这个地方有很多山。",
+        "en_content": " This part of the country is very mountainous"
+    },
+    {
+        "number": 153,
+        "zh_content": "这个地区的土地干燥。",
+        "en_content": " The land in this region is dry and parched"
+    },
+    {
+        "number": 154,
+        "zh_content": "沿北部海岸有许多高悬崖。",
+        "en_content": " Along the northern coast there are many high cliffs"
+    },
+    {
+        "number": 155,
+        "zh_content": "这里有森林，伐木很重要。",
+        "en_content": " There are forests here,and lumbering is important"
+    },
+    {
+        "number": 156,
+        "zh_content": "太平洋附近的风景很美。",
+        "en_content": " The scenery is beautiful near the Pacific Ocean"
+    },
+    {
+        "number": 157,
+        "zh_content": "这个山脉有许多高峰和深谷。",
+        "en_content": " This mountain range has many high peaks and deep canyons"
+    },
+    {
+        "number": 158,
+        "zh_content": "你那边什么气候?温和吗？",
+        "en_content": " what kind of climate do you haved?Is it mild?"
+    },
+    {
+        "number": 159,
+        "zh_content": "从大西洋岸到山上有多远？",
+        "en_content": " How far is it from the shore of the Atlantic to the mountains?"
+    },
+    {
+        "number": 160,
+        "zh_content": "沿海平原是否适合农业？",
+        "en_content": " Is the coastal plain good for farming?"
+    },
+    {
+        "number": 161,
+        "zh_content": "美国最长的河是什么？",
+        "en_content": " What's the longest river in the United States?"
+    },
+    {
+        "number": 162,
+        "zh_content": "大多数湖泊位于北部中部地区吗？",
+        "en_content": " Are most of the lakes located in the north central region?"
+    },
+    {
+        "number": 163,
+        "zh_content": "当你向西走的时候，土地越高越好？",
+        "en_content": " As you travel westward,does the land get higher?"
+    },
+    {
+        "number": 164,
+        "zh_content": "天气晴朗，你那下雨了吗？",
+        "en_content": " The weather is warm and sunny hereDo you get much rain? "
+    },
+    {
+        "number": 165,
+        "zh_content": "从地理上看，这个国家位于南半球。",
+        "en_content": " Geographically,this country is located in the southern hemisphere"
+    },
+    {
+        "number": 166,
+        "zh_content": "他是一个严肃音乐的作曲家，我喜欢他的音乐。",
+        "en_content": " He's a composer of serious musicI like his music a lot"
+    },
+    {
+        "number": 167,
+        "zh_content": "我们昨天去了一场音乐会听交响乐团。",
+        "en_content": " We went to a concert last night to hear the symphony orchestra"
+    },
+    {
+        "number": 168,
+        "zh_content": "我弟弟学了十年的吹喇叭。",
+        "en_content": " My brother took lessons on the trumpet for nearly ten years"
+    },
+    {
+        "number": 169,
+        "zh_content": "你弹钢琴很优美，你每天练习多久？",
+        "en_content": " You play the piano beautifullyHow much do you practice every day?"
+    },
+    {
+        "number": 170,
+        "zh_content": "我从来没听过这个作品吗？谁写的？",
+        "en_content": " I've never heard that piece beforeWho wrote it?"
+    },
+    {
+        "number": 171,
+        "zh_content": "你有没有想过成为一名专业音乐家？",
+        "en_content": " Have you ever thought about becoming a professional musician?"
+    },
+    {
+        "number": 172,
+        "zh_content": "这本小说的作者是谁？",
+        "en_content": " Who is the author of this novel?"
+    },
+    {
+        "number": 173,
+        "zh_content": "这是我看过最激动人心的故事。",
+        "en_content": " I've never read a more stirring story"
+    },
+    {
+        "number": 174,
+        "zh_content": "你觉得谁能被誉为我们这个时代最伟大的诗人？",
+        "en_content": " Who would you name as the greatest poet of our time?"
+    },
+    {
+        "number": 175,
+        "zh_content": "这首诗是现实主义的，我不太喜欢。",
+        "en_content": " This poetry is realisticl don't care for it very much"
+    },
+    {
+        "number": 176,
+        "zh_content": "许多伟大的作家在活着的时候都没有得到充分的赞赏。",
+        "en_content": " Many great writers were not appreciated fully while they were alive"
+    },
+    {
+        "number": 177,
+        "zh_content": "这是关于美国前沿生活的一首诗。",
+        "en_content": " This is a poem about frontier life in the United States"
+    },
+    {
+        "number": 178,
+        "zh_content": "这位作家在他的作品中使用了生动的描述。",
+        "en_content": " This writer uses vivid descriptions in his writings"
+    },
+    {
+        "number": 179,
+        "zh_content": "你对Henry Wadsworth Longfellow的作品了解多少？",
+        "en_content": " How much do you know about the works of Henry Wadsworth Longfellow?"
+    },
+    {
+        "number": 180,
+        "zh_content": "你最喜欢哪种音乐？你喜欢爵士乐吗？",
+        "en_content": "What's your favorite kind of music?Do you like jazz?"
+    },
+    {
+        "number": 181,
+        "zh_content": "该起床啰!",
+        "en_content": "Time to get up．"
+    },
+    {
+        "number": 182,
+        "zh_content": "但我还想睡",
+        "en_content": "But I still want to Sleep．"
+    },
+    {
+        "number": 183,
+        "zh_content": "太晚了。快点起来!",
+        "en_content": "It's getting latewake up"
+    },
+    {
+        "number": 184,
+        "zh_content": "好．马上起来了",
+        "en_content": "OkI'll get out of bed right away"
+    },
+    {
+        "number": 185,
+        "zh_content": "你没有听见闹钟响吗?",
+        "en_content": "Can't you hear the alarm clock?"
+    },
+    {
+        "number": 186,
+        "zh_content": "这孩子把闹钟弄坏了。",
+        "en_content": "The child has bust up the alarm clock "
+    },
+    {
+        "number": 187,
+        "zh_content": "嗳呀!必须每天早晨五点就起床!",
+        "en_content": "Fancy having to get up at five amevery day!"
+    },
+    {
+        "number": 188,
+        "zh_content": "起床整理床铺。",
+        "en_content": "Wake up and make your bed"
+    },
+    {
+        "number": 189,
+        "zh_content": "我们一起床就把床铺整理好。",
+        "en_content": "We made up our beds immediately after getting up"
+    },
+    {
+        "number": 190,
+        "zh_content": "拜托再让我睡五分钟啦!",
+        "en_content": "Let me sleep for five more minutes,please"
+    },
+    {
+        "number": 191,
+        "zh_content": "别忘了刷牙。",
+        "en_content": "Don't forget to brush your teeth"
+    },
+    {
+        "number": 192,
+        "zh_content": "出门的时候，可别忘了刷牙和洗脸。",
+        "en_content": "Don't forget to brush your teeth and wash your face"
+    },
+    {
+        "number": 193,
+        "zh_content": "我不会忘，可是我的牙刷呢?",
+        "en_content": "I won't,but where's my toothbrush"
+    },
+    {
+        "number": 194,
+        "zh_content": "我们需要一些牙膏。",
+        "en_content": "We need some toothpaste"
+    },
+    {
+        "number": 195,
+        "zh_content": "我们的牙膏快要用完了。",
+        "en_content": "We’re almost out of toothpaste?"
+    },
+    {
+        "number": 196,
+        "zh_content": "我晚点会去买回来。",
+        "en_content": "I'll get some later"
+    },
+    {
+        "number": 197,
+        "zh_content": "每天使用牙线。",
+        "en_content": "Use dental1 floss daily"
+    },
+    {
+        "number": 198,
+        "zh_content": "你每天都用牙线吗?",
+        "en_content": "Do you use dental floss every day?"
+    },
+    {
+        "number": 199,
+        "zh_content": "是啊。它对牙龈健康有好处。",
+        "en_content": "Yes,it is healthy for your gums"
+    },
+    {
+        "number": 200,
+        "zh_content": "请你剔牙时把嘴遮起来",
+        "en_content": "Please cover your mouth when you pick your teeth"
+    },
+    {
+        "number": 201,
+        "zh_content": "拜托你剔牙时把嘴遮起来。",
+        "en_content": "Please cover your mouth when you're using a toothpick"
+    },
+    {
+        "number": 202,
+        "zh_content": "哦!对不起，我忘了。",
+        "en_content": "Oh I'm sorryI forgot"
+    },
+    {
+        "number": 203,
+        "zh_content": "我没有意识到时间过得这么快。",
+        "en_content": "I didn't realize the time had passed so quickly"
+    },
+    {
+        "number": 204,
+        "zh_content": "我离开之前有很多事情要做。",
+        "en_content": "I've got a lot of things to do before I can leave"
+    },
+    {
+        "number": 205,
+        "zh_content": "有一件事，我必须去银行取钱。",
+        "en_content": "For one thing,I've got to drop by the bank to get some money"
+    },
+    {
+        "number": 206,
+        "zh_content": "这要花费我所有的积蓄去买票。",
+        "en_content": "It'll take almost all my savings to buy the ticket"
+    },
+    {
+        "number": 207,
+        "zh_content": "明天动身，但我现在还没开始收拾行李呢!",
+        "en_content": "We will leave tomorrow but I haven't begun to pack yet!"
+    },
+    {
+        "number": 208,
+        "zh_content": "史密斯先生正忙着收拾行李，因为那天晚上他要动身去伦敦。",
+        "en_content": "Mr Smith was busy packing, because he was leaving for London that night"
+    },
+    {
+        "number": 209,
+        "zh_content": "你能提醒我拿大衣真是太棒了。",
+        "en_content": "It's a good thing you reminded me to take my heavy coat "
+    },
+    {
+        "number": 210,
+        "zh_content": "如果你不提我从来不会想到。",
+        "en_content": "I never would have thought of it if you hadn't mentioned it "
+    },
+    {
+        "number": 211,
+        "zh_content": "我会到机场为你送行。",
+        "en_content": "I'll see you off at the airport"
+    },
+    {
+        "number": 212,
+        "zh_content": "他们正在报你的飞机起飞时间，你没有时间去做。",
+        "en_content": "They're calling your flight nowYou barely have time to make it"
+    },
+    {
+        "number": 213,
+        "zh_content": "你最好跑起来否则你就要落后了。",
+        "en_content": "You'd better run or you're going to be left behind"
+    },
+    {
+        "number": 214,
+        "zh_content": "别忘了给我们电报，让我们知道你是安全到达的。",
+        "en_content": "Don't forget to cable to let us know you arrived safely"
+    },
+    {
+        "number": 215,
+        "zh_content": "我肯定我忘记了什么，但现在已经太晚了。",
+        "en_content": "I'm sure I've forgotten something ,but it's too late now"
+    },
+    {
+        "number": 216,
+        "zh_content": "你有什么要报关的吗",
+        "en_content": "Do you have anything to declare for customs? "
+    },
+    {
+        "number": 217,
+        "zh_content": "你不必为个人物品付任何税。",
+        "en_content": "You don't have to pay any duty on personal belongings"
+    },
+    {
+        "number": 218,
+        "zh_content": "旅途中你将带什么行李呢?",
+        "en_content": "What will you bring along when travelling"
+    },
+    {
+        "number": 219,
+        "zh_content": "我将在长途旅行中带上一个大箱子和铺盖。",
+        "en_content": "I will bring one large trunk and one bedroll for a long journey"
+    },
+    {
+        "number": 220,
+        "zh_content": "我们总是到临行前才收拾行李。",
+        "en_content": "We always leave our packing to/till the last moment"
+    },
+    {
+        "number": 221,
+        "zh_content": "太荒谬了！（太贵了）如果50块我就买。",
+        "en_content": "Ridiculous! I'd take it for 50 yuan"
+    },
+    {
+        "number": 222,
+        "zh_content": "再便宜一点我就买。",
+        "en_content": "I'd buy this if it were cheaper。"
+    },
+    {
+        "number": 223,
+        "zh_content": "虽然一件衣服非常可爱，但是也会由于它的纤维质地而觉得价格过高。",
+        "en_content": "Even if an article of clothing is very cute, but still seems overpriced for the fabric quality -- it is "
+    },
+    {
+        "number": 224,
+        "zh_content": "这东西除了价钱之外我都喜欢。",
+        "en_content": "I like everything about it except the price。"
+    },
+    {
+        "number": 225,
+        "zh_content": "多买一点有折扣吗?",
+        "en_content": "If I buy more than one, will you give me a discount?"
+    },
+    {
+        "number": 226,
+        "zh_content": "我要去购物，因为我需要衣服。",
+        "en_content": "I'm going to shopping, because I need clothes "
+    },
+    {
+        "number": 227,
+        "zh_content": "如果这件衬衫不合身，我可以把它带回来吗?",
+        "en_content": "If this shirt doesn't fit,may I bring it back later? "
+    },
+    {
+        "number": 228,
+        "zh_content": "你穿多大尺码的鞋子?",
+        "en_content": "What size shoes do you wear? "
+    },
+    {
+        "number": 229,
+        "zh_content": "那套西装看起来很适合你。",
+        "en_content": "That suit looks perfect for you"
+    },
+    {
+        "number": 230,
+        "zh_content": "这件衣服是用丝绸制成的，是吗？",
+        "en_content": "This dress is made of silk,isn't it? "
+    },
+    {
+        "number": 231,
+        "zh_content": "她问店主她是否能试穿一下那件绒衣。",
+        "en_content": "She asked the shopkeeper if she could try the sweater on "
+    },
+    {
+        "number": 232,
+        "zh_content": "人们过去可能想要一辆新车，现在他们想要一辆豪华车。",
+        "en_content": "Where people once dreamed of buying a new car, they now dream of buying a luxury model "
+    },
+    {
+        "number": 233,
+        "zh_content": "洗衣机多少钱？",
+        "en_content": "What's the price of that washing machine?"
+    },
+    {
+        "number": 234,
+        "zh_content": "这个毛毯多少钱？",
+        "en_content": "How much is this blanket? "
+    },
+    {
+        "number": 235,
+        "zh_content": "今天出售这种毛巾吗？",
+        "en_content": "Do you sell this towel today？"
+    },
+    {
+        "number": 236,
+        "zh_content": "这个皮革钱包很漂亮，但太贵了。",
+        "en_content": "This leather purse is beautiful, but it's too expensive"
+    },
+    {
+        "number": 237,
+        "zh_content": "告诉我我欠你多少钱，我会付清的。",
+        "en_content": "Tell me what I owe you and I'll settle up"
+    },
+    {
+        "number": 238,
+        "zh_content": "这是20美元70美分。",
+        "en_content": "That will be twenty dollars and seventy cents"
+    },
+    {
+        "number": 239,
+        "zh_content": "你有20美元零钱吗？",
+        "en_content": "Do you have change for a twenty-dollar bill?"
+    },
+    {
+        "number": 240,
+        "zh_content": "店员帮我找到了我想要的东西。",
+        "en_content": "The clerk helped me find what I wanted"
+    },
+    {
+        "number": 241,
+        "zh_content": "我是非常喜欢吃。",
+        "en_content": "I enjoy eating very much"
+    },
+    {
+        "number": 242,
+        "zh_content": "你刚才在做什么?",
+        "en_content": "What were you just doing?"
+    },
+    {
+        "number": 243,
+        "zh_content": "你刚才在做什么?",
+        "en_content": "What are you doing just now?"
+    },
+    {
+        "number": 244,
+        "zh_content": "我在做运动,它叫做太极拳。",
+        "en_content": "I was doing my exercise,it is called Tai Chi"
+    },
+    {
+        "number": 245,
+        "zh_content": "你也应该试试看。",
+        "en_content": "You should try it,too"
+    },
+    {
+        "number": 246,
+        "zh_content": "我不知道你会瑜珈。",
+        "en_content": "I didn't know you did yoga"
+    },
+    {
+        "number": 247,
+        "zh_content": "你应该试试。",
+        "en_content": "You should try it"
+    },
+    {
+        "number": 248,
+        "zh_content": "我们应该多聚一聚,好好聊—聊。",
+        "en_content": "We should get together more and have a nice chant"
+    },
+    {
+        "number": 249,
+        "zh_content": "游泳不是我的最爱。",
+        "en_content": "Swimming is not my cup of tea"
+    },
+    {
+        "number": 250,
+        "zh_content": "健康的爱好使人轻松，帶来快乐。",
+        "en_content": "A healthy hobby makes one relaxed and brings happiness"
+    },
+    {
+        "number": 251,
+        "zh_content": "我花了很多时间在我的兴趣爱好上。",
+        "en_content": "I spend a lot of time on my hobby"
+    },
+    {
+        "number": 252,
+        "zh_content": "过度沉湎于自己的爱好而忽视工作是不好的。",
+        "en_content": "Too much absorbed in one's hobby and neglecting work are not good"
+    },
+    {
+        "number": 253,
+        "zh_content": "我一向对蹦极很感兴趣。",
+        "en_content": "I've always been interested in bungee jumping"
+    },
+    {
+        "number": 254,
+        "zh_content": "养花是我最喜欢的消遣之一。",
+        "en_content": "Growing flowers is one of my favorite pastimes"
+    },
+    {
+        "number": 255,
+        "zh_content": "我最喜欢跳舞，它总是让我感到充满活力。",
+        "en_content": "I love modern dance, and it always makes me feel full of vitality"
+    },
+    {
+        "number": 256,
+        "zh_content": "你喜欢在业余时间做什么？",
+        "en_content": "What do you like doing in your spare time?"
+    },
+    {
+        "number": 257,
+        "zh_content": "你不工作的时候做什么？",
+        "en_content": "What do you do when you are not working?"
+    },
+    {
+        "number": 258,
+        "zh_content": "在业余时间你喜欢做什么？",
+        "en_content": "What do you like to do in your spare time?"
+    },
+    {
+        "number": 259,
+        "zh_content": "下班之后你有什么娱乐活动？",
+        "en_content": "How do you entertain yourself after work?"
+    },
+    {
+        "number": 260,
+        "zh_content": "真是太有趣了。你还有其他什么我不知道的兴趣爱好吗？",
+        "en_content": "That's really interesting What other hobbies do you have that I don't know about?"
+    },
+    {
+        "number": 261,
+        "zh_content": "你明天打算做什么？",
+        "en_content": " What do you plan to do next day?"
+    },
+    {
+        "number": 262,
+        "zh_content": "我希望在海边度过几天。",
+        "en_content": " I'm hoping to spend a few days by the sea"
+    },
+    {
+        "number": 263,
+        "zh_content": "你这个假期考虑去购物吗？",
+        "en_content": " Would you consider going to shopping this holiday?"
+    },
+    {
+        "number": 264,
+        "zh_content": "如果有机会去，我想和你一起去。",
+        "en_content": " If there is a chance to go, I want to go with you"
+    },
+    {
+        "number": 265,
+        "zh_content": "你考虑好之后，请让我知道你的决定。",
+        "en_content": " After you think it over,please let me know what you decide"
+    },
+    {
+        "number": 266,
+        "zh_content": "明天恐怕我什么也不做。",
+        "en_content": " I doubt that I'll do anything tomorrow"
+    },
+    {
+        "number": 267,
+        "zh_content": "对不起，请稍等一会儿，我要办点事。",
+        "en_content": " Please excuse me for a little whileI want to do something"
+    },
+    {
+        "number": 268,
+        "zh_content": "我想我会工作，而不是去看电影。",
+        "en_content": " I imagine I'll do some work instead of going to the movies"
+    },
+    {
+        "number": 269,
+        "zh_content": "你方便地向他解释你的计划吗？",
+        "en_content": " Is it convenient for you to explain your plan to him?"
+    },
+    {
+        "number": 270,
+        "zh_content": "没有什么可做，因为明天是假期。",
+        "en_content": " There's nothing to do because tomorrow is a holliday"
+    },
+    {
+        "number": 271,
+        "zh_content": "你姐姐打算明天做什么？",
+        "en_content": " What's your sister planning to do tomorrow?"
+    },
+    {
+        "number": 272,
+        "zh_content": "口袋里只有10美元他不知道要做什么。",
+        "en_content": " He didn't know what to do, with only ten dollars in his pocket"
+    },
+    {
+        "number": 273,
+        "zh_content": "在不了事实的情况下很难做出决定。",
+        "en_content": " It is difficult to make a decision in the absence of the facts"
+    },
+    {
+        "number": 274,
+        "zh_content": "他们正在努力规划他们的假期。",
+        "en_content": " They are trying to plan their holiday"
+    },
+    {
+        "number": 275,
+        "zh_content": "好主意！",
+        "en_content": " That's a good idea"
+    },
+    {
+        "number": 276,
+        "zh_content": "你参加篮球比赛了吗？",
+        "en_content": " Did you take part in the basketball game?"
+    },
+    {
+        "number": 277,
+        "zh_content": "你们收信用卡吗?。",
+        "en_content": " Do you take credit cards?"
+    },
+    {
+        "number": 278,
+        "zh_content": "就让它过去吧，不要做无益的后悔。",
+        "en_content": " Let it goDon't cry over spilt milk"
+    },
+    {
+        "number": 279,
+        "zh_content": "不要让机遇从我们身边溜走。",
+        "en_content": " Do not let the opportunity slip away from us"
+    },
+    {
+        "number": 280,
+        "zh_content": "他勇敢地承认了自己的失败，我给了他第二次机会。",
+        "en_content": " He displayed such courage in admitting his failure that I did give him another chance"
+    },
+    {
+        "number": 281,
+        "zh_content": "他显得有点紧张。",
+        "en_content": " He seems at bit nervous"
+    },
+    {
+        "number": 282,
+        "zh_content": "他在学校里四处遛达。",
+        "en_content": " He strolls around the school"
+    },
+    {
+        "number": 283,
+        "zh_content": "我有蛀牙。",
+        "en_content": " I have cavities"
+    },
+    {
+        "number": 284,
+        "zh_content": "今晚去酒吧怎样？",
+        "en_content": " How about going to a bar tonight？"
+    },
+    {
+        "number": 285,
+        "zh_content": "这是你我之间的秘密。",
+        "en_content": " It's a secret between you and me "
+    },
+    {
+        "number": 286,
+        "zh_content": "在那一点上我同意你。",
+        "en_content": " I'm with you on that"
+    },
+    {
+        "number": 287,
+        "zh_content": "我会给你任何你们要求的东西",
+        "en_content": " I will give you for it whatever you ask"
+    },
+    {
+        "number": 288,
+        "zh_content": "这些孩子们把水果都吃光了。",
+        "en_content": " These children have finished off the fruit"
+    },
+    {
+        "number": 289,
+        "zh_content": "我看到他们在做作业。",
+        "en_content": " I saw them doing their homework"
+    },
+    {
+        "number": 290,
+        "zh_content": "不用担心，我会安排好一切的。",
+        "en_content": " Don't worry I will arrange everything well"
+    },
+    {
+        "number": 291,
+        "zh_content": "我忘了续借了。",
+        "en_content": "I forgot to renew them"
+    },
+    {
+        "number": 292,
+        "zh_content": "那些书过期了。",
+        "en_content": "Those books are overdue"
+    },
+    {
+        "number": 293,
+        "zh_content": "这些书过期了吗?",
+        "en_content": "Are these books overdue？"
+    },
+    {
+        "number": 294,
+        "zh_content": "我的护照快要过期了。",
+        "en_content": "My passport is about to expire"
+    },
+    {
+        "number": 295,
+        "zh_content": "我想申请延期。",
+        "en_content": "I'd like to apply for an extension"
+    },
+    {
+        "number": 296,
+        "zh_content": "这些书昨天就应该还的。",
+        "en_content": "Theses books wer due last day"
+    },
+    {
+        "number": 297,
+        "zh_content": "你想要借书需要交罚金。",
+        "en_content": "You need to pay a fine for the book"
+    },
+    {
+        "number": 298,
+        "zh_content": "这些书过期了，你需要交罚金。",
+        "en_content": "These books are overdueYou have to pay a fine"
+    },
+    {
+        "number": 299,
+        "zh_content": "如果需要加急护照，我该怎么办？",
+        "en_content": "What should I do if I need a passport urgently?"
+    },
+    {
+        "number": 300,
+        "zh_content": "我看这药肯定过期了，你最好现在扔掉。",
+        "en_content": "I think this medicine is past-date You'd better throw it away!"
+    },
+    {
+        "number": 301,
+        "zh_content": "无论过期了多长时间，该还的书也总还是要物归原主的。",
+        "en_content": "It's never too late to return your books"
+    },
+    {
+        "number": 302,
+        "zh_content": "假如你要去图书馆的话，我倒不如跟你一起去把这些书还了。",
+        "en_content": "If you're going to the library, I might as well go with you and return these books"
+    },
+    {
+        "number": 303,
+        "zh_content": "这个怎么样?",
+        "en_content": "How about this?"
+    },
+    {
+        "number": 304,
+        "zh_content": "你觉得怎么样？",
+        "en_content": "What do you think?"
+    },
+    {
+        "number": 305,
+        "zh_content": "我最喜欢夏天。",
+        "en_content": "I like summer best"
+    },
+    {
+        "number": 306,
+        "zh_content": "日程表怎么样?",
+        "en_content": "What about the schedule?"
+    },
+    {
+        "number": 307,
+        "zh_content": "我想你错了。",
+        "en_content": "I think you're mistaken about that"
+    },
+    {
+        "number": 308,
+        "zh_content": "你有更好的意见吗?",
+        "en_content": "Do you have a better opinion?"
+    },
+    {
+        "number": 309,
+        "zh_content": "要不要和我一起去?",
+        "en_content": "Would you like to go with me?"
+    },
+    {
+        "number": 310,
+        "zh_content": "你绝对是正确的。",
+        "en_content": "You're absolutely right about that"
+    },
+    {
+        "number": 311,
+        "zh_content": "你不和我一起打羽毛球吗?",
+        "en_content": "Do not you play badminton with me?"
+    },
+    {
+        "number": 312,
+        "zh_content": "请给我你坦白的意见。",
+        "en_content": "Please give me your frank opinion"
+    },
+    {
+        "number": 313,
+        "zh_content": "你对我的孩子有什么看法？",
+        "en_content": "What do you think of my children?"
+    },
+    {
+        "number": 314,
+        "zh_content": "下班后喝一杯怎么样？",
+        "en_content": "How about getting a drink after work?"
+    },
+    {
+        "number": 315,
+        "zh_content": "要不要和我一起去购物?",
+        "en_content": "Would you like to go shopping with me?"
+    },
+    {
+        "number": 316,
+        "zh_content": "这个周末看电影如何?",
+        "en_content": "How about watching movies this weekend?"
+    },
+    {
+        "number": 317,
+        "zh_content": "你觉得今天会下雨吗？",
+        "en_content": "Do you think it's going to rain today?"
+    },
+    {
+        "number": 318,
+        "zh_content": "我不知道会不会下雨。",
+        "en_content": "I don't know whether it will rain or not"
+    },
+    {
+        "number": 319,
+        "zh_content": "你真的想知道我的想法吗？",
+        "en_content": "Do you really want to know what I think?"
+    },
+    {
+        "number": 320,
+        "zh_content": "就个人而言，我喜欢冬天的天气。",
+        "en_content": "Personally,I prefer winter weather"
+    },
+    {
+        "number": 321,
+        "zh_content": "在我看来，这是一个很好的主意。",
+        "en_content": "In my opinion,that's an excellent idea"
+    },
+    {
+        "number": 322,
+        "zh_content": "我觉得你有非常有魅力的孩子。",
+        "en_content": "I think you have very attractive children"
+    },
+    {
+        "number": 323,
+        "zh_content": "为什么Sam先生这么累？你有什么想法吗？",
+        "en_content": "Why MrSam so tired?Do you have any idea?"
+    },
+    {
+        "number": 324,
+        "zh_content": "他很累，因为他整天都在努力工作。",
+        "en_content": "He is tired because he worked hard all day today"
+    },
+    {
+        "number": 325,
+        "zh_content": "平常喜欢抽烟吗?",
+        "en_content": "Do you like smoking?"
+    },
+    {
+        "number": 326,
+        "zh_content": "这里是无烟区。",
+        "en_content": "This is a non-smoking section"
+    },
+    {
+        "number": 327,
+        "zh_content": "我这就把烟熄掉。",
+        "en_content": "I’ll put it out"
+    },
+    {
+        "number": 328,
+        "zh_content": "这里是无烟区。",
+        "en_content": "I’m afraid this is a no-smoking area"
+    },
+    {
+        "number": 329,
+        "zh_content": "这里禁止吸烟。",
+        "en_content": "Smoking is not permitted in this area"
+    },
+    {
+        "number": 330,
+        "zh_content": "他既不喝酒也不抽烟。",
+        "en_content": "He neither drinks nor smokes "
+    },
+    {
+        "number": 331,
+        "zh_content": "那为什么不去看医生呢?",
+        "en_content": "Why not go to see the doctor?"
+    },
+    {
+        "number": 332,
+        "zh_content": "他既不喝酒抽烟，也不吃肉。",
+        "en_content": "He neither drinks, smokes, nor eats meat"
+    },
+    {
+        "number": 333,
+        "zh_content": "今天我去找医生治疗咳嗽。",
+        "en_content": "I went to see the doctor today about my cough"
+    },
+    {
+        "number": 334,
+        "zh_content": "你脸色很苍白，身体一定不大好。",
+        "en_content": "You look pale, you must have poor health"
+    },
+    {
+        "number": 335,
+        "zh_content": "饮酒和吸烟对你的身体有害。",
+        "en_content": "It's bad for your health to drink and smoke"
+    },
+    {
+        "number": 336,
+        "zh_content": "这里禁止吸烟，但你可以吸。",
+        "en_content": "Smoking is forbidden here but you are allowed to smoke"
+    },
+    {
+        "number": 337,
+        "zh_content": "能把烟灭了吗？这里是无烟区。",
+        "en_content": "Can you please put out your cigarette? This is a non-smoking section"
+    },
+    {
+        "number": 338,
+        "zh_content": "医生叫我戒酒戒烟。",
+        "en_content": "The doctor advised me to cut out smoking and drinking"
+    },
+    {
+        "number": 339,
+        "zh_content": "我相信你知道吸烟对你的身体有害，那么你为什么还要吸烟呢？",
+        "en_content": "I am sure that you know that smoking harms your body Then why do you continue smoking?"
+    },
+    {
+        "number": 340,
+        "zh_content": "你最好戒烟否则就在睡前几小时停烟。",
+        "en_content": "You should quit or make your last cigarette of the day well before bed"
+    },
+    {
+        "number": 341,
+        "zh_content": "信在哪里？",
+        "en_content": "Where is the letter？"
+    },
+    {
+        "number": 342,
+        "zh_content": "你是怎么署名的？",
+        "en_content": "How did you sign the letter?"
+    },
+    {
+        "number": 343,
+        "zh_content": "邮递员总是3点钟过来。",
+        "en_content": "The postman always comes at 3pm"
+    },
+    {
+        "number": 344,
+        "zh_content": "他去邮局寄信。",
+        "en_content": "He went to the post office to mail a letter"
+    },
+    {
+        "number": 345,
+        "zh_content": "我回忆不起来有多久了。",
+        "en_content": "I can't recall how long it's been"
+    },
+    {
+        "number": 346,
+        "zh_content": "我今天晚上需要写邮件发给我妈妈。",
+        "en_content": "I need to email my mother this evening"
+    },
+    {
+        "number": 347,
+        "zh_content": "我在信中附上了一些照片。",
+        "en_content": "I enclosed some photographs in my letter"
+    },
+    {
+        "number": 348,
+        "zh_content": "我哥哥随信附上一张我侄女的照片。",
+        "en_content": "My brother enclosed a photo of my niece in his letter"
+    },
+    {
+        "number": 349,
+        "zh_content": "他最后一次写信给你什么时候？",
+        "en_content": "When was the last time he wrote you ? "
+    },
+    {
+        "number": 350,
+        "zh_content": "距离你爸爸写信给你有多久了?",
+        "en_content": "How long has it been since your father wrote to you?"
+    },
+    {
+        "number": 351,
+        "zh_content": "我感到内疚，因为我最近没有写信给她。",
+        "en_content": "I feel guilty because I haven't written her lately"
+    },
+    {
+        "number": 352,
+        "zh_content": "我不知道是不是要发邮件。",
+        "en_content": "I didn't know whether to send the letter airmail or not "
+    },
+    {
+        "number": 353,
+        "zh_content": "一封信到达加利福尼亚需要多长时间？",
+        "en_content": "How long does it take for a letter to get to California? "
+    },
+    {
+        "number": 354,
+        "zh_content": "在邮寄之前，不要忘记在邮件上放邮票。",
+        "en_content": "Don't forget to put stamps on the letter before you mail it"
+    },
+    {
+        "number": 355,
+        "zh_content": "距离你叔叔上一次写信给你到现在有多久了？",
+        "en_content": "How long has it been since you've heard from your uncle?"
+    },
+    {
+        "number": 356,
+        "zh_content": "我昨晚给父亲写信了，我不能再拖延了。",
+        "en_content": "I wrote to my father last night I couldn't put it off any longer"
+    },
+    {
+        "number": 357,
+        "zh_content": "当我没有收到学校回复的邮件时，我感到失望。",
+        "en_content": "I'm disappointed when I don't get any mail from the school"
+    },
+    {
+        "number": 358,
+        "zh_content": "有果汁吗？",
+        "en_content": "Is there any juice? "
+    },
+    {
+        "number": 359,
+        "zh_content": "你买鸡蛋了吗？",
+        "en_content": "Did you buy any egg? "
+    },
+    {
+        "number": 360,
+        "zh_content": "请填写这张申请表。",
+        "en_content": "Please fill in this application form"
+    },
+    {
+        "number": 361,
+        "zh_content": "你能借我一本书吗？",
+        "en_content": "Do you have a book I could borrow? "
+    },
+    {
+        "number": 362,
+        "zh_content": "你能借我一本书吗？",
+        "en_content": "Could you lend me a book? "
+    },
+    {
+        "number": 363,
+        "zh_content": "你可以在电脑上续借。",
+        "en_content": "You can renew the books over the computer"
+    },
+    {
+        "number": 364,
+        "zh_content": "我想申请一个新的借书证。",
+        "en_content": "I'd like to apply for a new library card"
+    },
+    {
+        "number": 365,
+        "zh_content": "这些书你只能借半个月。",
+        "en_content": "You can keep these books for only half a month"
+    },
+    {
+        "number": 366,
+        "zh_content": "可不可以借我一下你的复印机？",
+        "en_content": "Is there any chance of my borrowing your copier?"
+    },
+    {
+        "number": 367,
+        "zh_content": "如果看不完的话可以续借吗?",
+        "en_content": "May I renew them if I haven't finished reading them? "
+    },
+    {
+        "number": 368,
+        "zh_content": "如果看不完的话可以续借吗?",
+        "en_content": "May I renew them if I haven't finished reading them?"
+    },
+    {
+        "number": 369,
+        "zh_content": "稍等一会儿，3分钟以后给你借书证。",
+        "en_content": "Just wait a moment,your card will be ok in three minutes"
+    },
+    {
+        "number": 370,
+        "zh_content": "如果我想续借这些书，需要把书带来吗?",
+        "en_content": "Do I have to take these books here if I want to renew them？"
+    },
+    {
+        "number": 371,
+        "zh_content": "今天是几号？",
+        "en_content": "What’s the date today? "
+    },
+    {
+        "number": 372,
+        "zh_content": "你出生在什么地方？",
+        "en_content": "Where were you born? "
+    },
+    {
+        "number": 373,
+        "zh_content": "明天是我的生日。",
+        "en_content": "Tomorrow is my birthday"
+    },
+    {
+        "number": 374,
+        "zh_content": "你是什么时候出生的？",
+        "en_content": "When were you born? "
+    },
+    {
+        "number": 375,
+        "zh_content": "我不知道出发日期。",
+        "en_content": "I don’t know about the departure date"
+    },
+    {
+        "number": 376,
+        "zh_content": "我不知道我爸爸什么时候回家的。",
+        "en_content": "I don't know when my dad come home"
+    },
+    {
+        "number": 377,
+        "zh_content": "让我们讨论一下明天出发时间。",
+        "en_content": "Let's discuss the departure time tomorrow"
+    },
+    {
+        "number": 378,
+        "zh_content": "我不记得那时我在哪里。",
+        "en_content": "I don’t remember where I was then "
+    },
+    {
+        "number": 379,
+        "zh_content": "明年这个时候你将在哪里？",
+        "en_content": "Where will you be nest year at this time? "
+    },
+    {
+        "number": 380,
+        "zh_content": "今天是几号和星期几啊？",
+        "en_content": "what's the date and what day is it, please?"
+    },
+    {
+        "number": 381,
+        "zh_content": "今天是2017年11月1号。",
+        "en_content": "Today is November first,twenty seventeen"
+    },
+    {
+        "number": 382,
+        "zh_content": "请告诉我你是什么时候出生的。",
+        "en_content": "Please tell me when you were born"
+    },
+    {
+        "number": 383,
+        "zh_content": "我1995年8月1号出生的。",
+        "en_content": "I was born on August first,nineteen ninty-five"
+    },
+    {
+        "number": 384,
+        "zh_content": "我的妹妹是1990年出生的。",
+        "en_content": "My sister was born in nineteen ninty"
+    },
+    {
+        "number": 385,
+        "zh_content": "我出生在离这儿不远的小城市里。",
+        "en_content": "I was born in a little town not far from here"
+    },
+    {
+        "number": 386,
+        "zh_content": "关于上个世纪的事你知道些什么？",
+        "en_content": "What do you know about the last century?"
+    },
+    {
+        "number": 387,
+        "zh_content": "去年一整年你都在哪里？",
+        "en_content": "Where were you during the last year?"
+    },
+    {
+        "number": 388,
+        "zh_content": "快到中午了。",
+        "en_content": "It's almost noon"
+    },
+    {
+        "number": 389,
+        "zh_content": "我没有时间。",
+        "en_content": "I have no time"
+    },
+    {
+        "number": 390,
+        "zh_content": "你的表慢5分钟。",
+        "en_content": "Your watch is 5 minutes slow"
+    },
+    {
+        "number": 391,
+        "zh_content": "今天是愚人节。",
+        "en_content": "It's the April Fool's Day!"
+    },
+    {
+        "number": 392,
+        "zh_content": "你能把闹钟定在7点吗？",
+        "en_content": "Could you set the alarm for seven?"
+    },
+    {
+        "number": 393,
+        "zh_content": "今天超市都关门了。",
+        "en_content": "The market are all closed today。"
+    },
+    {
+        "number": 394,
+        "zh_content": "今天是什么日子，节假日吗？",
+        "en_content": "What is it, some kind of holiday today?"
+    },
+    {
+        "number": 395,
+        "zh_content": "你能和我再待上几分钟吗？",
+        "en_content": "Could you stay with me a few more minutes?"
+    },
+    {
+        "number": 396,
+        "zh_content": "我2点出门。",
+        "en_content": "I'll leave at 2pm"
+    },
+    {
+        "number": 397,
+        "zh_content": "我妻子按阴历过生日。",
+        "en_content": "My wife celebrates her birthday according to the lunar calendar。"
+    },
+    {
+        "number": 398,
+        "zh_content": "过几天你就会好了，耐心点儿。",
+        "en_content": "You'll be fine in a couple of days Just be patient"
+    },
+    {
+        "number": 399,
+        "zh_content": "你妻子的生日每年都在变，好奇怪。",
+        "en_content": "It's pretty strange that your wife's birthday changes every year Why is that?"
+    },
+    {
+        "number": 400,
+        "zh_content": "对我来说按阴历过生日别有一番异国情调。",
+        "en_content": "It's quite exotic for me to celebrate a birthday according to the lunar calendar "
+    },
+    {
+        "number": 401,
+        "zh_content": "我是项目经理。",
+        "en_content": "I'm the Project Manager"
+    },
+    {
+        "number": 402,
+        "zh_content": "你们有哪些职位空缺？",
+        "en_content": "What kind of vacancies do you have?"
+    },
+    {
+        "number": 403,
+        "zh_content": "他的秘书把它记了下来。",
+        "en_content": "His secretary got it down"
+    },
+    {
+        "number": 404,
+        "zh_content": "我爸爸是航空公司的飞行员。",
+        "en_content": "My dad is a pilot with the Airlines "
+    },
+    {
+        "number": 405,
+        "zh_content": "你们有没有兼职家教的工作？",
+        "en_content": "Do you have any jobs for a part-time tutor?"
+    },
+    {
+        "number": 406,
+        "zh_content": "我还能申请这个空缺的职位吗？",
+        "en_content": "Can I still apply for the open position?"
+    },
+    {
+        "number": 407,
+        "zh_content": "我在管理方面有实际工作经验。",
+        "en_content": "I have practical experience in management"
+    },
+    {
+        "number": 408,
+        "zh_content": "作为一名服务员，我经常需要轮班。",
+        "en_content": "As I’m a waiter, I do a lot of shift work"
+    },
+    {
+        "number": 409,
+        "zh_content": "他在那个项目中做的是吃力不讨好的活儿。",
+        "en_content": "He did the dirty work on that project"
+    },
+    {
+        "number": 410,
+        "zh_content": "当你长大后，你想要成为什么吗？",
+        "en_content": "What do you want to be when you grow up ? "
+    },
+    {
+        "number": 411,
+        "zh_content": "你做什么工作？你是警察吗？",
+        "en_content": "What kind of work do you do? Are you a policeman? "
+    },
+    {
+        "number": 412,
+        "zh_content": "我想成为一名商业航空公司的飞行员。",
+        "en_content": "I want to become a commercial airline pilot"
+    },
+    {
+        "number": 413,
+        "zh_content": "我有一个很好的工作与优秀的时间。",
+        "en_content": "I have a good-paying job with excellent hours"
+    },
+    {
+        "number": 414,
+        "zh_content": "结婚之前，我的妹妹担任秘书。",
+        "en_content": "My sister worked as a secretary after she got married"
+    },
+    {
+        "number": 415,
+        "zh_content": "我哥哥在军队里他刚刚晋升主管。",
+        "en_content": "My brother's in the armyHe was just promoted to major"
+    },
+    {
+        "number": 416,
+        "zh_content": "的父亲是律师，他有自己的一套。",
+        "en_content": "Sany's father is an attorneyHe has his own practiceSany"
+    },
+    {
+        "number": 417,
+        "zh_content": "我是联邦雇员 我为劳工部工作。",
+        "en_content": "I'm a federal employee I work for the Department of Labor"
+    },
+    {
+        "number": 418,
+        "zh_content": "这位总统是位应归入伟人之列的政治家。",
+        "en_content": "The president is a statesman who belongs among the great"
+    },
+    {
+        "number": 419,
+        "zh_content": "我父亲是航空公司的飞行员。他刚刚退休了。",
+        "en_content": "My dad was a pilot with the airlinesHe just retired"
+    },
+    {
+        "number": 420,
+        "zh_content": "约翰已经建立了自己的生意。他拥有一家酒店。",
+        "en_content": "John has built up his own businessHe owns a hotel"
+    },
+    {
+        "number": 421,
+        "zh_content": "你是否考虑过成为医学专业的职员?",
+        "en_content": "Have you ever thought about a career in the medical profession? "
+    },
+    {
+        "number": 422,
+        "zh_content": "压力最大的职业是商业航空公司的飞行员。",
+        "en_content": "Commercial airline pilot is the highest stress profession"
+    },
+    {
+        "number": 423,
+        "zh_content": "他总是为自己的工作感到自豪。他的效率非常高。",
+        "en_content": "He always takes pride in his workHe's very efficient "
+    },
+    {
+        "number": 424,
+        "zh_content": "史密斯先生是政治家，他当选为州长。",
+        "en_content": "Mr Smith is a politicianHe's running for election as governor "
+    },
+    {
+        "number": 425,
+        "zh_content": "在成功的职业生涯后，他被任命为大使。",
+        "en_content": "After a successful career in business,he was appointed ambassador"
+    },
+    {
+        "number": 426,
+        "zh_content": "一旦我完成了培训，我将成为一名银行柜员。",
+        "en_content": "As soon as I complete my training,I'm going to be a bank teller "
+    },
+    {
+        "number": 427,
+        "zh_content": "一个当过酒吧经理的小伙子想应聘公关主管职位。",
+        "en_content": "A bar manager applyfor a director of public affairs position"
+    },
+    {
+        "number": 428,
+        "zh_content": "我喜欢画画，但我不想让它成为我生活的一部分。",
+        "en_content": "I like painting,but I wouldn't want it to be my life's work "
+    },
+    {
+        "number": 429,
+        "zh_content": "我有多年销售经验，并且我很擅长与人相处。",
+        "en_content": "I've spent several years working in sales and I get on with people easily"
+    },
+    {
+        "number": 430,
+        "zh_content": "我想要力争上游得到像专案经理这样的主管职位。",
+        "en_content": "I would then like to work up to a senior position, such as being a project team leader"
+    },
+    {
+        "number": 431,
+        "zh_content": "你是中介公司吧！",
+        "en_content": "You're a headhunter"
+    },
+    {
+        "number": 432,
+        "zh_content": "我做会计工作。",
+        "en_content": "I'm engaged in accounting"
+    },
+    {
+        "number": 433,
+        "zh_content": "我们是中介公司。",
+        "en_content": "We're an Employment Agency"
+    },
+    {
+        "number": 434,
+        "zh_content": "这份工作很辛苦。",
+        "en_content": "The work is really hard "
+    },
+    {
+        "number": 435,
+        "zh_content": "我有资格担任这个职位",
+        "en_content": "I'm qualified for this position"
+    },
+    {
+        "number": 436,
+        "zh_content": "你现在正在做什么工作?",
+        "en_content": "What kind of work are you doing now?"
+    },
+    {
+        "number": 437,
+        "zh_content": "这份工作有哪些职责？",
+        "en_content": "What are the duties that come with this job?"
+    },
+    {
+        "number": 438,
+        "zh_content": "上司对我的工作表现非常满意。",
+        "en_content": "My boss is very satisfied with my work"
+    },
+    {
+        "number": 439,
+        "zh_content": "英语对外贸公司很重要。",
+        "en_content": "English is really important for foreign trade corporation"
+    },
+    {
+        "number": 440,
+        "zh_content": "我先前的工作与我的专业无关。",
+        "en_content": "My previous job had nothing to do with my major"
+    },
+    {
+        "number": 441,
+        "zh_content": "她是一位主管中介公司的老板。",
+        "en_content": "She is the owner of an executive search firm "
+    },
+    {
+        "number": 442,
+        "zh_content": "你为什么不过来填写申请表？",
+        "en_content": "Why don't you come in and fill out an application?"
+    },
+    {
+        "number": 443,
+        "zh_content": "应聘这个职位需要什么条件？",
+        "en_content": "What are the requirements to apply for this position?"
+    },
+    {
+        "number": 444,
+        "zh_content": "这个团队有广泛的直接用户。",
+        "en_content": "The groups have an indirect and large set of customers"
+    },
+    {
+        "number": 445,
+        "zh_content": "画家描绘了滑铁卢战役中的拿破仑。",
+        "en_content": "The painter depicted Napoleon at the Battle of Waterloo "
+    },
+    {
+        "number": 446,
+        "zh_content": "这位画家模仿毕加索的绘画风格。",
+        "en_content": "The painter modeled his style after that of Picasso "
+    },
+    {
+        "number": 447,
+        "zh_content": "你在目前单位的工作职责是什么?",
+        "en_content": "What are you responsibilities at yourpresent work unit?"
+    },
+    {
+        "number": 448,
+        "zh_content": "我们刊登了好几项工作，是哪一项呢？",
+        "en_content": "which job is that? We advertised several openings"
+    },
+    {
+        "number": 449,
+        "zh_content": "会计及时卡住了这笔不必要的开支。",
+        "en_content": "The accountant checked this unnecessary spending in good time"
+    },
+    {
+        "number": 450,
+        "zh_content": "这份秘书工作涉及哪些职责？",
+        "en_content": "What sorts of responsibilities does this secretary’s job involve?"
+    },
+    {
+        "number": 451,
+        "zh_content": "我辞职的原因是他们从不履行诺言。",
+        "en_content": "The reason that I resigned was they never kept their promises"
+    },
+    {
+        "number": 452,
+        "zh_content": "我已经准备好承担伴随职位而来的更加重大的责任。",
+        "en_content": "I'm ready for the added responsibility in involves"
+    },
+    {
+        "number": 453,
+        "zh_content": "我希望找一个公司可以让我发挥才能。",
+        "en_content": "I hope to find a company where I can have a chance to use my knowleage"
+    },
+    {
+        "number": 454,
+        "zh_content": "我们培训公司的管理层以增强其表达技巧。",
+        "en_content": "We train our agency leaders to enhance their presentation skills"
+    },
+    {
+        "number": 455,
+        "zh_content": "市场销售经理的职位还缺人。",
+        "en_content": "The position for market sale manager is still available"
+    },
+    {
+        "number": 456,
+        "zh_content": "在一家小公司工作，那里不可能有升职的机会。",
+        "en_content": "I worked in a small company where further promotion was impossible"
+    },
+    {
+        "number": 457,
+        "zh_content": "需要长时间辛苦工作才能在这个领域取得成功。",
+        "en_content": "You'll need to put in a lot of long hard hours to succeed in this field"
+    },
+    {
+        "number": 458,
+        "zh_content": "我得先了解你们公司，在我去填写申请表格之前。",
+        "en_content": "I have to know about your company before I come to fill out an application"
+    },
+    {
+        "number": 459,
+        "zh_content": "我的工作包括填写日记账、核实数据、纠正误差。",
+        "en_content": "My work includes journal entries，verifyingdata and reconciling discrepancies"
+    },
+    {
+        "number": 460,
+        "zh_content": "在这个岗位工作3年，该学会的都已经学会了。",
+        "en_content": "You can learn everything have learned after 3 years experience in this position"
+    },
+    {
+        "number": 461,
+        "zh_content": "喝酒怎么样？",
+        "en_content": "What about wine?"
+    },
+    {
+        "number": 462,
+        "zh_content": "我喝了龙舌兰。",
+        "en_content": "I drank Tequlia"
+    },
+    {
+        "number": 463,
+        "zh_content": "我喜欢喝黑咖啡。",
+        "en_content": "I like black coffee"
+    },
+    {
+        "number": 464,
+        "zh_content": "我不喜欢那种味道",
+        "en_content": "I don't like the taste"
+    },
+    {
+        "number": 465,
+        "zh_content": "我喜欢甜甜圈和咖啡。",
+        "en_content": "I love donuts and coffee"
+    },
+    {
+        "number": 466,
+        "zh_content": "要加冰吗?",
+        "en_content": "Do you want some ice in your drink?"
+    },
+    {
+        "number": 467,
+        "zh_content": "我已经喝了很多啤酒了。",
+        "en_content": "I have had a lot of beers"
+    },
+    {
+        "number": 468,
+        "zh_content": "咖啡店今天好忙呀。",
+        "en_content": "The coffee shop is busy today"
+    },
+    {
+        "number": 469,
+        "zh_content": "你想喝番茄汁吗?",
+        "en_content": "Do you want some tomato juice?"
+    },
+    {
+        "number": 470,
+        "zh_content": "你喜欢喝什么咖啡呀？",
+        "en_content": "How do you drink your coffee?"
+    },
+    {
+        "number": 471,
+        "zh_content": "如果甜甜圈都卖完的话就更糟了。",
+        "en_content": "That would be worse"
+    },
+    {
+        "number": 472,
+        "zh_content": "喝茶对你的身体有好处。",
+        "en_content": "Tea is good for your health。"
+    },
+    {
+        "number": 473,
+        "zh_content": "我喜欢咖啡里加奶油和糖。",
+        "en_content": "I like to add cream and sugar"
+    },
+    {
+        "number": 474,
+        "zh_content": "你喜欢喝无糖可乐吗?",
+        "en_content": "Would you like to drink diet Coke?"
+    },
+    {
+        "number": 475,
+        "zh_content": "你想出去喝点饮料吗？",
+        "en_content": "Would you like to go out for a drink?"
+    },
+    {
+        "number": 476,
+        "zh_content": "我倒是希望他们的甜甜圈没有卖完。",
+        "en_content": "I hope they don’t run out of donuts"
+    },
+    {
+        "number": 477,
+        "zh_content": "队伍好长，这里人好多。",
+        "en_content": "The line is long There are a lot of people here"
+    },
+    {
+        "number": 478,
+        "zh_content": "希望轮到我们的时候里面的咖啡还没有卖完。",
+        "en_content": "I hope they don’t run out of coffee"
+    },
+    {
+        "number": 479,
+        "zh_content": "夏天没有什么比冰可乐那样让人精神。",
+        "en_content": "Nothing’s as refreshing as cold cola in summer"
+    },
+    {
+        "number": 480,
+        "zh_content": "他们今天在做特惠活动，买甜甜圈可以免费附送一杯咖啡。",
+        "en_content": "They are having a special If you order a donut, you get a cup of coffee for free"
+    },
+    {
+        "number": 481,
+        "zh_content": "你还好吧?",
+        "en_content": "Are you OK?"
+    },
+    {
+        "number": 482,
+        "zh_content": "我鼻塞。",
+        "en_content": "I have a stuffy nose"
+    },
+    {
+        "number": 483,
+        "zh_content": "一定痛死了!",
+        "en_content": "It must be painful"
+    },
+    {
+        "number": 484,
+        "zh_content": "我喉咙痛。",
+        "en_content": "I have a sore throat"
+    },
+    {
+        "number": 485,
+        "zh_content": "疼了多久？",
+        "en_content": "How long have you had it?"
+    },
+    {
+        "number": 486,
+        "zh_content": "他们的肚子痛。",
+        "en_content": "They have stomachaches"
+    },
+    {
+        "number": 487,
+        "zh_content": "你怎么啦?",
+        "en_content": "What's the wrong with you?"
+    },
+    {
+        "number": 488,
+        "zh_content": "我的脚扭了。",
+        "en_content": "I have sprained my ankle"
+    },
+    {
+        "number": 489,
+        "zh_content": "我一直在流鼻涕。",
+        "en_content": "I've been running nose"
+    },
+    {
+        "number": 490,
+        "zh_content": "我浑身无力。",
+        "en_content": "I don't have the strength"
+    },
+    {
+        "number": 491,
+        "zh_content": "我有严重的头痛。",
+        "en_content": "I have a serious headache"
+    },
+    {
+        "number": 492,
+        "zh_content": "我生病了，不舒服。",
+        "en_content": "I am under the weather "
+    },
+    {
+        "number": 493,
+        "zh_content": "我需要住院吗？",
+        "en_content": "Do I need to be hospitalized? "
+    },
+    {
+        "number": 494,
+        "zh_content": "你之前吃了什么药？",
+        "en_content": "What medicine did you take?"
+    },
+    {
+        "number": 495,
+        "zh_content": "你应该要保持良好的饮食习惯。",
+        "en_content": "You should keep healthy diet"
+    },
+    {
+        "number": 496,
+        "zh_content": "我感冒了，咳了2天了。",
+        "en_content": "I have a cold and cough for 2 days "
+    },
+    {
+        "number": 497,
+        "zh_content": "我觉得头晕，恶心，想吐。",
+        "en_content": "I feel light-headed, nausea and vomiting"
+    },
+    {
+        "number": 498,
+        "zh_content": "她得了重感冒，请带她去医院。",
+        "en_content": "She has a bad coldPlease take her to hospital"
+    },
+    {
+        "number": 499,
+        "zh_content": "我的症状是头晕、胸闷。",
+        "en_content": "My symptoms include are dizziness and  chest tightness"
+    },
+    {
+        "number": 500,
+        "zh_content": "晚上睡觉的时候要用嘴呼吸。",
+        "en_content": "I have to breathe through my mouth when I sleep at night"
+    },
+    {
+        "number": 501,
+        "zh_content": "你结婚了吗？",
+        "en_content": "Are you married?"
+    },
+    {
+        "number": 502,
+        "zh_content": "我还是单身。",
+        "en_content": "I'm still single"
+    },
+    {
+        "number": 503,
+        "zh_content": "和谁结婚了？",
+        "en_content": "Who did Andy marry?Andy"
+    },
+    {
+        "number": 504,
+        "zh_content": "她昨天生了宝宝。",
+        "en_content": "She had a baby last day"
+    },
+    {
+        "number": 505,
+        "zh_content": "你哥哥有孩子了吗？",
+        "en_content": "Do your brother has children?"
+    },
+    {
+        "number": 506,
+        "zh_content": "他们已经有两个宝宝了。",
+        "en_content": "They already have two babies"
+    },
+    {
+        "number": 507,
+        "zh_content": "他们结婚了多久了？",
+        "en_content": "How long have they been married?"
+    },
+    {
+        "number": 508,
+        "zh_content": "你女儿订婚了，是吗？",
+        "en_content": "Your daughter is engaged,isn't she?"
+    },
+    {
+        "number": 509,
+        "zh_content": "我的祖父在1930年结婚。",
+        "en_content": "My grandfather got married in 1930"
+    },
+    {
+        "number": 510,
+        "zh_content": "我的儿子想在七月结婚。",
+        "en_content": "My son wants to get married in July"
+    },
+    {
+        "number": 511,
+        "zh_content": "他们已经结婚了很多年了。",
+        "en_content": "They've been married for many years"
+    },
+    {
+        "number": 512,
+        "zh_content": "他们的孙子们现在长大了。",
+        "en_content": "Their grandchildren are grown up now"
+    },
+    {
+        "number": 513,
+        "zh_content": "我和我的第一任女朋友订婚了。",
+        "en_content": "I am engaged to my first girlfriend"
+    },
+    {
+        "number": 514,
+        "zh_content": "我朋友下个月准备结婚了。",
+        "en_content": "My firend are going to be married next month"
+    },
+    {
+        "number": 515,
+        "zh_content": "我姐姐明天去相亲。",
+        "en_content": "My sister is going to have a blind date tomorrow"
+    },
+    {
+        "number": 516,
+        "zh_content": "我姐姐已经订婚了两个月了。",
+        "en_content": "My sister has been engaged for two months"
+    },
+    {
+        "number": 517,
+        "zh_content": "什么时候是祖父母的结婚纪念日？",
+        "en_content": "When is grandparents' wedding anniversary?"
+    },
+    {
+        "number": 518,
+        "zh_content": "她是个寡妇，且独自抚养着儿子。",
+        "en_content": "She is a widow and raises her son alone"
+    },
+    {
+        "number": 519,
+        "zh_content": "他们不知道婚礼什么时候结束。",
+        "en_content": "They don't know when the wedding will be over"
+    },
+    {
+        "number": 520,
+        "zh_content": "我和我妻子要去美国度过结婚纪念日。",
+        "en_content": "My wife and I will go to USA on our wedding anniversary"
+    },
+    {
+        "number": 521,
+        "zh_content": "你要尝尝吗？",
+        "en_content": "Want a taste?"
+    },
+    {
+        "number": 522,
+        "zh_content": "什么味道？",
+        "en_content": "What’s the smell?"
+    },
+    {
+        "number": 523,
+        "zh_content": "我真得很饿。",
+        "en_content": "I’m really hungry"
+    },
+    {
+        "number": 524,
+        "zh_content": "帮忙洗一下碗。",
+        "en_content": "Help wash the dishes"
+    },
+    {
+        "number": 525,
+        "zh_content": "来帮忙摆碗筷。",
+        "en_content": "Help me set the table"
+    },
+    {
+        "number": 526,
+        "zh_content": "孩子们该吃饭啦。",
+        "en_content": "It's time to eat,boys"
+    },
+    {
+        "number": 527,
+        "zh_content": "我想吃肯德基。",
+        "en_content": "I am in the mood for KFC"
+    },
+    {
+        "number": 528,
+        "zh_content": "晚餐我煎了牛排。",
+        "en_content": "I cook steak for dinner"
+    },
+    {
+        "number": 529,
+        "zh_content": "请把盐递给我。",
+        "en_content": "Please pass the salt to me"
+    },
+    {
+        "number": 530,
+        "zh_content": "把你盘子里的东西都吃完。",
+        "en_content": "Clean up your plate"
+    },
+    {
+        "number": 531,
+        "zh_content": "我们午饭吃什么呀？",
+        "en_content": "What should we have for lunch?"
+    },
+    {
+        "number": 532,
+        "zh_content": "你什么时候能准备好饭？",
+        "en_content": "When are you ready for dinner?"
+    },
+    {
+        "number": 533,
+        "zh_content": "吃饭的时候别说话。",
+        "en_content": "Please be quiet when you are eating"
+    },
+    {
+        "number": 534,
+        "zh_content": "这是孩子们最喜欢吃的菜。",
+        "en_content": "That's our kids' favorite dish"
+    },
+    {
+        "number": 535,
+        "zh_content": "牛排没有胡椒粉不好吃。",
+        "en_content": "Without pepper,the steak is not tasty"
+    },
+    {
+        "number": 536,
+        "zh_content": "不然我们叫外卖不要出去吃了？",
+        "en_content": "How about we order  take-out instead of going out?"
+    },
+    {
+        "number": 537,
+        "zh_content": "我在APP上看到了一个提供免费配送优惠券。",
+        "en_content": "I found a coupon in App for free delivery"
+    },
+    {
+        "number": 538,
+        "zh_content": "太好了！我也不想出去买。",
+        "en_content": "Cool! I don’t want to go out to pick it up"
+    },
+    {
+        "number": 539,
+        "zh_content": "是啊，下雨呢。",
+        "en_content": "Yeap! It’s raining"
+    },
+    {
+        "number": 540,
+        "zh_content": "你吃太多了，我想减肥对你来说有点困难。",
+        "en_content": "You eat too much ,so I think it is hard for you to keep slim"
+    },
+    {
+        "number": 541,
+        "zh_content": "我是你的。",
+        "en_content": "I'm yours"
+    },
+    {
+        "number": 542,
+        "zh_content": "我爱你。",
+        "en_content": "I heart you"
+    },
+    {
+        "number": 543,
+        "zh_content": "我想要你。",
+        "en_content": "I want you"
+    },
+    {
+        "number": 544,
+        "zh_content": "我需要你。",
+        "en_content": "I need you"
+    },
+    {
+        "number": 545,
+        "zh_content": "你真好。",
+        "en_content": "You're sweet"
+    },
+    {
+        "number": 546,
+        "zh_content": "你是我的。",
+        "en_content": "You're mine"
+    },
+    {
+        "number": 547,
+        "zh_content": "你真性感。",
+        "en_content": "You're sexy"
+    },
+    {
+        "number": 548,
+        "zh_content": "你真漂亮。",
+        "en_content": "You're beautiful"
+    },
+    {
+        "number": 549,
+        "zh_content": "我暗恋你。",
+        "en_content": "I'm crushing on you"
+    },
+    {
+        "number": 550,
+        "zh_content": "我爱上你了。",
+        "en_content": "I'm falling for you"
+    },
+    {
+        "number": 551,
+        "zh_content": "你让我的人生完整。",
+        "en_content": "You complete me"
+    },
+    {
+        "number": 552,
+        "zh_content": "你使我感到幸福。",
+        "en_content": "You make me happy"
+    },
+    {
+        "number": 553,
+        "zh_content": "你就是我等的那个人。",
+        "en_content": "You're the one"
+    },
+    {
+        "number": 554,
+        "zh_content": "你是我喜欢的那种类型。",
+        "en_content": "You're my type"
+    },
+    {
+        "number": 555,
+        "zh_content": "我为你发光发热。",
+        "en_content": "I’m burning for you"
+    },
+    {
+        "number": 556,
+        "zh_content": "你是我的唯一。",
+        "en_content": "I think you’re the one"
+    },
+    {
+        "number": 558,
+        "zh_content": "你的眼睛真美。",
+        "en_content": "You have beautiful eyes"
+    },
+    {
+        "number": 559,
+        "zh_content": "你是我的一切。",
+        "en_content": "You're everything to me"
+    },
+    {
+        "number": 560,
+        "zh_content": "我们拉着手走吧。",
+        "en_content": "Let's walk hand in hand"
+    },
+    {
+        "number": 561,
+        "zh_content": "我可以牵你的手吗?",
+        "en_content": "May I hold your hand? "
+    },
+    {
+        "number": 562,
+        "zh_content": "你现在有朋友吗?",
+        "en_content": "Are you seeing anyone now? "
+    },
+    {
+        "number": 563,
+        "zh_content": "我对你一见钟情。",
+        "en_content": "It was love at first sight "
+    },
+    {
+        "number": 564,
+        "zh_content": "我完全迷上你了。",
+        "en_content": "I’ve totally fallen for you"
+    },
+    {
+        "number": 565,
+        "zh_content": "没有你我无法活下去。",
+        "en_content": "I can't live without you "
+    },
+    {
+        "number": 566,
+        "zh_content": "我默默喜欢你，暗恋你。",
+        "en_content": "I've got a crush on you"
+    },
+    {
+        "number": 567,
+        "zh_content": "我想知道你的一切。",
+        "en_content": "I want to know all about you"
+    },
+    {
+        "number": 568,
+        "zh_content": "我被你迷得神魂颠倒。",
+        "en_content": "I'm head over heels for you"
+    },
+    {
+        "number": 569,
+        "zh_content": "能认识你我非常幸福。",
+        "en_content": "I'm happy to have known you"
+    },
+    {
+        "number": 570,
+        "zh_content": "我爱的就是这样的你。",
+        "en_content": "I love you just the way you are"
+    },
+    {
+        "number": 571,
+        "zh_content": "我们对彼此來說是完美的。",
+        "en_content": "We’re perfect for each other"
+    },
+    {
+        "number": 572,
+        "zh_content": "我觉得我对你有感觉。",
+        "en_content": "I think I have a feeling for you"
+    },
+    {
+        "number": 573,
+        "zh_content": "我情不自禁一直看着你。",
+        "en_content": "I can't take my eyes off of you: "
+    },
+    {
+        "number": 574,
+        "zh_content": "有你的感觉真好。",
+        "en_content": "It is wonderful to have you in my life"
+    },
+    {
+        "number": 575,
+        "zh_content": "我无法停止想你，脑海你都是你。",
+        "en_content": "I can't stop thinking about you"
+    },
+    {
+        "number": 576,
+        "zh_content": "你让我想要成為一个更好的男人。",
+        "en_content": "You make me want to be a better man"
+    },
+    {
+        "number": 577,
+        "zh_content": "我忘记你却要用上一生的时间。",
+        "en_content": "It will take me a whole life to forget you"
+    },
+    {
+        "number": 578,
+        "zh_content": "我爱你胜过任何曾经爱过的人。",
+        "en_content": "I love you more than anyone has ever loved"
+    },
+    {
+        "number": 579,
+        "zh_content": "你是朵花，在我心中早已悄然开放了。",
+        "en_content": "You are a flower already opened in my hear"
+    },
+    {
+        "number": 580,
+        "zh_content": "我早上醒来的原因有两个:闹钟和你。",
+        "en_content": "There are two reasons why I wake up in the morning: my alarm clock and you"
+    },
+    {
+        "number": 611,
+        "zh_content": "你朋友多大了？",
+        "en_content": "How old is your friend?"
+    },
+    {
+        "number": 612,
+        "zh_content": "你们在聊什么？",
+        "en_content": "What are you talking？"
+    },
+    {
+        "number": 613,
+        "zh_content": "你昨天去哪了？",
+        "en_content": "Where did you go yesterday?"
+    },
+    {
+        "number": 614,
+        "zh_content": "我问了他许多问题。",
+        "en_content": "I asked him a lot of questions"
+    },
+    {
+        "number": 615,
+        "zh_content": "他在酒吧有很多朋友。",
+        "en_content": "He has many friends in the pub"
+    },
+    {
+        "number": 616,
+        "zh_content": "我们一起聊聊你的学习吧。",
+        "en_content": "Let's talk about your study"
+    },
+    {
+        "number": 617,
+        "zh_content": "你周末跟我们一起好吗？",
+        "en_content": "Will you join us this weekends?"
+    },
+    {
+        "number": 618,
+        "zh_content": "我朋友会说一点英语。",
+        "en_content": "My friend can speak a little English"
+    },
+    {
+        "number": 619,
+        "zh_content": "我们很久没见了。",
+        "en_content": "We haven't seen each other for a long time"
+    },
+    {
+        "number": 620,
+        "zh_content": "到现在为之我还没有见到Jony。",
+        "en_content": "I haven't seen Jony until now"
+    },
+    {
+        "number": 621,
+        "zh_content": "我正在和我朋友一起吃饭。",
+        "en_content": "I am having dinner with my friends"
+    },
+    {
+        "number": 622,
+        "zh_content": "他几乎回答了我所有的问题。",
+        "en_content": "He answered almost all of my questions"
+    },
+    {
+        "number": 623,
+        "zh_content": "我问他在加拿大有认识的人吗？",
+        "en_content": "I asked him if he knew anybody in Canada"
+    },
+    {
+        "number": 624,
+        "zh_content": "你有什么困难，我希望可以帮到你。",
+        "en_content": "Do you have any difficulty？I hope I can help you"
+    },
+    {
+        "number": 625,
+        "zh_content": "这个假期我打算和我朋友去英国。",
+        "en_content": "I am planning to go to England with my friends this vocation"
+    },
+    {
+        "number": 626,
+        "zh_content": "我喜欢动作片。",
+        "en_content": "I like action movies"
+    },
+    {
+        "number": 627,
+        "zh_content": "电影什么时候开始？",
+        "en_content": "When the film starts？"
+    },
+    {
+        "number": 628,
+        "zh_content": "我想看《战狼》。",
+        "en_content": "I want to see the Wolf Warrior"
+    },
+    {
+        "number": 629,
+        "zh_content": "这部电影要放多长时间?",
+        "en_content": "How long did the movie last? "
+    },
+    {
+        "number": 630,
+        "zh_content": "很多年轻人都喜欢街舞。",
+        "en_content": "Many young people like HIPHOP"
+    },
+    {
+        "number": 631,
+        "zh_content": "我的儿子想学跳舞。",
+        "en_content": "My son wants to learn how to dance"
+    },
+    {
+        "number": 632,
+        "zh_content": "我不习惯天黑以后出门。",
+        "en_content": "I'm not accustomed to going out after dark"
+    },
+    {
+        "number": 633,
+        "zh_content": "这个电影里有很多帅哥。",
+        "en_content": "There are a lot of handsome men in this movie"
+    },
+    {
+        "number": 634,
+        "zh_content": "他们说这部电影是科幻片。",
+        "en_content": "They said the film was a science fiction film"
+    },
+    {
+        "number": 635,
+        "zh_content": "这个电影里有我很喜欢的女演员。",
+        "en_content": "There are actresses I love in this movie"
+    },
+    {
+        "number": 636,
+        "zh_content": "昨晚我们一群人去了戏院。",
+        "en_content": "A group of us went out to the theater last night"
+    },
+    {
+        "number": 637,
+        "zh_content": "这出新戏很好，大家都很喜欢。",
+        "en_content": "The new play was good and everybody enjoyed it"
+    },
+    {
+        "number": 638,
+        "zh_content": "餐馆里满了，所以我们决定去别的地方。",
+        "en_content": "The restaurant was filled,so we decided to go elsewhere"
+    },
+    {
+        "number": 639,
+        "zh_content": "演出结束后，我们都想去吃点东西。",
+        "en_content": "After the play was over,we all wanted to get something to eat"
+    },
+    {
+        "number": 640,
+        "zh_content": "给我冲杯咖啡，好吗？",
+        "en_content": "Make me a cup of coffee, will you? "
+    },
+    {
+        "number": 641,
+        "zh_content": "他总是有很多想法。",
+        "en_content": "He always has a lot of ideas"
+    },
+    {
+        "number": 642,
+        "zh_content": "我希望我还有其它选择。",
+        "en_content": "I hope I have alternatives"
+    },
+    {
+        "number": 643,
+        "zh_content": "我们对此有不同的看法。",
+        "en_content": "We have opposite views on this"
+    },
+    {
+        "number": 644,
+        "zh_content": "一切都有两面。",
+        "en_content": "There are always two sides to everything "
+    },
+    {
+        "number": 645,
+        "zh_content": "你同意我的观点吗？",
+        "en_content": "Would you go along with my opinion?"
+    },
+    {
+        "number": 646,
+        "zh_content": "我想与你分享一些观点。",
+        "en_content": "I’d like to share with your some opinion"
+    },
+    {
+        "number": 647,
+        "zh_content": "经常有人会询问我们的意见。",
+        "en_content": "We’re often asked to give our opinion"
+    },
+    {
+        "number": 648,
+        "zh_content": "你有你的观点，我有我的。",
+        "en_content": "You have your point of view,and I have mine"
+    },
+    {
+        "number": 649,
+        "zh_content": "毕竟，我们的看法并不相同。",
+        "en_content": "Our views are not so far apart,after all"
+    },
+    {
+        "number": 650,
+        "zh_content": "你以不同于我的方式来处理它。",
+        "en_content": "You approach it in a different way than I do"
+    },
+    {
+        "number": 651,
+        "zh_content": "我不想再讨论这个问题了。",
+        "en_content": "I don't want to discuss the question any further"
+    },
+    {
+        "number": 652,
+        "zh_content": "我们应该能够解决我们的分歧。",
+        "en_content": "We should be able to resolve our differences"
+    },
+    {
+        "number": 653,
+        "zh_content": "我们可以非常直接地表达我们的意见。",
+        "en_content": "We can be very direct with our opinion"
+    },
+    {
+        "number": 654,
+        "zh_content": "我认为坐飞机去四川会更方便。",
+        "en_content": "I reckon it will be much convenient to get to Sichuan by air"
+    },
+    {
+        "number": 655,
+        "zh_content": "我不会和你争辩，但我认为你是不公平的。",
+        "en_content": "I won't argue with you,but I think you're being unfair"
+    },
+    {
+        "number": 656,
+        "zh_content": "我先自己看看。",
+        "en_content": "I just take a look myself"
+    },
+    {
+        "number": 657,
+        "zh_content": "是有特殊的日子吗？",
+        "en_content": "Is it for a special occasion?"
+    },
+    {
+        "number": 658,
+        "zh_content": "你今天的打扮酷毙了！",
+        "en_content": "You are dressed to kill today! "
+    },
+    {
+        "number": 659,
+        "zh_content": "这套西装不合身了。",
+        "en_content": "This suit doesn't fit me anymore"
+    },
+    {
+        "number": 660,
+        "zh_content": "这条裙子正在打折。",
+        "en_content": "We have this dress sale right now"
+    },
+    {
+        "number": 661,
+        "zh_content": "快点穿衣服，天气寒冷。",
+        "en_content": "Hurry up and get dressed It’s cold"
+    },
+    {
+        "number": 662,
+        "zh_content": "别穿T恤。不适合这个场合。",
+        "en_content": "Take off your T-shirt It doesn't fit"
+    },
+    {
+        "number": 663,
+        "zh_content": "今晚派对你穿什么？",
+        "en_content": "What do you going to wear for the party tonight?"
+    },
+    {
+        "number": 664,
+        "zh_content": "你有什么特别想买的吗？",
+        "en_content": "Are you shopping for anything in particular?"
+    },
+    {
+        "number": 665,
+        "zh_content": "外面冷，你最好穿件夹克衫。",
+        "en_content": "You'd better wear a jacketIt's chilly outside"
+    },
+    {
+        "number": 666,
+        "zh_content": "我要去把这套西装拿去洗烫一下。",
+        "en_content": "I've got to get this suits cleaned and ironed"
+    },
+    {
+        "number": 667,
+        "zh_content": "很难选择适合这种场合的衣服。",
+        "en_content": "It's hard to choose what to wear for this occasion"
+    },
+    {
+        "number": 668,
+        "zh_content": "欧巴马总统穿着素色黑西装。",
+        "en_content": "President Obama is wearing a solid-colored black business suit"
+    },
+    {
+        "number": 669,
+        "zh_content": "我所有的西装都脏了，没有什么能穿的。",
+        "en_content": "All my suits are dirtyI don't have anything to wear "
+    },
+    {
+        "number": 670,
+        "zh_content": "他还打了一个蓝色条纹领带和别了一个美国国旗的徽章。",
+        "en_content": "He is also wearing a blue striped tie and a lapel pin of the American flag"
+    },
+    {
+        "number": 671,
+        "zh_content": "是什么毛病？",
+        "en_content": "What's wrong with it?"
+    },
+    {
+        "number": 672,
+        "zh_content": "手机屏碎了。",
+        "en_content": "The screen is cracked"
+    },
+    {
+        "number": 673,
+        "zh_content": "我电脑死机了。",
+        "en_content": "The computer has crashed"
+    },
+    {
+        "number": 674,
+        "zh_content": "我的音响坏了。",
+        "en_content": "My stereo is out of order"
+    },
+    {
+        "number": 675,
+        "zh_content": "我将尽快修理它。",
+        "en_content": "I'll try to fix it soon"
+    },
+    {
+        "number": 676,
+        "zh_content": "她精神几乎崩溃了。",
+        "en_content": "She almost broke down"
+    },
+    {
+        "number": 677,
+        "zh_content": "我的回车键坏了。",
+        "en_content": "My enter key won’t work"
+    },
+    {
+        "number": 678,
+        "zh_content": "消除键失灵了。",
+        "en_content": "The delete key doesn't work"
+    },
+    {
+        "number": 679,
+        "zh_content": "我要破门而入了。",
+        "en_content": "I'll break this door down"
+    },
+    {
+        "number": 680,
+        "zh_content": "电视又出故障了。",
+        "en_content": "The TV is on the fritz again"
+    },
+    {
+        "number": 681,
+        "zh_content": "电梯又坏了。",
+        "en_content": "The elevator is out of order again"
+    },
+    {
+        "number": 682,
+        "zh_content": "谈判又失败了。",
+        "en_content": "Negotiations have broken down again"
+    },
+    {
+        "number": 683,
+        "zh_content": "我的车中途抛锚了。",
+        "en_content": "My car broke down on the way here"
+    },
+    {
+        "number": 684,
+        "zh_content": "我又登陆不上网络了。",
+        "en_content": "I can't log on the internet again"
+    },
+    {
+        "number": 685,
+        "zh_content": "你能帮我修电脑吗?",
+        "en_content": "Could you help me mend the computer?"
+    },
+    {
+        "number": 686,
+        "zh_content": "电视机有问题了。",
+        "en_content": "Something is wrong with the television"
+    },
+    {
+        "number": 687,
+        "zh_content": "这个仓库的门就是打不开。",
+        "en_content": "The warehouse door won't open"
+    },
+    {
+        "number": 688,
+        "zh_content": "我们又得换个灯泡了。",
+        "en_content": "We'll have to change the bulb again"
+    },
+    {
+        "number": 689,
+        "zh_content": "复印机有毛病了。",
+        "en_content": "There is something wrong with the copier"
+    },
+    {
+        "number": 690,
+        "zh_content": "网络有问题。",
+        "en_content": "There is something the matter with the network"
+    },
+    {
+        "number": 691,
+        "zh_content": "洗衣机又出毛病了。",
+        "en_content": "The washing machine is on the blink again"
+    },
+    {
+        "number": 692,
+        "zh_content": "你电脑上改动了什么吗?",
+        "en_content": "Did you change anything on your computer?"
+    },
+    {
+        "number": 693,
+        "zh_content": "你用的是哪种杀毒软件?",
+        "en_content": "What kind of anti-virus software do you use?"
+    },
+    {
+        "number": 694,
+        "zh_content": "把肉放进冰箱，免得坏了。",
+        "en_content": "Put the meat in the fridge so it doesn't go bad"
+    },
+    {
+        "number": 695,
+        "zh_content": "病毒会导致你的电脑出现故障。",
+        "en_content": "The viruses can lead your computer into failure"
+    },
+    {
+        "number": 696,
+        "zh_content": "我觉得汤已经坏掉了，尝起来怪怪的。",
+        "en_content": "I think the soup is spoilt; it tastes weird"
+    },
+    {
+        "number": 697,
+        "zh_content": "在拥挤的电梯里我们聚拢在一起。",
+        "en_content": "We are all bunched together in the crowded elevator"
+    },
+    {
+        "number": 698,
+        "zh_content": "电梯坏了，我们不得不爬楼梯。",
+        "en_content": "The elevator is broken, so we have to climb the stairs"
+    },
+    {
+        "number": 699,
+        "zh_content": "我想要修这台电脑，但还是用不了。",
+        "en_content": "I tried to fix the computer, but it still doesn’t work"
+    },
+    {
+        "number": 700,
+        "zh_content": "复印机坏了，明天才能修。",
+        "en_content": "The copy machine is out of order and won't be repaired until tomorrow"
+    },
+    {
+        "number": 701,
+        "zh_content": "这是重播。",
+        "en_content": "It's a rerun．"
+    },
+    {
+        "number": 702,
+        "zh_content": "那是配音的!",
+        "en_content": "It's dubbed．"
+    },
+    {
+        "number": 703,
+        "zh_content": "这是现场直播吗？",
+        "en_content": "Is this live?"
+    },
+    {
+        "number": 704,
+        "zh_content": "我喜欢情景喜剧。",
+        "en_content": "I like sitcom"
+    },
+    {
+        "number": 705,
+        "zh_content": "没有字幕。",
+        "en_content": "There are no subtitles!"
+    },
+    {
+        "number": 706,
+        "zh_content": "请关上电视。",
+        "en_content": "Please turn off the TV"
+    },
+    {
+        "number": 707,
+        "zh_content": "我比较喜欢游戏节目。",
+        "en_content": "I prefer Game show"
+    },
+    {
+        "number": 708,
+        "zh_content": "今天电视演什么节目?",
+        "en_content": "What's on TV today?"
+    },
+    {
+        "number": 709,
+        "zh_content": "电视连续剧很无聊。",
+        "en_content": "TV soap operas are boring"
+    },
+    {
+        "number": 710,
+        "zh_content": "这些连续剧好无聊!",
+        "en_content": "These series are really boring"
+    },
+    {
+        "number": 711,
+        "zh_content": "我们换别的频道好不好?",
+        "en_content": "Can we change the channel?"
+    },
+    {
+        "number": 712,
+        "zh_content": "你能把音量调低点吗？",
+        "en_content": "Will you turn down the volume?"
+    },
+    {
+        "number": 713,
+        "zh_content": "你喜欢哪些电视节目？",
+        "en_content": "What kind of TV programs do like?"
+    },
+    {
+        "number": 714,
+        "zh_content": "你最喜欢什么电视节目?",
+        "en_content": "What's your favorite TV program?"
+    },
+    {
+        "number": 715,
+        "zh_content": "我可以多看一会儿电视吗？",
+        "en_content": "Can I watch a little more TV?"
+    },
+    {
+        "number": 716,
+        "zh_content": "音乐现场节目是我的最爱",
+        "en_content": "live music shows are my very favorite"
+    },
+    {
+        "number": 717,
+        "zh_content": "你看了昨晚的益智节目了吗?",
+        "en_content": "Did you see the quiz show last night?"
+    },
+    {
+        "number": 718,
+        "zh_content": "我在看这个焦点访谈节目。",
+        "en_content": "I've been watching in-depth interviews"
+    },
+    {
+        "number": 719,
+        "zh_content": "我最喜欢的节目是医疗剧。",
+        "en_content": "Medical drama is my favourite programme"
+    },
+    {
+        "number": 720,
+        "zh_content": "今天晚上的节目都非常好看。",
+        "en_content": "The whole program tonight was excellent"
+    },
+    {
+        "number": 721,
+        "zh_content": "我不喜欢在广告上费时间。",
+        "en_content": "I don't like spending time on commercials"
+    },
+    {
+        "number": 722,
+        "zh_content": "电视有越来越多的真人秀节目。",
+        "en_content": "There are more and more reality shows on TV"
+    },
+    {
+        "number": 723,
+        "zh_content": "每个频道都太多广告了。",
+        "en_content": "There are too many commercials on every channel"
+    },
+    {
+        "number": 724,
+        "zh_content": "昨天晚上我在电视上看过这个脱口秀。",
+        "en_content": "I saw talk show on TV last night"
+    },
+    {
+        "number": 725,
+        "zh_content": "你知道新闻之后播什么节目吗?",
+        "en_content": "Do you happen to know what's on after the news?"
+    },
+    {
+        "number": 726,
+        "zh_content": "我最喜欢的脱口秀是Ellen’s show",
+        "en_content": "My favorite talk show is the Ellen’s show"
+    },
+    {
+        "number": 727,
+        "zh_content": "我妈妈坚持看这一个肥皂剧已经很多年了。",
+        "en_content": "My mom has been following this soap opera for years"
+    },
+    {
+        "number": 728,
+        "zh_content": "虽然我不是小孩子我也很喜欢看这些节目。",
+        "en_content": "I love watching them as well,although l'm not a kid"
+    },
+    {
+        "number": 729,
+        "zh_content": "最近我看的最棒的连续剧是Game of Thrones",
+        "en_content": "The best series I’ve seen recently is Game of Thrones"
+    },
+    {
+        "number": 730,
+        "zh_content": "我不喜欢综艺节目，因为有时主持人缺乏幽默。",
+        "en_content": "I don't like variety show because sometimes the host lacks a sense of humor"
+    },
+    {
+        "number": 741,
+        "zh_content": "我要去乐购。",
+        "en_content": "I'm going toTesco"
+    },
+    {
+        "number": 742,
+        "zh_content": "我要去沃尔玛。",
+        "en_content": "I'm going to Walmart"
+    },
+    {
+        "number": 743,
+        "zh_content": "我要去商场。",
+        "en_content": "I'm heading to the market"
+    },
+    {
+        "number": 744,
+        "zh_content": "在街边的那一家呀。",
+        "en_content": "The one down the street"
+    },
+    {
+        "number": 745,
+        "zh_content": "我有一份购物清单。",
+        "en_content": "Do you have a shopping list"
+    },
+    {
+        "number": 746,
+        "zh_content": "那里一直都很挤啊。",
+        "en_content": "It's always so crowded there"
+    },
+    {
+        "number": 747,
+        "zh_content": "因为去那里买东西的人不多啊。",
+        "en_content": "Not enough customers"
+    },
+    {
+        "number": 748,
+        "zh_content": "我一直都是去那里买东西的。",
+        "en_content": "I always go to that market"
+    },
+    {
+        "number": 749,
+        "zh_content": "那家商场要关门了。",
+        "en_content": "The market is going out of business"
+    },
+    {
+        "number": 750,
+        "zh_content": "那里的东西要多很多。",
+        "en_content": "It has a bigger selection of things"
+    },
+    {
+        "number": 751,
+        "zh_content": "哪有最大的购物中心？",
+        "en_content": "Where is the biggest shopping center?"
+    },
+    {
+        "number": 752,
+        "zh_content": "附近哪有百货商店？",
+        "en_content": "Is there a department store around here?"
+    },
+    {
+        "number": 753,
+        "zh_content": "我还是更喜欢去小一点的地方买。",
+        "en_content": "I still like the smaller one"
+    },
+    {
+        "number": 754,
+        "zh_content": "请问乳类制品在哪里？",
+        "en_content": "Excuse me Where are the dairy products?"
+    },
+    {
+        "number": 755,
+        "zh_content": "你能把鸡蛋单独放一个袋子吗？",
+        "en_content": "Could you put the eggs in a separate bag?"
+    },
+    {
+        "number": 756,
+        "zh_content": "我通常把包存进免费储物柜里。",
+        "en_content": "I usually save my bag in the free locker"
+    },
+    {
+        "number": 757,
+        "zh_content": "那真是太好了，我需要买很多东西。",
+        "en_content": "That's great to know I need to buy a lot of stuff"
+    },
+    {
+        "number": 758,
+        "zh_content": "更多的人都去几条街外更大的那家商场买了。",
+        "en_content": "More people are going to the bigger market a few blocks away"
+    },
+    {
+        "number": 759,
+        "zh_content": "今天去那家很划算，他们的很多商品都在进行打折大促销。",
+        "en_content": "Today is a good day to go There are a lot of items on sale"
+    },
+    {
+        "number": 760,
+        "zh_content": "你最好还是赶紧过去。由于那里在做降价大促销，所以人很多。",
+        "en_content": "You better leave soon There were a lot of people today because of the big sale"
+    },
+    {
+        "number": 761,
+        "zh_content": "我们结账吧。",
+        "en_content": "Let's foot the bill"
+    },
+    {
+        "number": 762,
+        "zh_content": "这有免税店吗？",
+        "en_content": "Is there a duty-free shop?"
+    },
+    {
+        "number": 763,
+        "zh_content": "胡萝卜全卖光了。",
+        "en_content": "We're all out of carrots"
+    },
+    {
+        "number": 764,
+        "zh_content": "可爱但是不耐穿。",
+        "en_content": "Cute but not very durable"
+    },
+    {
+        "number": 765,
+        "zh_content": "我想买厨房用具。",
+        "en_content": "I'd like to buy kitchenware"
+    },
+    {
+        "number": 766,
+        "zh_content": "所有的培根都卖完了。",
+        "en_content": "All the bacon is sold out"
+    },
+    {
+        "number": 767,
+        "zh_content": "这个是一包一包卖的。",
+        "en_content": "This is sold by package "
+    },
+    {
+        "number": 768,
+        "zh_content": "和卖家描述得差不多。",
+        "en_content": "It performed as advertised"
+    },
+    {
+        "number": 769,
+        "zh_content": "什么时候商店开始营业？",
+        "en_content": "What time do stores open?"
+    },
+    {
+        "number": 770,
+        "zh_content": "请问洗发液在哪里？",
+        "en_content": "Where can I find the shampoos?"
+    },
+    {
+        "number": 771,
+        "zh_content": "没有货了。",
+        "en_content": "There's none in stock/It's out of stock"
+    },
+    {
+        "number": 772,
+        "zh_content": "冷冻食品区在哪里？",
+        "en_content": "Where is the frozen foods section?"
+    },
+    {
+        "number": 773,
+        "zh_content": "人多得要命!",
+        "en_content": "What a crowd!It's so crowded!What a big crowd!"
+    },
+    {
+        "number": 774,
+        "zh_content": "你多久去一次超市？",
+        "en_content": "How often do you visit the supermarket?"
+    },
+    {
+        "number": 775,
+        "zh_content": "调料货架在第五通道。",
+        "en_content": "The condiments shelf is in the 5th aisle"
+    },
+    {
+        "number": 776,
+        "zh_content": "你喜欢在超市买什么？",
+        "en_content": "What do you like to buy at the supermarket?"
+    },
+    {
+        "number": 777,
+        "zh_content": "这辆购物车的轮子摇摆不定。",
+        "en_content": "This shopping cart has a wobbly wheel"
+    },
+    {
+        "number": 778,
+        "zh_content": "请把水果放在购物手推车里。",
+        "en_content": "Please put the fruit in the shopping cart"
+    },
+    {
+        "number": 779,
+        "zh_content": "请问，哪个过道可以找到尿布啊？",
+        "en_content": "Excuse me, which aisle can I find diapers?"
+    },
+    {
+        "number": 780,
+        "zh_content": "确保你在走之前把东西钱给付了。",
+        "en_content": "Make sure you pay for your shopping before you leave"
+    },
+    {
+        "number": 781,
+        "zh_content": "请问有折扣吗？",
+        "en_content": "Is there any discount?"
+    },
+    {
+        "number": 782,
+        "zh_content": "要试穿这个吗？",
+        "en_content": "Do you want to try it on?"
+    },
+    {
+        "number": 783,
+        "zh_content": "你有积分卡吗？",
+        "en_content": "Do you have a loyalty card?"
+    },
+    {
+        "number": 784,
+        "zh_content": "需要帮忙装袋吗？",
+        "en_content": "Do you need a help packing?"
+    },
+    {
+        "number": 785,
+        "zh_content": "可以试穿这双鞋吗？",
+        "en_content": "Could I try these shoes on?"
+    },
+    {
+        "number": 786,
+        "zh_content": "太小了!必须退货。",
+        "en_content": "Way too small! Had to return"
+    },
+    {
+        "number": 787,
+        "zh_content": "你有会员卡吗？",
+        "en_content": "Do you have a membership card?"
+    },
+    {
+        "number": 788,
+        "zh_content": "我还会买些水果回来。",
+        "en_content": "I will pick up some fruits too"
+    },
+    {
+        "number": 789,
+        "zh_content": "我能和你一起去超市吗？",
+        "en_content": "Can I go to the market with you?"
+    },
+    {
+        "number": 790,
+        "zh_content": "请给我一斤牛肉。",
+        "en_content": "I'd like half a kilogram of beef,please"
+    },
+    {
+        "number": 791,
+        "zh_content": "可以多给我一个袋子吗？",
+        "en_content": "Could I have a carrier bag,please?"
+    },
+    {
+        "number": 792,
+        "zh_content": "这件物品上标的价格是错的。",
+        "en_content": "The price marked on this item is wrong"
+    },
+    {
+        "number": 793,
+        "zh_content": "我们大约只能去一个小时的时间。",
+        "en_content": "We will only be gone for about an hour"
+    },
+    {
+        "number": 794,
+        "zh_content": "我们可以在回来的路上买冰淇淋吃吗？",
+        "en_content": "Can we get ice cream on the way home?"
+    },
+    {
+        "number": 795,
+        "zh_content": "你看那些西红柿， 特别新鲜。",
+        "en_content": "Look at these tomatoes They are very fresh"
+    },
+    {
+        "number": 796,
+        "zh_content": "我们去那边买点你爱吃的。",
+        "en_content": "Let's go over there and buy something you like"
+    },
+    {
+        "number": 797,
+        "zh_content": "你能给我买些零食回来吗，我想带到学校吃。",
+        "en_content": "Can you buy some snacks for school?"
+    },
+    {
+        "number": 798,
+        "zh_content": "镇上的超市有特别大的购物车。",
+        "en_content": "The supermarket in town has huge shopping carts"
+    },
+    {
+        "number": 799,
+        "zh_content": "我今天下午要去超市。需要帮你买什么吗？",
+        "en_content": "I'm going to the supermarket this afternoon Do you need anything?"
+    },
+    {
+        "number": 800,
+        "zh_content": "附近的购物中心周末大减价，想去看看吗？",
+        "en_content": "The mall nearby is having a big sale this weekend You wanna go?"
+    }
+]

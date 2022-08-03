@@ -10,6 +10,7 @@ use App\Models\Code;
 use App\Models\Todo;
 use App\Http\Controllers\Controller;
 use App\Models\Word;
+use App\Models\Sentence;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -27,6 +28,7 @@ class TypeController extends Controller
         Book::NAME => Book::NAME,
         Collection::NAME => Collection::NAME,
         Word::NAME => Word::NAME,
+        Sentence::NAME => Sentence::NAME,
     ];
     /**
      * Index interface.

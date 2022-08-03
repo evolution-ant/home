@@ -160,6 +160,9 @@ class JokeController extends Controller
             ])->default(1);
             $create->text('remark', 'Remark');
         });
+        $grid->column('type.name')->display(function ($gg, $column) {
+            return $column->labelWrapper($this->type->name, $this->type_id);
+        });
         $grid->content()->codeWrapper('go');
         $grid->column('like')->action(LikeJoke::class);
         $grid->column('created_at')->hide();

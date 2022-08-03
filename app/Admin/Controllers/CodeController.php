@@ -98,7 +98,7 @@ class CodeController extends Controller
         $grid->tools(function (Grid\Tools $tools) {
             $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=codes" class="btn btn-success btn-sm" role="button">Type</a>');
             $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=codes" class="btn btn-danger btn-sm" role="button">Tag</a>');
-            $tools->append('<a href="/admin/code" class="btn btn-warning btn-sm" role="button">Clear</a>');
+            $tools->append('<a href="/admin/codes" class="btn btn-warning btn-sm" role="button">Clear</a>');
         });
         $grid->enableHotKeys();
         $grid->quickSearch(function ($model, $query) {
@@ -180,7 +180,7 @@ class CodeController extends Controller
 
         $grid->column('Edit')->display(function () {
             return sprintf('<div class="list-group">
-            <a href="/admin/code/%s/edit" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+            <a href="/admin/codes/%s/edit" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
             </div>', $this->id);
         });
 
