@@ -169,7 +169,7 @@ class SentenceController extends Controller
             }
             if ($translations) {
                 // $translations 放在 h3 里
-                $str .= sprintf('%s %s<br>', $country, $translations);
+                $str .= sprintf('%s <h3>%s</h3><br>', $country, $translations);
             }
             // $str 左对齐居中显示
             return '<div style="text-align:center;">' . $str . '</div>';
