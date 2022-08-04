@@ -185,7 +185,7 @@ class WordController extends Controller
         });
         // 展示 grade 字段
         $grid->column('importance')->display(function ($grade, $column) {
-            return $column->gradeWrapper($grade);
+            return $column->gradeWrapper(Word::NAME, $grade);
         });
         $grid->column('like')->action(LikeWord::class);
         $grid->column('id')->hide();

@@ -7,7 +7,7 @@ use Encore\Admin\Grid\Displayers\AbstractDisplayer;
 
 class GradeWrapper extends AbstractDisplayer
 {
-    protected function script($key, $value)
+    protected function script($key, $group, $value)
     {
         \Log::info(__METHOD__, ['unique_id:']);
         $value = str_replace('`', '"', $value);
@@ -26,7 +26,7 @@ class GradeWrapper extends AbstractDisplayer
             button4$key.classList.remove('btn-default');
             button4$key.classList.remove('btn-danger');
             button4$key.classList.add('btn-danger');
-            $.get("/api/word/update", { id: $key, importance: 4 },
+            $.get("/api/$group/update", { id: $key, importance: 4 },
             function(data){
             });
         });
@@ -45,7 +45,7 @@ class GradeWrapper extends AbstractDisplayer
             button3$key.classList.remove('btn-default');
             button3$key.classList.remove('btn-warning');
             button3$key.classList.add('btn-warning');
-            $.get("/api/word/update", { id: $key, importance: 3 },
+            $.get("/api/$group/update", { id: $key, importance: 3 },
             function(data){
             });
         });
@@ -62,7 +62,7 @@ class GradeWrapper extends AbstractDisplayer
             button2$key.classList.remove('btn-default');
             button2$key.classList.remove('btn-info');
             button2$key.classList.add('btn-info');
-            $.get("/api/word/update", { id: $key, importance: 2 },
+            $.get("/api/$group/update", { id: $key, importance: 2 },
             function(data){
             });
         });
@@ -75,20 +75,20 @@ class GradeWrapper extends AbstractDisplayer
             button2$key.classList.add('btn-default');
             button1$key.classList.remove('btn-success');
             button1$key.classList.add('btn-default');
-            
+
             button1$key.classList.remove('btn-default');
             button1$key.classList.remove('btn-success');
             button1$key.classList.add('btn-success');
-            $.get("/api/word/update", { id: $key, importance: 1 },
+            $.get("/api/$group/update", { id: $key, importance: 1 },
             function(data){
             });
         });
         SCRIPT;
     }
 
-    public function display($value = '')
+    public function display($group = '', $value = '')
     {
-        Admin::script($this->script($this->getKey(), $value));
+        Admin::script($this->script($this->getKey(), $group, $value));
         $btn_style_1 = 'btn-default';
         $btn_style_2 = 'btn-default';
         $btn_style_3 = 'btn-default';

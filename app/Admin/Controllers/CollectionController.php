@@ -163,9 +163,15 @@ class CollectionController extends Controller
         // 显示标题
         $grid->column('title', 'Title')->display(function ($title) {
             // 在线 favicon
-            $favicon = '<img src="' . $this->favicon . '" width="16" height="16" />';
+            $favicon = '<img src="' . $this->favicon . '" width="16" fheight="16" />';
+            $apple = '';
+            // 如果 content 包含 'apple.com' 则显示 'Apple'
+            if (strpos($this->content, 'apple.com') !== false) {
+                $favicon = '';
+                $apple = '';
+            }
             // 返回 a 标签,包含 title 和 link 和新窗口打开三个属性
-            return "<a href='{$this->content}' target='_blank'>{$favicon} {$this->title}</a>";
+            return "{$apple}<a href='{$this->content}' target='_blank'>{$favicon} {$this->title}</a>";
         });
         $grid->column('tags')->display(function ($tags, $column) {
             $tag_names = [];

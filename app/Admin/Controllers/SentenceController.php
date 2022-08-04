@@ -160,32 +160,23 @@ class SentenceController extends Controller
         $grid->column('content')->expand(function ($model) {
             $str = '';
             $translations = $model->translations;
-            // phonetic,explains
-            $phonetic = $model->phonetic;
-            $explains = $model->explains;
             $country = '';
             //如果 language 里包含 'ZH' 或 'zh',则country为 🇨🇳 ，否则为 🇺🇸
             if (strpos($model->language, 'ZH') !== false || strpos($model->language, 'zh') !== false) {
-                $country = '🇺🇸';
+                $country = '';
             } else {
-                $country = '🇨🇳';
+                $country = '';
             }
             if ($translations) {
                 // $translations 放在 h3 里
                 $str .= sprintf('%s %s<br>', $country, $translations);
-            }
-            if ($phonetic) {
-                $str = $str . sprintf('%s %s<br>', '🎙', $phonetic);
-            }
-            if ($explains) {
-                $str = $str . sprintf('%s %s<br>', '📖', $explains);
             }
             // $str 左对齐居中显示
             return '<div style="text-align:center;">' . $str . '</div>';
         });
         // 展示 grade 字段
         $grid->column('importance')->display(function ($grade, $column) {
-            return $column->gradeWrapper($grade);
+            return $column->gradeWrapper(Sentence::NAME, $grade);
         });
         $grid->column('like')->action(LikeSentence::class);
         $grid->column('id')->hide();
