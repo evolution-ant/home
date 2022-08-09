@@ -26,8 +26,8 @@ class Kernel extends ConsoleKernel
         //         ['content' => 'taylor@example.com'],
         //     ]);
         // })->everyMinute();
-        // $this->notify_word($schedule);
-        $this->notify_sentence($schedule);
+        $this->notify_word($schedule);
+        // $this->notify_sentence($schedule);
         // 查询,
         // $schedule->command('route:list')->dailyAt('02:00');
     }

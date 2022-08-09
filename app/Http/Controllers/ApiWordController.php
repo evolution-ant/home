@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Type;
+use GrahamCampbell\ResultType\Success;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
@@ -26,5 +27,15 @@ class ApiWordController extends Controller
         \Log::info(__METHOD__, ['request:', $request->all()]);
         // 更新 words 表，id 为 id 的记录，importance 为 importance 的记录
         $word = \DB::table('words')->where('id', $id)->update(['importance' => $importance]);
+    }
+
+    function google(Request $request)
+    {
+        // 获取请求的 id
+        $id = $request->input('id');
+        // 查询 words 表，id 为 id 的记录
+        $word = \DB::table('words')->where('id', $id)->first();
+        \Log::info(__METHOD__, ['request:', $request->all()]);
+        return response()->json(['data' => $word]);
     }
 }
