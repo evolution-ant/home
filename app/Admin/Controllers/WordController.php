@@ -103,10 +103,11 @@ class WordController extends Controller
         $grid->tools(function (Grid\Tools $tools) {
             $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=' . Word::NAME . '" class="btn btn-success btn-sm" role="button">Type</a>');
             $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=' . Word::NAME . '" class="btn btn-danger btn-sm" role="button">Tag</a>');
+            $tools->append('<a href="/admin/words" class="btn btn-warning btn-sm" role="button">Clear</a>');
         });
         $grid->enableHotKeys();
         $grid->quickSearch(function ($model, $query) {
-            $model->where('title', 'like', "%{$query}%")->orWhere('content', 'like', "%{$query}%")->orWhere('remark', 'like', "%{$query}%");
+            $model->where('content', 'like', "%{$query}%")->orWhere('remark', 'like', "%{$query}%");
         });
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('type_id', 'Type', Type::where('group', Word::NAME)->pluck('name', 'id'));
@@ -181,12 +182,17 @@ class WordController extends Controller
                 $str = $str . sprintf('%s %s<br>', '📖', $explains);
             }
             // $str 左对齐居中显示
-            return '<div style="text-align:center;">' . $str . '</div>';
+            return '<div style="margin-left:320px;">' . $str . '</div>';
         });
         // 展示 grade 字段
         $grid->column('importance')->display(function ($grade, $column) {
             return $column->gradeWrapper(Word::NAME, $grade);
         });
+
+        $grid->column('en_sentence')->display(function ($grade, $column) {
+            return $column->sentenceWrapper($this->content, $this->en_sentence, $this->zh_sentence);
+        });
+
         $grid->column('like')->action(LikeWord::class);
         $grid->column('id')->hide();
         return $grid;

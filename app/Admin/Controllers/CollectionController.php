@@ -8,13 +8,8 @@ use App\Models\Tag;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
-use Encore\Admin\Widgets\Form as WForm;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
-use Encore\Admin\Widgets\Table;
-use Encore\Admin\Widgets\Tab;
-use Encore\Admin\Widgets\InfoBox;
-use Encore\Admin\Widgets\Collapse;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\DB;
 use App\Admin\Actions\Code\Restore;
@@ -102,6 +97,7 @@ class CollectionController extends Controller
         $grid->tools(function (Grid\Tools $tools) {
             $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=' . Collection::NAME . '" class="btn btn-success btn-sm" role="button">Type</a>');
             $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=' . Collection::NAME . '" class="btn btn-danger btn-sm" role="button">Tag</a>');
+            $tools->append('<a href="/admin/collections" class="btn btn-warning btn-sm" role="button">Clear</a>');
         });
         $grid->enableHotKeys();
         $grid->quickSearch(function ($model, $query) {
@@ -164,14 +160,8 @@ class CollectionController extends Controller
         $grid->column('title', 'Title')->display(function ($title) {
             // 在线 favicon
             $favicon = '<img src="' . $this->favicon . '" width="16" fheight="16" />';
-            $apple = '';
-            // 如果 content 包含 'apple.com' 则显示 'Apple'
-            if (strpos($this->content, 'apple.com') !== false) {
-                $favicon = '';
-                $apple = '';
-            }
             // 返回 a 标签,包含 title 和 link 和新窗口打开三个属性
-            return "{$apple}<a href='{$this->content}' target='_blank'>{$favicon} {$this->title}</a>";
+            return "<a href='{$this->content}' target='_blank'>{$favicon} {$this->title}</a>";
         });
         $grid->column('tags')->display(function ($tags, $column) {
             $tag_names = [];

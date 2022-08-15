@@ -27,6 +27,8 @@ use App\Admin\Extensions\Column\LabelWrapper;
 use App\Admin\Extensions\Column\BadgeWrapper;
 use App\Admin\Extensions\Column\LanguageWrapper;
 use App\Admin\Extensions\Column\GradeWrapper;
+use App\Admin\Extensions\Column\SentenceWrapper;
+use App\Admin\Extensions\Column\ContentWrapper;
 
 app('view')->prependNamespace('admin', resource_path('views/admin'));
 
@@ -49,6 +51,8 @@ Column::extend('labelWrapper', LabelWrapper::class);
 Column::extend('badgeWrapper', BadgeWrapper::class);
 Column::extend('languageWrapper', LanguageWrapper::class);
 Column::extend('gradeWrapper', GradeWrapper::class);
+Column::extend('sentenceWrapper', SentenceWrapper::class);
+Column::extend('contentWrapper', ContentWrapper::class);
 
 Form::init(function (Form $form) {
 

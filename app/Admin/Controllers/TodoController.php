@@ -102,6 +102,7 @@ class TodoController extends Controller
         $grid->tools(function (Grid\Tools $tools) {
             $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=todos" class="btn btn-success btn-sm" role="button">Type</a>');
             $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=todos" class="btn btn-danger btn-sm" role="button">Tag</a>');
+            $tools->append('<a href="/admin/todos" class="btn btn-warning btn-sm" role="button">Clear</a>');
         });
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('type_id', 'Type', Type::where('group', Todo::NAME)->pluck('name', 'id'));

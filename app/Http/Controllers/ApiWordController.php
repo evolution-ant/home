@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Type;
-use GrahamCampbell\ResultType\Success;
 use Symfony\Component\Process\Process;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class ApiWordController extends Controller
 {
@@ -27,6 +24,14 @@ class ApiWordController extends Controller
         \Log::info(__METHOD__, ['request:', $request->all()]);
         // 更新 words 表，id 为 id 的记录，importance 为 importance 的记录
         $word = \DB::table('words')->where('id', $id)->update(['importance' => $importance]);
+    }
+    function sound(Request $request)
+    {
+        $content = $request->input('content');
+        \Log::info(__METHOD__, ['request:', $request->all()]);
+        // 执行 shell
+        $process = Process::fromShellCommandline('say "' . $content . '"');
+        $process->run();
     }
 
     function google(Request $request)

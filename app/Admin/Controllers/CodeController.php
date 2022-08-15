@@ -164,7 +164,7 @@ class CodeController extends Controller
                 $name = $this->type->name;
             }
             return $column->codeWrapper($name, $this->title, $this->remark);
-        });
+        })->width(1000);
         $grid->column('tags')->display(function ($tags, $column) {
             $tag_names = [];
             $tag_ids = [];

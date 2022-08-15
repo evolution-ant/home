@@ -98,11 +98,11 @@ class BookController extends Controller
         $grid->tools(function (Grid\Tools $tools) {
             $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=books" class="btn btn-success btn-sm" role="button">Type</a>');
             $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=books" class="btn btn-danger btn-sm" role="button">Tag</a>');
-            $tools->append('<a href="/admin/book" class="btn btn-warning btn-sm" role="button">Clear</a>');
+            $tools->append('<a href="/admin/books" class="btn btn-warning btn-sm" role="button">Clear</a>');
         });
         $grid->enableHotKeys();
         $grid->quickSearch(function ($model, $query) {
-            $model->where('title', 'like', "%{$query}%")->orWhere('content', 'like', "%{$query}%")->orWhere('remark', 'like', "%{$query}%");
+            $model->where('content', 'like', "%{$query}%");
         });
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('type_id', 'Type', Type::where('group', Book::NAME)->pluck('name', 'id'));
@@ -149,21 +149,11 @@ class BookController extends Controller
             $create->text('remark', 'Remark');
         });
         $grid->column('like')->action(LikeBook::class);
-        $grid->column('type.name', 'PL')->display(function ($name, $column) {
-            $name = '';
-            $id = 0;
-            if ($this->type != null) {
-                $name = $this->type->name;
-                $id = $this->type->id;
-            }
-            return $column->languageWrapper($name);
+        $grid->column('type.name')->display(function ($gg, $column) {
+            return $column->labelWrapper($this->type->name, $this->type_id);
         });
         $grid->column('content')->display(function ($content, $column) {
-            $name = '';
-            if ($this->type != null) {
-                $name = $this->type->name;
-            }
-            return $column->codeWrapper($name, $this->title, $this->remark);
+            return $column->contentWrapper($this->content);
         });
         $grid->column('tags')->display(function ($tags, $column) {
             $tag_names = [];

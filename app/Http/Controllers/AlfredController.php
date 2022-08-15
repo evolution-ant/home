@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Type;
+use Symfony\Component\Process\Process;
+use App\Models\Word;
+use App\Models\Joke;
 
 class AlfredController extends Controller
 {
@@ -45,7 +48,7 @@ class AlfredController extends Controller
         \Log::info(__METHOD__, ['text:', $text]);
         \Log::info(__METHOD__, ['group:', $group]);
         // 查询 types 表，type 为 type 的记录
-        $type = Type::where('name', $type)->first();
+        $type = Type::where('name', $type)->where('group', $group)->first();
         $type_id = 0;
         // 如果 type 里包含 id 属性，则获取 id
         if (isset($type->id)) {
@@ -100,10 +103,42 @@ class AlfredController extends Controller
         \Log::info(__METHOD__, ['group:', $group]);
         \Log::info(__METHOD__, ['name:', $name]);
         // 查询 types 获取 group
-        $type = Type::where('name', $name)->first();
+        $type = Type::where('name', $name)->where('group', $group)->first();
         // type_id
         $type_id = $type->id;
         //重定向
         return redirect('/admin/' . $group . "?_selector%5Btype_id%5D=" . $type_id);
+    }
+
+    function notify_word(Request $request)
+    {
+        // 查询 word 表中 importance = 4 的随机一条数据
+        $word = Word::where("importance", ">", 2)->inRandomOrder()->first();
+        $phonetic = $word->phonetic;
+        // phonetic 拼接 🎙
+        $phonetic = '🎙 ' . $phonetic;
+        // content 拼接
+        $content = $word->content;
+        $explains = $word->explains;
+        // 把 <br> 替换成换行符
+        $explains = str_replace('<br>', "\n", $explains);
+        $cmd_notify = sprintf("osascript -e 'display notification \"%s\" with title \"%s\" subtitle \"%s\"' && say \"%s\" && say \"%s\" && say \"%s\"", $explains, $content, $phonetic, $content, $content, $content);
+        $process = Process::fromShellCommandline($cmd_notify);
+        $process->run();
+    }
+
+    function notify_joke(Request $request)
+    {
+        $joke = Joke::inRandomOrder()->first();
+        $content = $joke->content;
+        // 所有 emoji 表情
+        $emojis = [
+            '😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '☺️', '😊', '😇', '🙂', '🙃', '😉', '😌', '😍', '😘', '😗', '😙', '😚', '😋', '😛', '😝', '🤑', '🤗', '🤓', '😎', '🤡', '🤠', '😏', '😒', '😞', '😔', '😟', '😕', '🙁', '☹️', '😣', '😖', '😫', '😩', '😤', '😠', '😡', '😶', '😐', '😑', '😯', '😦', '😧', '😮', '😲', '😵', '😳', '😱', '😨', '😰', '😢', '😥', '🤤', '😭', '😓', '😪', '😴', '🙄', '🤔', '🤥', '😬', '🤐', '🤢', '🤧', '😷', '🤒', '🤕', '😈', '👿', '👹', '👺', '💩', '👻', '💀', '☠️', '👽', '👾', '🤖', '🎃', '😺', '😸', '😹', '😻', '😼', '😽', '🙀', '😿', '😾', '🙌', '👏', '👋', '👍', '👎', '👊', '✊', '✌️', '👌', '✋', '👐', '💪', '🙏', '☝️', '👆', '👇', '👈', '👉', '🖕', '🖐', '🤘'
+        ];
+        // 随机取一个 emoji 表情
+        $emoji = $emojis[array_rand($emojis)];
+        $cmd_notify = sprintf("osascript -e 'display notification \"%s\" with title \".:: %s ::.\"'", $content,  $emoji);
+        $process = Process::fromShellCommandline($cmd_notify);
+        $process->run();
     }
 }
