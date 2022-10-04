@@ -10,17 +10,44 @@ class IsDone extends RowAction
     // 在页面点击这一列的图表之后，发送请求到后端的handle方法执行
     public function handle(Todo $Todo)
     {
-        $Todo->is_done = (int) !$Todo->is_done;
+        if ($Todo->status == Todo::STATUS_UNDO || $Todo->status == Todo::STATUS_PROGRESS) {
+            $Todo->status = Todo::STATUS_DONE;
+        } else {
+            $Todo->status = Todo::STATUS_UNDO;
+        }
         $Todo->save();
-        // 保存之后返回新的html到前端显示
-        $html = $Todo->is_done == 0 ? '<button type="button" class="btn btn-default">⭕️</button>' : '<button type="button" class="btn btn-default">✅</button>';
+        $icon = '';
+        switch ($Todo->status) {
+            case Todo::STATUS_DONE:
+                $icon = Todo::STATUS_DONE_NAME;
+                break;
+            case Todo::STATUS_UNDO:
+                $icon = Todo::STATUS_UNDO_NAME;
+                break;
+            case Todo::STATUS_PROGRESS:
+                $icon = Todo::STATUS_PROGRESS_NAME;
+                break;
+        }
+        $html = '<button type="button" class="btn btn-default">' . $icon . '</button>';
         return $this->response()->html($html)->refresh();
     }
 
     // 这个方法来根据`star`字段的值来在这一列显示不同的图标
-    public function display($is_done)
+    public function display($status)
     {
-        \Log::info(__METHOD__, ['is_done:', $is_done]);
-        return $is_done == 0 ? '<button type="button" class="btn btn-default">⭕️</button>' : '<button type="button" class="btn btn-default">✅</button>';
+        $icon = '';
+        switch ($status) {
+            case Todo::STATUS_DONE:
+                $icon = Todo::STATUS_DONE_NAME;
+                break;
+            case Todo::STATUS_UNDO:
+                $icon = Todo::STATUS_UNDO_NAME;
+                break;
+            case Todo::STATUS_PROGRESS:
+                $icon = Todo::STATUS_PROGRESS_NAME;
+                break;
+        }
+        $html = '<button type="button" class="btn btn-default">' . $icon . '</button>';
+        return $html;
     }
 }

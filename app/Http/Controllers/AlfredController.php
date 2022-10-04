@@ -7,6 +7,7 @@ use App\Models\Type;
 use Symfony\Component\Process\Process;
 use App\Models\Word;
 use App\Models\Joke;
+use App\Models\Todo;
 
 class AlfredController extends Controller
 {
@@ -18,10 +19,116 @@ class AlfredController extends Controller
         // 查询 types 表，group 为 group 的记录
         $types = Type::where('group', $group)->get();
         // 返回 types 表中 group 为 group 的记录
+        // 管理者
         return response()->json([
             'types' => $types
         ]);
     }
+
+    function todo_detail(Request $request)
+    {
+        // 获取请求的 title
+        $title = $request->input('title');
+        // 移除 title 中的 🔥⏳🎉
+        $title = str_replace(['🔥', '⏳', '🎉'], '', $title);
+        \Log::info(__METHOD__, ['title:', $title]);
+        // 查询 types 表，group 为 group 的记录
+        $todo = Todo::where('title', 'like', '%' . $title . '%')->first();
+        // 获取 id
+        $id = $todo->id;
+        // 重定向到 todos/1/edit 路由
+        return redirect('/admin/todos/' . $id . '/edit');
+    }
+
+    function todo_status(Request $request)
+    {
+        // 获取 title
+        $title = $request->input('title');
+        // 获取 status
+        $status_action = $request->input('status');
+        $old_status = Todo::where('title', $title)->first()->status;
+        \Log::info(__METHOD__, ['title:', $title]);
+        \Log::info(__METHOD__, ['status:', $status_action]);
+        $message = '';
+        $new_status = -1;
+        switch ($status_action) {
+            case 'switch':
+                if ($old_status == Todo::STATUS_DONE) {
+                    $new_status = Todo::STATUS_UNDO;
+                    $message = '⏳[待处理]';
+                }
+                if ($old_status == Todo::STATUS_UNDO || $old_status == Todo::STATUS_PROGRESS) {
+                    $new_status = Todo::STATUS_DONE;
+                    $message = '🎉[已完成]';
+                }
+                break;
+            case 'progress':
+                $new_status = Todo::STATUS_PROGRESS;
+                $message = '🔥[处理中]';
+                break;
+            default:
+                break;
+        }
+        // 更新 title 的 status 字段
+        Todo::where('title', $title)->update(['status' => $new_status]);
+        // 返回更新后的记录
+        return response()->json([
+            'code' => 0,
+            'message' => $message . $title
+        ]);
+    }
+
+    function todo_list(Request $request)
+    {
+        // 获取请求的 is_undo
+        $is_undo = $request->input('is_undo');
+        \Log::info(__METHOD__, ['is_undo:', $is_undo]);
+        if ($is_undo == 1) {
+            $symbol = '=';
+        } else {
+            $symbol = '!=';
+        }
+        // 获取周日的日期
+        $next_sunday = date('Y-m-d', strtotime('next Sunday'));
+        // 获取上周日的日期
+        $last_sunday = date('Y-m-d', strtotime('last Sunday'));
+        // 查询 todos, deadline_at 小于 date 的记录
+        $todos = Todo::where('deadline_at', '<=', $next_sunday)->where('deadline_at', '>=', $last_sunday)->where('status', $symbol, Todo::STATUS_DONE)->orderBy('status', 'desc')->get(['title', 'status'])->toArray();
+        return response()->json([
+            'todos' => $todos
+        ]);
+    }
+
+    function todo_add(Request $request)
+    {
+        // 获取请求的 title
+        $title = $request->input('title');
+        // 判断 title 是否已存在
+        $todo = Todo::where('title', $title)->first();
+        if ($todo) {
+            return response()->json([
+                'code' => 1,
+                'message' => '🔴[已存在]' . $title
+            ]);
+        }
+        // 获取本周日的日期
+        $date = date('Y-m-d', strtotime('next Sunday'));
+        $deadline_at = $date;
+        // 创建 todo 对象
+        $todo = new Todo();
+        // 设置 todo 对象的 title 属性为 title
+        $todo->title = $title;
+        $todo->deadline_at = $deadline_at;
+        $todo->status = Todo::STATUS_UNDO;
+        // 保存 todo 对象
+        $todo->save();
+        // 返回 todo 对象
+        return response()->json([
+            'code' => 0,
+            'message' => '🟢[添加成功]' . $title
+        ]);
+    }
+
     function create(Request $request)
     {
         \Log::info(__METHOD__, ['enter']);

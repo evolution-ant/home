@@ -29,6 +29,7 @@ use App\Admin\Extensions\Column\LanguageWrapper;
 use App\Admin\Extensions\Column\GradeWrapper;
 use App\Admin\Extensions\Column\SentenceWrapper;
 use App\Admin\Extensions\Column\ContentWrapper;
+use App\Admin\Extensions\Column\ChildTodoWrapper;
 
 app('view')->prependNamespace('admin', resource_path('views/admin'));
 
@@ -53,6 +54,7 @@ Column::extend('languageWrapper', LanguageWrapper::class);
 Column::extend('gradeWrapper', GradeWrapper::class);
 Column::extend('sentenceWrapper', SentenceWrapper::class);
 Column::extend('contentWrapper', ContentWrapper::class);
+Column::extend('childTodoWrapper', ChildTodoWrapper::class);
 
 Form::init(function (Form $form) {
 

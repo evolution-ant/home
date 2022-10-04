@@ -122,6 +122,7 @@ class JokeController extends Controller
                 }
                 $query->whereIn('id', $joke_ids);
             });
+            $selector->selectOne('like', 'Type', ['1' => '🤩', '0' => '🫥']);
         });
 
         $grid->filter(function (Grid\Filter $filter) {
@@ -163,6 +164,9 @@ class JokeController extends Controller
         });
         $grid->column('like')->action(LikeJoke::class);
         $grid->column('type.name')->display(function ($gg, $column) {
+            if ($this->type == null) {
+                return '';
+            }
             return $column->labelWrapper($this->type->name, $this->type_id);
         });
         $grid->column('content')->display(function ($content, $column) {
@@ -213,7 +217,7 @@ class JokeController extends Controller
     {
         $form = new Form(new Joke);
         $types = Type::where('group', Joke::NAME)->pluck('name', 'id');
-        $form->radioCard('type_id', "type")->options($types);
+        $form->radioCard('type_id', "type")->options($types)->default(1);
         $form->textarea('content')->required();
 
         $tags = Tag::where('group', Joke::NAME)->pluck('name', 'id');

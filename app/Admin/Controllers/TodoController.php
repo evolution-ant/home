@@ -14,6 +14,8 @@ use Encore\Admin\Show;
 use Illuminate\Support\Facades\DB;
 use App\Admin\Actions\Todo\Restore;
 use App\Admin\Actions\Todo\IsDone;
+use Encore\Admin\Widgets\Table;
+
 
 class TodoController extends Controller
 {
@@ -42,15 +44,15 @@ class TodoController extends Controller
      */
     public function show($id, Content $content)
     {
-        // return $content
-        //     ->header(trans('admin.detail'))
-        //     ->description(trans('admin.description'))
-        //     ->body($this->detail($id));
-        return $content->title('详情')
-            ->description('简介')
-            ->view('product.show', array(
-                'content' => 'content'
-            ));
+        return $content
+            ->header(trans('admin.detail'))
+            ->description(trans('admin.description'))
+            ->body($this->detail($id));
+        // return $content->title('详情')
+        //     ->description('简介')
+        //     ->view('product.show', array(
+        //         'content' => 'content'
+        //     ));
     }
 
     /**
@@ -90,7 +92,7 @@ class TodoController extends Controller
     {
 
         $grid = new Grid(new Todo);
-
+        $grid->model()->orderBy('status', 'desc');
         $grid->actions(function ($actions) {
             if (\request('_scope_') == 'trashed') {
                 $actions->add(new Restore());
@@ -98,12 +100,12 @@ class TodoController extends Controller
         });
 
         $grid->enableHotKeys();
-        $grid->quickSearch('content', 'remark');
         $grid->tools(function (Grid\Tools $tools) {
             $tools->append('<a href="/admin/types?&_selector%5Bgroup%5D=todos" class="btn btn-success btn-sm" role="button">Type</a>');
             $tools->append('<a href="/admin/tags?&_selector%5Bgroup%5D=todos" class="btn btn-danger btn-sm" role="button">Tag</a>');
             $tools->append('<a href="/admin/todos" class="btn btn-warning btn-sm" role="button">Clear</a>');
         });
+        $grid->quickSearch('content', 'remark');
         $grid->selector(function (Grid\Tools\Selector $selector) {
             $selector->selectOne('type_id', 'Type', Type::where('group', Todo::NAME)->pluck('name', 'id'));
             $selector->select('tags', 'Tags',  Tag::where('group', Todo::NAME)->pluck('name', 'id'), function ($query, $value) {
@@ -117,37 +119,41 @@ class TodoController extends Controller
                 $query->whereIn('id', $todo_ids);
             });
             $selector->selectOne('importance', 'Imp', [
-                3 => '⭐️⭐️⭐️ 高',
-                2 => '⭐️⭐️ 中',
-                1 => '⭐️ 低',
+                3 => '⭐️⭐️⭐️',
+                2 => '⭐️⭐️',
+                1 => '⭐️',
             ]);
-            $selector->selectOne('is_done', 'IsDone', [
-                0 => '⭕️ 未完成',
-                1 => '✅ 已完成',
-            ]);
-            $selector->select('deadline_at', 'deadline_at',  ['today' => 'today', 'week' => 'week', 'month' => 'month'], function ($query, $value) {
-                \Log::info(__METHOD__, ['date:', date("Y-m")]);
+            $selector->selectOne(
+                'status',
+                [
+                    Todo::STATUS_PROGRESS => Todo::STATUS_PROGRESS_NAME . 'Progress',
+                    Todo::STATUS_UNDO => Todo::STATUS_UNDO_NAME . 'Undo',
+                    Todo::STATUS_DONE => Todo::STATUS_DONE_NAME . 'Done',
+                ]
+            );
+            // 获取本周最后一天
+            $selector->selectOne('deadline_at', 'deadline_at',  ['today' => 'today', 'week' => 'week', 'month' => 'month'], function ($query, $value) {
                 switch ($value) {
                     case 'today':
-                        $query->where('deadline_at', date("Y-m-d"));
+                        $tomorrow = date('Y-m-d', strtotime('+1 day'));
+                        // 打印 $tomorrow
+                        \Log::info(__METHOD__, ['tomorrow', $tomorrow]);
+                        $query->where('deadline_at', '<', $tomorrow);
                         break;
-                        // case 'week':
-                        //     $query->where('deadline_at', date("Y-m-d"));
-                        //     break;
+                    case 'week':
+                        $sunday = date('Y-m-d', strtotime('+1 sunday'));
+                        \Log::info(__METHOD__, ['week', $sunday]);
+                        $query->where('deadline_at', '<', $sunday);
+                        break;
                     case 'month':
-                        $query->like('deadline_at', date("Y-m"));
-                        break;
-                    default:
-                        $query->where('deadline_at', date("Y-m-d"));
+                        $lastday = date('Y-m-d', strtotime('last day of this month'));
+                        \Log::info(__METHOD__, ['month', $lastday]);
+                        $query->where('deadline_at', '<', $lastday);
                         break;
                 }
             });
         });
 
-        $grid->footer(function ($query) {
-            $data = $query->where('importance', 0)->sum('importance');
-            return "<div style='padding: 10px;'>总收入 ： $data</div>";
-        });
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
             $filter->scope('trashed', '回收站')->onlyTrashed();
@@ -182,12 +188,61 @@ class TodoController extends Controller
                 1 => '⭐️',
                 2 => '⭐️ ⭐️',
                 3 => '⭐️ ⭐️ ⭐️',
-            ])->default(1);
-            // $create->text('remark', 'Remark');
+            ])->default(3);
         });
 
-        $grid->column('id');
-        $grid->column('is_done')->action(IsDone::class);
+        $grid->column('items', '.::.')->expand(function ($model) {
+            $items = $model->item;
+            foreach ($items as $key => $row) {
+                $title[$key] = $row['title'];
+                $status[$key] = $row['status'];
+            }
+            array_multisort(array_column($items, 'status'), SORT_DESC, $items);
+
+            $new_items = [];
+            // 遍历所有的items
+            foreach ($items as $key => $item) {
+                $status_str = '';
+                $title_style = '';
+                \Log::info(__METHOD__, $item);
+                $status = $item['status'];
+                switch ($status) {
+                    case Todo::STATUS_UNDO:
+                        $title_style = 'danger';
+                        $status_str = Todo::STATUS_UNDO_NAME;
+                        break;
+                    case Todo::STATUS_DONE:
+                        $status_str = Todo::STATUS_DONE_NAME;
+                        $title_style = 'success';
+                        break;
+                    case Todo::STATUS_PROGRESS:
+                        $title_style = 'warning';
+                        $status_str = Todo::STATUS_PROGRESS_NAME;
+                        break;
+                }
+
+                $title = $item['title'];
+                $start_str = str_repeat('&nbsp;', 37);
+                $second_str = str_repeat('&nbsp;', 8);
+                if ($status == Todo::STATUS_DONE) {
+                    $title = sprintf('<span>%s%s<span class="text-%s">%s<del>%s</del></span></span>', $start_str, $status_str, $title_style, $second_str, $title);
+                } else if ($status == Todo::STATUS_PROGRESS) {
+                    $title = sprintf('<span>%s%s<span class="text-%s">%s<u>%s</u></span></span>', $start_str, $status_str, $title_style, $second_str, $title);
+                } else {
+                    $title = sprintf('<span>%s%s<span class="text-%s">%s%s</span></span>', $start_str, $status_str, $title_style, $second_str, $title);
+                }
+                $new_items[] = [
+                    'status_str' => $title
+                ];
+            };
+            $str = str_repeat('&nbsp;', 32);
+            return new Table([$str . 'status'], $new_items);
+        })->width(50);
+
+        $grid->column('deadline_at', 'date')->display(function ($deadline_at) {
+            return date("m-d", strtotime($deadline_at));
+        })->width(50);
+        $grid->column('status', 'stat')->action(IsDone::class)->width(50);
         $grid->column('title')->display(function ($title) {
             $tags = '';
             foreach ($this->tags as $tag) {
@@ -217,24 +272,27 @@ class TodoController extends Controller
                 }
                 $tags = $tags . "<span class='badge label-$tag_style'>$tag->name</span>";
             }
-            switch ($this->importance) {
-                case 1:
-                    $title_style = 'success';
+            // 真假，不是该对象，更糟糕，用更差的衬托，偷换概念（我在紧张的思考），借代（量词，一口），反复，相关（死，擦伤），对偶，设问（地球之所以美丽是因为没放弃任何一种颜色），反语（乔丹太犹豫了），共同点（生活咖啡），夸张（空间上的夸张），对比（萌，凶），
+            switch ($this->status) {
+                case Todo::STATUS_UNDO:
+                    $title_style = 'danger';
                     break;
-                case 2:
+                case Todo::STATUS_PROGRESS:
                     $title_style = 'warning';
                     break;
-                case 3:
-                    $title_style = 'danger';
+                case Todo::STATUS_DONE:
+                    $title_style = 'success';
                     break;
                 default:
                     $title_style = 'danger';
                     break;
             }
-            if ($this->is_done == 0) {
-                return sprintf('<p class="text-%s">%s %s</p>', $title_style, $tags, $title);
-            } else {
+            if ($this->status == Todo::STATUS_DONE) {
                 return sprintf('<p class="text-%s"><del>%s %s</del></p>', $title_style, $tags, $title);
+            } else if ($this->status == Todo::STATUS_PROGRESS) {
+                return sprintf('<p class="text-%s"><u>%s %s</u></p>', $title_style, $tags, $title);
+            } else {
+                return sprintf('<p class="text-%s">%s %s</p>', $title_style, $tags, $title);
             }
         });
         $grid->column('importance')->display(function ($importance) {
@@ -254,9 +312,7 @@ class TodoController extends Controller
             }
             return $star_str;
         })->sortable();
-        $grid->column('deadline_at')->display(function ($deadline_at) {
-            return str_replace(' 00:00:00', '', $deadline_at);
-        })->sortable();
+
         $grid->column('content')->width(200);
         $grid->column('created_at')->hide();
         $grid->column('updated_at')->hide();
@@ -297,15 +353,36 @@ class TodoController extends Controller
     {
         $form = new Form(new Todo);
         $types = Type::where('group', Todo::NAME)->pluck('name', 'id');
-        $form->radioCard('type_id', "type")->options($types);
-        $form->text('title', 'title')->required();
-        $form->date('deadline_at', 'deadline_at')->format('YYYY-MM-DD');
-        $tags = Tag::where('group', Todo::NAME)->pluck('name', 'id');
-        $form->listbox('tags', 'choose tags')->options($tags);
+        // $form->radioCard('type_id')->options($types);
+        $form->text('title')->required();
+        $form->date('deadline_at')->format('YYYY-MM-DD');
+        // $tags = Tag::where('group', Todo::NAME)->pluck('name', 'id');
+        // $form->listbox('tags', 'choose tags')->options($tags);
         // $form->starRating('importance');
-        $form->textarea('content');
-        $form->text('remark', 'remark');
+        // $form->textarea('content');
+        // $form->text('remark', 'remark');
+        $form->table('item', function ($table) {
+            $table->text('title');
+            $table->radio('status')->options(
+                [
+                    Todo::STATUS_UNDO => Todo::STATUS_UNDO_NAME,
+                    Todo::STATUS_PROGRESS => Todo::STATUS_PROGRESS_NAME,
+                    Todo::STATUS_DONE => Todo::STATUS_DONE_NAME,
+                ]
+            )->default(Todo::STATUS_UNDO);
+        });
+        $form->radio('status')->options(
+            [
+                Todo::STATUS_UNDO => Todo::STATUS_UNDO_NAME,
+                Todo::STATUS_PROGRESS => Todo::STATUS_PROGRESS_NAME,
+                Todo::STATUS_DONE => Todo::STATUS_DONE_NAME,
+            ]
+        )->default(Todo::STATUS_UNDO);
+        // $form->text('status');
 
+        $form->saving(function (Form $form) {
+            \Log::info(__METHOD__, ['request:', $form->item]);
+        });
         return $form;
     }
 }

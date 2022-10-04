@@ -21,6 +21,8 @@ Route::group([
         'types' => TypeController::class,
         'tags' => TagController::class,
         'tests' => TestController::class,
+        'mindmaps' => MindMapController::class,
+        'wisesayings' => WisesayingController::class,
     ]);
     // 加入自己的管理路由
     $router->namespace('Auth')->group(function ($router) {

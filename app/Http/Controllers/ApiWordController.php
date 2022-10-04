@@ -33,7 +33,6 @@ class ApiWordController extends Controller
         $process = Process::fromShellCommandline('say "' . $content . '"');
         $process->run();
     }
-
     function google(Request $request)
     {
         // 获取请求的 id

@@ -9,6 +9,13 @@ class Todo extends Model
 {
     use SoftDeletes;
 
+    // 常量
+    const STATUS_DONE = 0;
+    const STATUS_UNDO = 1;
+    const STATUS_PROGRESS = 2;
+    const STATUS_UNDO_NAME = '⏳ ';
+    const STATUS_DONE_NAME = '🎉 ';
+    const STATUS_PROGRESS_NAME = '🔥 ';
     const NAME = 'todos';
     protected $table = 'todos';
 
@@ -19,5 +26,13 @@ class Todo extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+    public function getItemAttribute($item)
+    {
+        return array_values(json_decode($item, true) ?: []);
+    }
+    public function setItemAttribute($item)
+    {
+        $this->attributes['item'] = json_encode(array_values($item));
     }
 }

@@ -82,6 +82,7 @@ class SentenceController extends Controller
             ->description(trans('admin.description'))
             ->body($this->form());
     }
+
     /**
      * Make a grid builder.
      *

@@ -13,6 +13,8 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-        '/api/create'
+        '/api/create',
+        '/api/mindmap/create',
+        '/api/mindmap/update'
     ];
 }
